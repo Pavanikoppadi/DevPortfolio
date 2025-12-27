@@ -3,33 +3,38 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
-import resumindPreview from "@/assets/projects/resumind-preview.jpg";
-import votingPreview from "@/assets/projects/voting-system-preview.jpg";
-import sparkPreview from "@/assets/projects/spark-launchpad-preview.jpg";
+import project1 from "@/assets/projects/project-1.jpg";
+import project2 from "@/assets/projects/project-2.jpg";
+import project3 from "@/assets/projects/project-3.jpg";
+import project4 from "@/assets/projects/project-4.jpg";
 
 const projects = [
   {
     id: 1,
     title: "Resumind.ai",
-    tagline: "Intelligence meets opportunity",
-    description: "An AI-powered resume optimization platform that transforms how candidates present themselves to ATS systems. Real-time suggestions, intelligent scoring, and seamless CI/CD deployment.",
-    image: resumindPreview,
+    description: "An AI-powered resume optimization platform that transforms how candidates present themselves to ATS systems. Real-time suggestions and intelligent scoring.",
+    image: project1,
     link: "#",
   },
   {
     id: 2,
-    title: "Secure Voting System",
-    tagline: "Democracy, digitized",
-    description: "A comprehensive MERN-based online voting platform with military-grade encryption, real-time analytics dashboards, and audit-ready transparency for campus elections.",
-    image: votingPreview,
+    title: "Smart Resume",
+    description: "The platform dynamically adapts to your career goals, keeping your achievements in view. Real-time feedback brings your profile to life.",
+    image: project2,
     link: "#",
   },
   {
     id: 3,
+    title: "Secure Voting",
+    description: "Automatically verifies voter identity. Once they confirm their credentials, the system validates and you decide how to proceed.",
+    image: project3,
+    link: "#",
+  },
+  {
+    id: 4,
     title: "Spark Launchpad",
-    tagline: "Ideas to implementation",
-    description: "A modular, enterprise-ready React + TypeScript SPA built for Corgnetrix. Features cloud-native architecture, component library integration, and performance-first design.",
-    image: sparkPreview,
+    description: "Keeps your project on track while you wait for deployment. Notifies you when builds are ready.",
+    image: project4,
     link: "#",
   },
 ];
@@ -62,8 +67,8 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-section" ref={ref}>
-      <div className="section-container">
-        {/* Header */}
+      {/* Header - aligned with section container */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -86,7 +91,7 @@ export const ProjectsSection = () => {
         </motion.div>
       </div>
 
-      {/* Horizontal Scroll Container */}
+      {/* Horizontal Scroll Container - same padding as header */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -96,8 +101,12 @@ export const ProjectsSection = () => {
         <div
           ref={scrollContainerRef}
           onScroll={updateScrollButtons}
-          className="flex gap-6 overflow-x-auto scrollbar-hide px-8 md:px-16 lg:px-24 pb-8 scroll-smooth"
-          style={{ scrollSnapType: "x mandatory" }}
+          className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
+          style={{ 
+            scrollSnapType: "x mandatory",
+            paddingLeft: "max(1.5rem, calc((100vw - 80rem) / 2 + 4rem))",
+            paddingRight: "max(1.5rem, calc((100vw - 80rem) / 2 + 4rem))",
+          }}
         >
           {projects.map((project, index) => (
             <motion.div
@@ -109,62 +118,51 @@ export const ProjectsSection = () => {
                 delay: 0.3 + index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="flex-shrink-0 w-[340px] md:w-[380px] group"
+              className="flex-shrink-0 w-[300px] md:w-[340px] group"
               style={{ scrollSnapAlign: "start" }}
             >
               {/* Project Image */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-surface">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-5 bg-surface">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Project Info */}
-              <div className="space-y-3">
-                <h3 className="text-subtitle font-semibold text-foreground">
-                  {project.title}.{" "}
-                  <span className="text-foreground-secondary font-normal">
+              <div className="space-y-2 pr-4">
+                <p className="text-body text-foreground">
+                  <span className="font-semibold">{project.title}.</span>{" "}
+                  <span className="text-foreground-secondary">
                     {project.description}
                   </span>
-                </h3>
-                
-                {/* View Project Link */}
-                <a
-                  href={project.link}
-                  className="inline-flex items-center gap-1.5 text-accent hover:text-accent/80 transition-colors text-body-sm font-medium group/link"
-                >
-                  View Project
-                  <ArrowUpRight
-                    size={14}
-                    className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                  />
-                </a>
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Navigation Arrows */}
-        <div className="flex justify-end gap-3 px-8 md:px-16 lg:px-24 mt-4">
-          <button
-            onClick={() => scroll("left")}
-            disabled={!canScrollLeft}
-            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-foreground/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            disabled={!canScrollRight}
-            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-foreground/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Scroll right"
-          >
-            <ChevronRight size={20} />
-          </button>
+        {/* Navigation Arrows - aligned with header */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <div className="flex justify-end gap-3 mt-8">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-foreground/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-foreground/40 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </motion.div>
     </section>
