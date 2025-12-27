@@ -13,7 +13,7 @@ export const Footer = () => {
         >
           <div className="text-center md:text-left">
             <p className="text-caption text-foreground-secondary">
-              © {new Date().getFullYear()} Portfolio. All rights reserved.
+              © {new Date().getFullYear()} Pavani Koppadi. All rights reserved.
             </p>
           </div>
           

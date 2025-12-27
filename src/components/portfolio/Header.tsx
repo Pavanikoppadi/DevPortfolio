@@ -36,7 +36,7 @@ export const Header = () => {
       >
         <nav className="section-container flex items-center justify-between h-14 md:h-16">
           <a href="#" className="text-foreground font-semibold text-lg tracking-tight">
-            Portfolio
+            Pavani Koppadi
           </a>
 
           {/* Desktop Navigation */}
