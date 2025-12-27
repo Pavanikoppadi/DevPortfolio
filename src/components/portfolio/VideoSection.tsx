@@ -19,13 +19,15 @@ export const VideoSection = () => {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/1nqZAl_skNE?autoplay=1&mute=1&controls=0&loop=1&playlist=1nqZAl_skNE&modestbranding=1&rel=0&showinfo=0"
+              src="https://www.youtube.com/embed/1nqZAl_skNE?autoplay=1&mute=1&controls=0&loop=1&playlist=1nqZAl_skNE&modestbranding=1&rel=0&showinfo=0&disablekb=1"
               title="Portfolio Video"
               className="absolute inset-0 w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               frameBorder="0"
             />
+            {/* Overlay to block YouTube hover controls */}
+            <div className="absolute inset-0 pointer-events-auto" />
           </div>
         </motion.div>
       </div>
