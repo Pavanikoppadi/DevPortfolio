@@ -18,8 +18,8 @@
 @layer base {
   :root {
     /* Core Colors - Apple Dark Theme */
-    --background: 0 0% 4%;
-    --background-elevated: 0 0% 7%;
+    --background: 0 0% 0%;
+    --background-elevated: 0 0% 0%;
     --background-secondary: 0 0% 10%;
     
     --foreground: 0 0% 96%;
@@ -56,12 +56,12 @@
     --radius: 0.75rem;
     
     /* Custom Design Tokens */
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 6%) 50%, hsl(0 0% 4%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 4%) 100%);
-    --gradient-glow: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210 15% 20% / 0.3), transparent);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 6%) 100%);
+    --gradient-hero: none;
+    --gradient-section: none;
+    --gradient-glow: none;
+    --gradient-card: none;
     
-    --shadow-glow: 0 0 80px hsl(210 15% 20% / 0.15);
+    --shadow-glow: none;
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
     --shadow-elevated: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
     
@@ -146,20 +146,17 @@
   }
 
   .section-full {
-    @apply min-h-screen flex flex-col items-center justify-center py-20 md:py-32;
-    background: var(--gradient-section);
+    @apply min-h-screen flex flex-col items-center justify-center py-20 md:py-32 bg-black;
   }
 
   /* Apple-style Cards */
   .card-glass {
-    @apply rounded-2xl p-8 border border-border/50;
-    background: var(--gradient-card);
+    @apply rounded-2xl p-8 border border-border/50 bg-black;
     box-shadow: var(--shadow-card);
   }
 
   .card-elevated {
-    @apply rounded-3xl overflow-hidden;
-    background: hsl(var(--background-elevated));
+    @apply rounded-3xl overflow-hidden bg-black;
     box-shadow: var(--shadow-elevated);
   }
 
@@ -241,7 +238,7 @@
     content: '';
     position: absolute;
     inset: -50%;
-    background: radial-gradient(ellipse at center, hsl(210 15% 25% / 0.1), transparent 70%);
+    background: transparent;
     pointer-events: none;
   }
 }

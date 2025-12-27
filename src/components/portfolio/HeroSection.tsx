@@ -3,27 +3,7 @@ import { ArrowDown, Download } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Ambient Glow Background */}
-      <div className="absolute inset-0 bg-gradient-hero">
-        <div className="absolute inset-0 bg-gradient-glow opacity-60" />
-        <motion.div
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3]
-          }}
-          transition={{ 
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full"
-          style={{
-            background: "radial-gradient(ellipse, hsl(210 20% 15% / 0.4) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-      </div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
 
       {/* Content */}
       <div className="relative z-10 section-container text-center">
