@@ -68,7 +68,7 @@ export const HeroSection = () => {
             View Work
             <ArrowDown size={16} />
           </a>
-          <a href="#" className="btn-secondary gap-2">
+          <a href="/pavanideveloperesume.pdf" download className="btn-secondary gap-2">
             <Download size={16} />
             Download Resume
           </a>
