@@ -76,9 +76,49 @@
     --sidebar-ring: 0 0% 53%;
   }
 
-  /* No light mode - dark only */
-  .dark {
-    /* Same as root - dark only theme */
+  /* Light Theme */
+  .light {
+    --background: 0 0% 100%;
+    --background-elevated: 0 0% 98%;
+    --background-secondary: 0 0% 96%;
+    
+    --foreground: 0 0% 9%;
+    --foreground-secondary: 0 0% 40%;
+    --foreground-tertiary: 0 0% 60%;
+    
+    --primary: 210 10% 85%;
+    --primary-foreground: 0 0% 9%;
+    
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 9%;
+    
+    --accent: 214 32% 20%;
+    --accent-foreground: 0 0% 96%;
+    
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+    
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 9%;
+    
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 9%;
+    
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 40%;
+    
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.08);
+    --shadow-elevated: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
+    
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 0 0% 9%;
+    --sidebar-primary-foreground: 0 0% 96%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 40%;
   }
 }
 
@@ -146,17 +186,17 @@
   }
 
   .section-full {
-    @apply min-h-screen flex flex-col items-center justify-center py-20 md:py-32 bg-black;
+    @apply min-h-screen flex flex-col items-center justify-center py-20 md:py-32 bg-background;
   }
 
   /* Apple-style Cards */
   .card-glass {
-    @apply rounded-2xl p-8 border border-border/50 bg-black;
+    @apply rounded-2xl p-8 border border-border/50 bg-background;
     box-shadow: var(--shadow-card);
   }
 
   .card-elevated {
-    @apply rounded-3xl overflow-hidden bg-black;
+    @apply rounded-3xl overflow-hidden bg-background;
     box-shadow: var(--shadow-elevated);
   }
 
