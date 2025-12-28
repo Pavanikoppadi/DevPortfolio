@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const VideoSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-black">
+    <section className="py-20 md:py-32 bg-background">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
