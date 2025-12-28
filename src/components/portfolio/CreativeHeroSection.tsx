@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const FloatingCard = ({
@@ -218,7 +218,7 @@ export const CreativeHeroSection = () => {
             className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
           >
             View Works
-            <ArrowUpRight size={18} />
+            <ArrowDown size={18} />
           </a>
           <a
             href="/pavanideveloperesume.pdf"
