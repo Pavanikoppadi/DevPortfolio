@@ -207,17 +207,28 @@ export const CreativeHeroSection = () => {
           AI-focused full stack developer building scalable, real-world web products.
         </motion.p>
 
-        <motion.a
-          href="/pavanideveloperesume.pdf"
-          download
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+          className="flex items-center justify-center gap-4"
         >
-          Resume
-          <ArrowUpRight size={18} />
-        </motion.a>
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+          >
+            View Works
+            <ArrowUpRight size={18} />
+          </a>
+          <a
+            href="/pavanideveloperesume.pdf"
+            download
+            className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+          >
+            Resume
+            <ArrowUpRight size={18} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
