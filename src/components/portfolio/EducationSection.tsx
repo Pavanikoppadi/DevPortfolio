@@ -24,10 +24,10 @@ export const EducationSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">Education</h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mt-4">
+          <h2 className="text-display mb-4">Education</h2>
+          <p className="text-body-lg text-foreground-secondary max-w-xl mx-auto">
             Academic foundation and continuous learning
           </p>
         </motion.div>
