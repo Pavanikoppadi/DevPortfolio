@@ -2,7 +2,7 @@ import { ReactNode, useState, useEffect } from "react";
 import { FixedSidebar } from "./FixedSidebar";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "../ui/ThemeToggle";
+import profilePhoto from "@/assets/profile-photo.png";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -41,21 +41,22 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-sidebar-dark px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-sidebar-accent flex items-center justify-center">
-            <span className="text-sidebar-foreground font-semibold text-xs">PK</span>
+          <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+            <img 
+              src={profilePhoto} 
+              alt="Pavani Koppadi" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className="text-sidebar-foreground font-semibold text-sm">Pavani Koppadi</span>
         </div>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-sidebar-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="p-2 text-sidebar-foreground"
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       {/* Mobile Menu Overlay */}
