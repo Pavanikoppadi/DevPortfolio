@@ -1,6 +1,5 @@
-import { Header } from "@/components/portfolio/Header";
+import { MainLayout } from "@/components/portfolio/MainLayout";
 import { CreativeHeroSection } from "@/components/portfolio/CreativeHeroSection";
-import { HeroSection } from "@/components/portfolio/HeroSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { VideoSection } from "@/components/portfolio/VideoSection";
 import { CapabilitiesSection } from "@/components/portfolio/CapabilitiesSection";
@@ -15,24 +14,22 @@ import { Footer } from "@/components/portfolio/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
+    <MainLayout>
+      <div id="home">
         <CreativeHeroSection />
-        <HeroSection />
-        <AboutSection />
-        <VideoSection />
-        <CapabilitiesSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <EducationSection />
-        <ToolboxSection />
-        <AchievementsSection />
-        <InterestsSection />
-        <ContactSection />
-      </main>
+      </div>
+      <AboutSection />
+      <VideoSection />
+      <CapabilitiesSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <EducationSection />
+      <ToolboxSection />
+      <AchievementsSection />
+      <InterestsSection />
+      <ContactSection />
       <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

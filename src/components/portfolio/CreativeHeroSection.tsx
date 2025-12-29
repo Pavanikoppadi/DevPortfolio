@@ -70,19 +70,19 @@ export const CreativeHeroSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
     >
-      {/* Floating Cards - Hidden on mobile, visible on md+ */}
-      <div className="hidden md:block">
+      {/* Floating Cards - Hidden on mobile, visible on lg+ */}
+      <div className="hidden lg:block">
         {/* Floating Cards - Left Side */}
         <FloatingCard
           mouseX={springX}
           mouseY={springY}
           depth={1.5}
           rotation={-6}
-          className="top-[15%] left-[8%] z-10"
+          className="top-[12%] left-[5%] z-10"
         >
-          <div className="bg-card rounded-[24px] p-4 shadow-2xl shadow-black/50 w-48 border border-border">
+          <div className="bg-card rounded-[24px] p-4 shadow-xl w-44 border border-border">
             <p className="text-foreground font-semibold text-sm">AI Full Stack Intern</p>
             <p className="text-muted-foreground text-xs mt-1">Electricon Wiz</p>
           </div>
@@ -93,9 +93,9 @@ export const CreativeHeroSection = () => {
           mouseY={springY}
           depth={1.2}
           rotation={4}
-          className="top-[40%] left-[6%] z-10"
+          className="top-[35%] left-[3%] z-10"
         >
-          <div className="bg-card rounded-[20px] p-3 shadow-2xl shadow-black/50 w-44 border border-border">
+          <div className="bg-card rounded-[20px] p-3 shadow-xl w-40 border border-border">
             <p className="text-foreground font-semibold text-sm">Resumind.ai</p>
             <p className="text-muted-foreground text-xs mt-1">AI Resume Builder</p>
           </div>
@@ -106,9 +106,9 @@ export const CreativeHeroSection = () => {
           mouseY={springY}
           depth={1.8}
           rotation={-3}
-          className="bottom-[20%] left-[12%] z-10"
+          className="bottom-[15%] left-[8%] z-10"
         >
-          <div className="bg-card rounded-[20px] p-4 shadow-2xl shadow-black/50 w-48 border border-border">
+          <div className="bg-card rounded-[20px] p-4 shadow-xl w-44 border border-border">
             <p className="text-foreground font-semibold text-sm">Tech Stack</p>
             <p className="text-muted-foreground text-xs mt-1">React • Node • AI</p>
           </div>
@@ -120,9 +120,9 @@ export const CreativeHeroSection = () => {
           mouseY={springY}
           depth={1.4}
           rotation={5}
-          className="top-[18%] right-[10%] z-10"
+          className="top-[12%] right-[5%] z-10"
         >
-          <div className="bg-card rounded-[24px] p-4 shadow-2xl shadow-black/50 w-48 border border-border">
+          <div className="bg-card rounded-[24px] p-4 shadow-xl w-44 border border-border">
             <p className="text-foreground font-semibold text-sm">Coding Winner</p>
             <p className="text-muted-foreground text-xs mt-1">AlgoZenith</p>
           </div>
@@ -133,9 +133,9 @@ export const CreativeHeroSection = () => {
           mouseY={springY}
           depth={1.6}
           rotation={-4}
-          className="bottom-[25%] right-[8%] z-10"
+          className="bottom-[18%] right-[5%] z-10"
         >
-          <div className="bg-card rounded-[24px] p-4 shadow-2xl shadow-black/50 w-52 border border-border">
+          <div className="bg-card rounded-[24px] p-4 shadow-xl w-48 border border-border">
             <p className="text-foreground font-semibold text-sm">Online Voting App</p>
             <p className="text-muted-foreground text-xs mt-1">MERN Stack</p>
           </div>
@@ -146,16 +146,7 @@ export const CreativeHeroSection = () => {
           mouseX={springX}
           mouseY={springY}
           depth={2}
-          className="top-[30%] left-[25%] text-foreground/20"
-        >
-          <Sparkle className="w-6 h-6" />
-        </FloatingCard>
-
-        <FloatingCard
-          mouseX={springX}
-          mouseY={springY}
-          depth={2.5}
-          className="top-[60%] right-[25%] text-foreground/15"
+          className="top-[28%] left-[22%] text-foreground/20"
         >
           <Sparkle className="w-5 h-5" />
         </FloatingCard>
@@ -163,8 +154,17 @@ export const CreativeHeroSection = () => {
         <FloatingCard
           mouseX={springX}
           mouseY={springY}
+          depth={2.5}
+          className="top-[55%] right-[22%] text-foreground/15"
+        >
+          <Sparkle className="w-4 h-4" />
+        </FloatingCard>
+
+        <FloatingCard
+          mouseX={springX}
+          mouseY={springY}
           depth={1.8}
-          className="bottom-[35%] left-[35%] text-foreground/10"
+          className="bottom-[40%] left-[30%] text-foreground/10"
         >
           <Sparkle className="w-4 h-4" />
         </FloatingCard>

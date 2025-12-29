@@ -65,15 +65,20 @@
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
     --shadow-elevated: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
     
-    /* Sidebar (if needed) */
-    --sidebar-background: 0 0% 6%;
+    /* Sidebar (fixed dark frame) */
+    --sidebar-dark: 0 0% 8%;
+    --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 96%;
+    --sidebar-muted: 0 0% 50%;
     --sidebar-primary: 0 0% 96%;
     --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 96%;
     --sidebar-border: 0 0% 15%;
     --sidebar-ring: 0 0% 53%;
+    
+    /* Content container (the white/light rounded area) */
+    --content-container: 40 20% 98%;
   }
 
   /* Light Theme */
@@ -111,14 +116,19 @@
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.08);
     --shadow-elevated: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
     
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 9%;
-    --sidebar-primary: 0 0% 9%;
-    --sidebar-primary-foreground: 0 0% 96%;
-    --sidebar-accent: 0 0% 94%;
-    --sidebar-accent-foreground: 0 0% 9%;
-    --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 0 0% 40%;
+    --sidebar-dark: 0 0% 8%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-muted: 0 0% 50%;
+    --sidebar-primary: 0 0% 96%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 53%;
+    
+    /* Content container stays light/white */
+    --content-container: 40 20% 98%;
   }
 }
 
@@ -182,11 +192,11 @@
 
   /* Section Layouts */
   .section-container {
-    @apply w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16;
+    @apply w-full max-w-6xl mx-auto px-6 md:px-10 lg:px-12;
   }
 
   .section-full {
-    @apply min-h-screen flex flex-col items-center justify-center py-20 md:py-32 bg-background;
+    @apply min-h-[80vh] flex flex-col items-center justify-center py-16 md:py-24;
   }
 
   /* Apple-style Cards */
