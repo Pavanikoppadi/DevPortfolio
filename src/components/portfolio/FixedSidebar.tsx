@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Instagram, Twitter } from "lucide-react";
-import { ThemeToggle } from "../ui/ThemeToggle";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -29,8 +29,12 @@ export const FixedSidebar = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-3 mb-10"
         >
-          <div className="w-10 h-10 rounded-full bg-sidebar-accent overflow-hidden flex items-center justify-center">
-            <span className="text-sidebar-foreground font-semibold text-sm">PK</span>
+          <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <img 
+              src={profilePhoto} 
+              alt="Pavani Koppadi" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h1 className="text-sidebar-foreground font-semibold text-sm leading-tight">
@@ -67,11 +71,6 @@ export const FixedSidebar = () => {
 
       {/* Bottom Section */}
       <div>
-        {/* Theme Toggle */}
-        <div className="mb-6">
-          <ThemeToggle />
-        </div>
-
         {/* Socials */}
         <div className="mb-6">
           <p className="text-sidebar-muted text-[10px] font-semibold tracking-widest uppercase mb-3">
