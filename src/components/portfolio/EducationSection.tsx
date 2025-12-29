@@ -14,7 +14,7 @@ const education = [
 
 export const EducationSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <section id="education" className="section-full" ref={ref}>
