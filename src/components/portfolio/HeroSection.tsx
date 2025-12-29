@@ -3,7 +3,7 @@ import { ArrowDown, Download } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
 
       {/* Content */}
       <div className="relative z-10 section-container text-center">
