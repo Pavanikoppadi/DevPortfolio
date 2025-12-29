@@ -1,28 +1,37 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Zap } from "lucide-react";
+import electriconLogo from "@/assets/electricon-logo.png";
+import pilotLogo from "@/assets/pilot-logo.png";
+import aaraLearnLogo from "@/assets/aaralearn-logo.png";
 
 const experiences = [
   {
     role: "AI Full-Stack Developer Intern",
     company: "Electricon Wiz",
     type: "Internship",
-    period: "2024",
+    period: "Oct 2025 - Present",
     location: "Remote",
     description: "Architected intelligent automation pipelines and AI-integrated web applications. Led front-end development with React while implementing machine learning models for predictive analytics.",
-    iconBg: "bg-emerald-500/10",
-    iconColor: "text-emerald-500",
+    logo: electriconLogo,
   },
   {
     role: "Software Developer Intern",
     company: "Pilot Mobility",
     type: "Internship",
-    period: "2023",
-    location: "Remote",
+    period: "May 2025 - Sep 2025",
+    location: "On-site",
     description: "Built and optimized cloud-native applications with focus on performance and scalability. Collaborated on API development and database optimization for mobile-first platforms.",
-    iconBg: "bg-emerald-500/10",
-    iconColor: "text-emerald-500",
+    logo: pilotLogo,
+  },
+  {
+    role: "Technical Intern",
+    company: "AaraLearn",
+    type: "Part-time",
+    period: "Nov 2024 - Jan 2025",
+    location: "Remote",
+    description: "Built and optimized a responsive website using WordPress and Gen AI tools. Improved accessibility by 35%, site speed by 20%, and workflow efficiency by 40%. Contributed to an NGO platform impacting thousands of underprivileged students.",
+    logo: aaraLearnLogo,
   },
 ];
 
@@ -61,9 +70,13 @@ export const ExperienceSection = () => {
               className="py-6 border-b border-border/60 last:border-b-0"
             >
               <div className="flex gap-4">
-                {/* Icon */}
-                <div className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl ${exp.iconBg} flex items-center justify-center`}>
-                  <Zap className={`w-6 h-6 md:w-7 md:h-7 ${exp.iconColor}`} />
+                {/* Logo */}
+                <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={exp.logo} 
+                    alt={`${exp.company} logo`}
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                  />
                 </div>
 
                 {/* Content */}
