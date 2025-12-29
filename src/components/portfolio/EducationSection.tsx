@@ -1,25 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import svecwLogo from "@/assets/svecw-logo.png";
 
 const education = [
   {
-    institution: "Malla Reddy Engineering College",
-    degree: "B.Tech, Computer Science",
-    iconLetter: "M",
-    iconBg: "bg-red-600",
-  },
-  {
-    institution: "Narayana Junior College",
-    degree: "Intermediate, MPC",
-    iconLetter: "N",
-    iconBg: "bg-blue-600",
-  },
-  {
-    institution: "Krishnaveni Talent School",
-    degree: "SSC",
-    iconLetter: "K",
-    iconBg: "bg-purple-600",
+    institution: "Shri Vishnu Engineering College for Women",
+    degree: "B.Tech in Information Technology",
+    details: "CGPA: 8.45/10",
+    logo: svecwLogo,
   },
 ];
 
@@ -44,7 +33,7 @@ export const EducationSection = () => {
         </motion.div>
 
         {/* Education List */}
-        <div className="space-y-0">
+        <div className="max-w-3xl mx-auto space-y-0">
           {education.map((edu, index) => (
             <motion.div
               key={edu.institution}
@@ -57,12 +46,14 @@ export const EducationSection = () => {
               }}
               className="py-6 border-b border-border/60 last:border-b-0"
             >
-              <div className="flex gap-4 items-center">
-                {/* Icon */}
-                <div className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl ${edu.iconBg} flex items-center justify-center`}>
-                  <span className="text-lg md:text-xl font-bold text-white">
-                    {edu.iconLetter}
-                  </span>
+              <div className="flex gap-4 items-start">
+                {/* Logo */}
+                <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={edu.logo} 
+                    alt={edu.institution} 
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                  />
                 </div>
 
                 {/* Content */}
@@ -72,6 +63,9 @@ export const EducationSection = () => {
                   </h3>
                   <p className="text-sm md:text-base text-muted-foreground mt-0.5">
                     {edu.degree}
+                  </p>
+                  <p className="text-sm md:text-base text-foreground/70 mt-1">
+                    {edu.details}
                   </p>
                 </div>
               </div>
