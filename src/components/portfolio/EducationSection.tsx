@@ -28,17 +28,20 @@ export const EducationSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="education" className="py-16 md:py-24 bg-background" ref={ref}>
+    <section id="education" className="section-full" ref={ref}>
       <div className="section-container">
         {/* Header */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-2xl md:text-3xl font-semibold mb-8 md:mb-12"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-16 md:mb-20"
         >
-          Education
-        </motion.h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">Education</h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mt-4">
+            Academic foundation and continuous learning
+          </p>
+        </motion.div>
 
         {/* Education List */}
         <div className="space-y-0">
