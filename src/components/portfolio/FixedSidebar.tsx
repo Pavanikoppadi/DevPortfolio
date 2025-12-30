@@ -13,7 +13,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+  { icon: Mail, href: "mailto:koppadipavani34@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://linkedin.com/in/", label: "LinkedIn" },
   { icon: Github, href: "https://github.com/", label: "GitHub" },
   { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
@@ -77,7 +77,7 @@ export const FixedSidebar = () => {
 
         {/* Hire Me Button */}
         <a
-          href="mailto:hello@example.com"
+          href="mailto:koppadipavani34@gmail.com"
           className="block w-full mb-6 px-4 py-2.5 bg-sidebar-foreground text-sidebar-dark text-sm font-medium text-center rounded-lg hover:bg-sidebar-foreground/90 transition-all duration-200"
         >
           Hire Me
