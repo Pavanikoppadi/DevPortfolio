@@ -61,7 +61,7 @@ export const ToolboxSection = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className="flex flex-col items-center justify-center group"
             >
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 overflow-hidden">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 overflow-hidden shadow-md shadow-foreground/10 group-hover:shadow-lg group-hover:shadow-foreground/15">
                 <img 
                   src={tool.image} 
                   alt={tool.name} 
