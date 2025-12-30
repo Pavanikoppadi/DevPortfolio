@@ -62,7 +62,7 @@ export const CapabilitiesSection = () => {
                 delay: index * 0.15,
                 ease: [0.16, 1, 0.3, 1] 
               }}
-              className="card-glass group hover:border-foreground/20 transition-all duration-500"
+              className="p-8 rounded-2xl border border-border bg-background group hover:border-foreground/20 transition-all duration-500"
             >
               <div className="flex items-start gap-6">
                 <div className="p-3 rounded-xl bg-background-secondary group-hover:bg-foreground/5 transition-colors duration-500">
