@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
+import { DeviceStatusBox } from "./DeviceStatusBox";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -71,6 +72,9 @@ export const FixedSidebar = () => {
 
       {/* Bottom Section */}
       <div>
+        {/* Device Status Box */}
+        <DeviceStatusBox />
+
         {/* Hire Me Button */}
         <a
           href="mailto:hello@example.com"
