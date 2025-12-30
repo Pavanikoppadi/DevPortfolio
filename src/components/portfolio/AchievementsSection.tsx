@@ -58,7 +58,7 @@ export const AchievementsSection = () => {
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1] 
               }}
-              className="card-glass text-center group hover:border-foreground/20 transition-all duration-500"
+              className="p-8 rounded-2xl border border-border bg-background text-center group hover:border-foreground/20 transition-all duration-500"
             >
               <div className="inline-flex p-4 rounded-2xl bg-background-secondary mb-4 group-hover:bg-foreground/5 transition-colors duration-500">
                 <achievement.icon className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
