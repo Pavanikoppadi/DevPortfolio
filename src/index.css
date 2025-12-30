@@ -18,7 +18,7 @@
 @layer base {
   :root {
     /* Core Colors - Light theme for content container */
-    --background: 40 20% 98%;
+    --background: 0 0% 100%;
     --background-elevated: 0 0% 100%;
     --background-secondary: 0 0% 96%;
     
@@ -78,7 +78,7 @@
     --sidebar-ring: 0 0% 53%;
     
     /* Content container (the white/light rounded area) */
-    --content-container: 40 20% 98%;
+    --content-container: 0 0% 100%;
   }
 
   /* Light Theme */
@@ -128,7 +128,7 @@
     --sidebar-ring: 0 0% 53%;
     
     /* Content container stays light/white */
-    --content-container: 40 20% 98%;
+    --content-container: 0 0% 100%;
   }
 }
 
