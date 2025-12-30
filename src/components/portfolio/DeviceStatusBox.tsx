@@ -3,7 +3,7 @@ import { Battery, BatteryCharging, Wifi, Monitor, Smartphone } from "lucide-reac
 import { useDeviceStatus } from "@/hooks/useDeviceStatus";
 
 export const DeviceStatusBox = () => {
-  const { time, date, battery, isCharging, connection, device } = useDeviceStatus();
+  const { time, date, battery, isCharging, speed, device } = useDeviceStatus();
 
   const getDeviceIcon = () => {
     if (device === 'iPhone' || device === 'Android') {
@@ -46,13 +46,13 @@ export const DeviceStatusBox = () => {
           </span>
         </div>
 
-        {/* Connection */}
+        {/* Speed */}
         <div className="flex flex-col items-center">
           <div className="w-6 h-6 rounded-md bg-sidebar-accent flex items-center justify-center text-sidebar-muted mb-1">
             <Wifi size={10} />
           </div>
           <span className="text-sidebar-muted text-[8px] leading-tight text-center">
-            {connection}
+            {speed}
           </span>
         </div>
 

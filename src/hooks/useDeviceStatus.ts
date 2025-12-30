@@ -5,7 +5,7 @@ interface DeviceStatus {
   date: string;
   battery: number | null;
   isCharging: boolean;
-  connection: string;
+  speed: string;
   device: string;
 }
 
@@ -15,7 +15,7 @@ export const useDeviceStatus = (): DeviceStatus => {
     date: '',
     battery: null,
     isCharging: false,
-    connection: 'Unknown',
+    speed: '—',
     device: 'Desktop',
   });
 
@@ -62,27 +62,21 @@ export const useDeviceStatus = (): DeviceStatus => {
     };
     getBattery();
 
-    // Get connection type
-    const getConnection = () => {
+    // Get connection speed
+    const getSpeed = () => {
       const nav = navigator as any;
-      if (nav.connection) {
-        const conn = nav.connection;
-        const type = conn.effectiveType || conn.type || 'Unknown';
-        const typeMap: Record<string, string> = {
-          'slow-2g': 'Slow',
-          '2g': '2G',
-          '3g': '3G',
-          '4g': '4G',
-          'wifi': 'WiFi',
-        };
-        setStatus(prev => ({ ...prev, connection: typeMap[type] || type.toUpperCase() }));
+      if (nav.connection && nav.connection.downlink) {
+        const downlink = nav.connection.downlink; // Mbps
+        setStatus(prev => ({ ...prev, speed: `${downlink} Mbps` }));
         
-        conn.addEventListener('change', getConnection);
+        nav.connection.addEventListener('change', getSpeed);
       } else if (navigator.onLine) {
-        setStatus(prev => ({ ...prev, connection: 'Online' }));
+        setStatus(prev => ({ ...prev, speed: 'Online' }));
+      } else {
+        setStatus(prev => ({ ...prev, speed: 'Offline' }));
       }
     };
-    getConnection();
+    getSpeed();
 
     // Get device type
     const getDevice = () => {
