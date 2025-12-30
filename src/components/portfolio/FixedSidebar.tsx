@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Instagram, Twitter } from "lucide-react";
+import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const navLinks = [
@@ -16,7 +16,6 @@ const socialLinks = [
   { icon: Linkedin, href: "https://linkedin.com/in/", label: "LinkedIn" },
   { icon: Github, href: "https://github.com/", label: "GitHub" },
   { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
-  { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
 ];
 
 export const FixedSidebar = () => {
