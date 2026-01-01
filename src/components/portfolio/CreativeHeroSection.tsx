@@ -121,18 +121,19 @@ export const CreativeHeroSection = () => {
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 bg-secondary hover:bg-muted border border-border text-foreground px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
           >
             View Works
-            <ArrowDown size={18} />
           </a>
           <a
             href="/pavanideveloperesume.pdf"
             download
-            className="inline-flex items-center gap-2 bg-secondary hover:bg-muted border border-border text-foreground px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
           >
             Resume
-            <ArrowUpRight size={18} />
+            <span className="flex items-center justify-center w-8 h-8 rounded-full border border-border">
+              <ArrowUpRight size={16} />
+            </span>
           </a>
         </motion.div>
       </div>
