@@ -1,3 +1,11 @@
+/**
+ * ToolboxSection Component
+ * 
+ * Displays AI and development tools in a 3-column grid.
+ * Features custom logo images with hover effects.
+ * Tool names appear on hover for clean minimal design.
+ */
+
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
@@ -13,6 +21,7 @@ import warpLogo from "@/assets/tools/warp.png";
 import boltLogo from "@/assets/tools/bolt.png";
 import geminiLogo from "@/assets/tools/gemini.png";
 
+/** List of tools with their logo images */
 const tools = [
   { image: chatgptLogo, name: "ChatGPT" },
   { image: claudeLogo, name: "Claude AI" },
@@ -32,22 +41,22 @@ export const ToolboxSection = () => {
   return (
     <section id="toolbox" className="py-24 md:py-32 bg-background" ref={ref}>
       <div className="container mx-auto px-4 md:px-8">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-display text-foreground">
-            Toolbox
-          </h2>
+          <h2 className="text-display text-foreground">Toolbox</h2>
         </motion.div>
 
+        {/* Tools Grid - 3 Columns */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 max-w-3xl mx-auto"
+          className="grid grid-cols-3 gap-8 md:gap-12 max-w-3xl mx-auto"
         >
           {tools.map((tool, index) => (
             <motion.div
@@ -57,6 +66,7 @@ export const ToolboxSection = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className="flex flex-col items-center justify-center group"
             >
+              {/* Tool Logo */}
               <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 overflow-hidden shadow-md shadow-foreground/10 group-hover:shadow-lg group-hover:shadow-foreground/15">
                 <img 
                   src={tool.image} 
@@ -64,6 +74,7 @@ export const ToolboxSection = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
+              {/* Tool Name - Visible on Hover */}
               <span className="mt-3 text-xs md:text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {tool.name}
               </span>

@@ -1,80 +1,21 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
-import { useEffect, useRef } from "react";
+/**
+ * CreativeHeroSection Component
+ * 
+ * The main hero section displayed at the top of the portfolio.
+ * Features animated introduction text, name, role badge, and call-to-action buttons.
+ * Follows Apple Design Guidelines with clean typography and smooth animations.
+ */
 
-const FloatingCard = ({
-  children,
-  className,
-  rotation = 0,
-  mouseX,
-  mouseY,
-  depth = 1,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  rotation?: number;
-  mouseX: any;
-  mouseY: any;
-  depth?: number;
-}) => {
-  const x = useTransform(mouseX, (val: number) => val * depth * 0.02);
-  const y = useTransform(mouseY, (val: number) => val * depth * 0.02);
-
-  return (
-    <motion.div
-      style={{ x, y, rotate: rotation }}
-      className={`absolute ${className}`}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const Sparkle = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5L12 0Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export const CreativeHeroSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      mouseX.set(e.clientX - centerX);
-      mouseY.set(e.clientY - centerY);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
-
   return (
-    <section
-      ref={containerRef}
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
-    >
-
-      {/* Center Content */}
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* Center Content Container */}
       <div className="relative z-20 text-center px-4 max-w-2xl mx-auto">
+        
+        {/* Greeting Text */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,6 +25,7 @@ export const CreativeHeroSection = () => {
           Heyy, I'm
         </motion.p>
 
+        {/* Name - Large Display Typography */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,6 +35,7 @@ export const CreativeHeroSection = () => {
           Pavani Koppadi
         </motion.h1>
 
+        {/* Role Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,6 +47,7 @@ export const CreativeHeroSection = () => {
           </span>
         </motion.div>
 
+        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,18 +57,22 @@ export const CreativeHeroSection = () => {
           AI-focused full stack developer building scalable, real-world web products.
         </motion.p>
 
+        {/* Call-to-Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex items-center justify-center gap-3"
         >
+          {/* Primary Button - View Works */}
           <a
             href="#projects"
             className="inline-flex items-center justify-center bg-foreground hover:bg-foreground/90 text-background px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base font-medium transition-all duration-300 hover:scale-[1.02]"
           >
             View Works
           </a>
+          
+          {/* Secondary Button - Resume Download */}
           <a
             href="/pavanideveloperesume.pdf"
             download

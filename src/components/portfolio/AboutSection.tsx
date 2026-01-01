@@ -1,3 +1,12 @@
+/**
+ * AboutSection Component
+ * 
+ * Personal statement section with two-column layout.
+ * Left: Bold statement headline
+ * Right: Narrative text and stats cards
+ * Features scroll-triggered animations.
+ */
+
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -10,6 +19,7 @@ export const AboutSection = () => {
     <section id="about" className="section-full" ref={ref}>
       <div className="section-container">
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
           {/* Left Column - Statement */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -29,6 +39,7 @@ export const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-6"
           >
+            {/* Bio Paragraphs */}
             <p className="text-body text-foreground-secondary leading-relaxed">
               Currently pursuing B.Tech in Information Technology with a CGPA of 8.45, 
               I've dedicated myself to mastering the intersection of artificial intelligence 
@@ -40,6 +51,8 @@ export const AboutSection = () => {
               to secure voting platforms, every project reflects a commitment to engineering 
               excellence.
             </p>
+            
+            {/* Stats Cards */}
             <div className="pt-4">
               <div className="flex flex-wrap gap-4">
                 <div className="card-glass py-4 px-6">

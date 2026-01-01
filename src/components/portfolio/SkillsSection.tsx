@@ -1,6 +1,15 @@
+/**
+ * SkillsSection Component
+ * 
+ * Displays technology skills as pill-shaped badges with icons.
+ * Features a responsive flexbox layout with hover effects.
+ * Icons loaded from DevIcons CDN.
+ */
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+/** List of technologies with their DevIcons URLs */
 const skills = [
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
@@ -28,6 +37,7 @@ export const SkillsSection = () => {
 
   return (
     <section className="py-16 md:py-24 px-6 md:px-12" ref={ref}>
+      {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -37,6 +47,7 @@ export const SkillsSection = () => {
         <h2 className="text-display text-foreground">Technologies I work with</h2>
       </motion.div>
 
+      {/* Skills Grid */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -51,12 +62,16 @@ export const SkillsSection = () => {
             transition={{ duration: 0.4, delay: 0.1 + index * 0.03 }}
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border hover:bg-secondary transition-colors duration-200"
           >
+            {/* Skill Icon */}
             <img 
               src={skill.icon} 
               alt={skill.name} 
               className="w-5 h-5 object-contain"
             />
-            <span className="text-foreground text-caption font-medium">{skill.name}</span>
+            {/* Skill Name */}
+            <span className="text-foreground text-caption font-medium">
+              {skill.name}
+            </span>
           </motion.div>
         ))}
       </motion.div>

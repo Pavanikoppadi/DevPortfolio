@@ -1,3 +1,11 @@
+/**
+ * ContactSection Component
+ * 
+ * Final call-to-action section for contacting.
+ * Features a centered layout with headline, tagline, and email button.
+ * Clean, minimal design following Apple guidelines.
+ */
+
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -16,14 +24,18 @@ export const ContactSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mx-auto"
         >
+          {/* Headline */}
           <h2 className="text-display mb-6">
             Let's build intelligent products together.
           </h2>
+          
+          {/* Tagline */}
           <p className="text-body-lg text-foreground-secondary mb-12">
             Open to opportunities where AI meets impactful engineering. 
             Let's create something extraordinary.
           </p>
 
+          {/* CTA Button */}
           <motion.a
             href="mailto:koppadipavani34@gmail.com"
             initial={{ opacity: 0, y: 20 }}

@@ -1,9 +1,17 @@
+/**
+ * HeroSection Component
+ * 
+ * Secondary hero section displaying the main tagline.
+ * Features animated gradient text for emphasis.
+ * Positioned after the CreativeHeroSection for visual flow.
+ */
+
 import { motion } from "framer-motion";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-[50vh] flex flex-col items-center justify-center overflow-hidden">
-      {/* Content */}
+      {/* Tagline Container */}
       <div className="relative z-10 section-container text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}

@@ -1,7 +1,18 @@
+/**
+ * LearningSection Component
+ * 
+ * Displays a GitHub-style contribution graph representing learning activity.
+ * Includes stats for days active, courses, projects, and technologies.
+ * Uses monochrome color palette for the contribution squares.
+ */
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-// Generate realistic contribution data for a year
+/**
+ * Generates random contribution data for the graph.
+ * Creates a 52-week grid with varying activity levels (0-4).
+ */
 const generateContributionData = () => {
   const data: number[][] = [];
   const weeks = 52;
@@ -9,7 +20,6 @@ const generateContributionData = () => {
   for (let week = 0; week < weeks; week++) {
     const weekData: number[] = [];
     for (let day = 0; day < 7; day++) {
-      // Create more realistic patterns with some empty days and varying intensity
       const random = Math.random();
       let level = 0;
       if (random > 0.3) level = 1;
@@ -25,10 +35,16 @@ const generateContributionData = () => {
 
 const contributionData = generateContributionData();
 
+/** Month labels for the graph */
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** Day labels for the graph */
 const days = ['Mon', 'Wed', 'Fri'];
 
-// Grey/black color palette
+/**
+ * Returns the appropriate CSS class for contribution level.
+ * Uses monochrome palette from muted to foreground.
+ */
 const getContributionColor = (level: number) => {
   switch (level) {
     case 0: return 'bg-muted';
@@ -44,11 +60,13 @@ export const LearningSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
+  // Calculate total contributions for display
   const totalContributions = contributionData.flat().filter(v => v > 0).length;
 
   return (
     <section id="learning" className="section-padding" ref={ref}>
       <div className="section-container">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -61,25 +79,26 @@ export const LearningSection = () => {
           </p>
         </motion.div>
 
+        {/* Contribution Graph Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-card rounded-2xl p-6 md:p-8 border border-border"
         >
-          {/* Header */}
+          {/* Graph Header */}
           <div className="flex items-center justify-between mb-6">
             <p className="text-caption font-medium text-foreground">
               {totalContributions} learning activities in the last year
             </p>
           </div>
 
-          {/* Graph Container */}
+          {/* Contribution Graph */}
           <div className="overflow-x-auto">
             <div className="min-w-[800px]">
-              {/* Months row */}
+              {/* Month Labels */}
               <div className="flex mb-2 ml-10">
-                {months.map((month, i) => (
+                {months.map((month) => (
                   <span 
                     key={month} 
                     className="text-xs text-muted-foreground"
@@ -90,9 +109,9 @@ export const LearningSection = () => {
                 ))}
               </div>
 
-              {/* Graph grid */}
+              {/* Graph Grid */}
               <div className="flex">
-                {/* Day labels */}
+                {/* Day Labels */}
                 <div className="flex flex-col justify-around mr-2 h-[88px]">
                   {days.map(day => (
                     <span key={day} className="text-xs text-muted-foreground">
@@ -101,7 +120,7 @@ export const LearningSection = () => {
                   ))}
                 </div>
 
-                {/* Contribution squares */}
+                {/* Contribution Squares */}
                 <div className="flex gap-[3px]">
                   {contributionData.map((week, weekIndex) => (
                     <motion.div
@@ -139,7 +158,7 @@ export const LearningSection = () => {
             </div>
           </div>
 
-          {/* Stats */}
+          {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border">
             <div className="text-center">
               <p className="text-2xl font-semibold text-foreground tracking-tight">365+</p>
