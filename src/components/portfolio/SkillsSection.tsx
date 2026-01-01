@@ -56,7 +56,7 @@ export const SkillsSection = () => {
               alt={skill.name} 
               className="w-5 h-5 object-contain"
             />
-            <span className="text-foreground text-sm font-medium">{skill.name}</span>
+            <span className="text-foreground text-caption font-medium">{skill.name}</span>
           </motion.div>
         ))}
       </motion.div>

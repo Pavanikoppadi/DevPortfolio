@@ -88,7 +88,7 @@ export const CreativeHeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-foreground text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+          className="text-foreground text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight mb-6"
         >
           Pavani Koppadi
         </motion.h1>
