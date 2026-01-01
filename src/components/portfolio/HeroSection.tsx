@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -38,21 +37,6 @@ export const HeroSection = () => {
           Building the future one intelligent system at a time.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a href="#projects" className="btn-primary gap-2">
-            View Work
-            <ArrowDown size={16} />
-          </a>
-          <a href="/pavanideveloperesume.pdf" download className="btn-secondary gap-2">
-            <Download size={16} />
-            Download Resume
-          </a>
-        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
