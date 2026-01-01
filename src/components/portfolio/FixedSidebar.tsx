@@ -48,9 +48,6 @@ export const FixedSidebar = () => {
 
         {/* Navigation */}
         <nav className="mb-8">
-          <p className="text-sidebar-muted text-[10px] font-semibold tracking-widest uppercase mb-3">
-            Creations
-          </p>
           <ul className="space-y-1">
             {navLinks.map((link, index) => (
               <motion.li
