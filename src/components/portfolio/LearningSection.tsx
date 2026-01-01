@@ -55,9 +55,9 @@ export const LearningSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-display mb-4">Learning & Upskilling</h2>
+          <h2 className="text-display mb-4">Learning & Understanding</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Consistent dedication to growth through daily learning and skill development
+            AI can replace many things, but never the depth of true learning and understanding — that's why I stay consistent.
           </p>
         </motion.div>
 
