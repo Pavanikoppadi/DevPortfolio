@@ -49,10 +49,7 @@ export const ProjectsSection = () => {
           className="flex items-end justify-between mb-12"
         >
           <div>
-            <h2 className="text-display mb-2">Featured Work.</h2>
-            <p className="text-subtitle text-foreground-secondary">
-              Even more impact.
-            </p>
+            <h2 className="text-display">Featured Work.</h2>
           </div>
           <a
             href="#"

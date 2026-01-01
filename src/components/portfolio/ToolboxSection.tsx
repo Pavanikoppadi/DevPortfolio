@@ -38,13 +38,9 @@ export const ToolboxSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             Toolbox
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            These are the preferred tools that I've been working on to streamline my creative process. 
-            I'm always open to learning new methodologies, approaches and strategies to hone my craft.
-          </p>
         </motion.div>
 
         <motion.div

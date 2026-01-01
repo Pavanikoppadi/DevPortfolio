@@ -26,10 +26,7 @@ export const EducationSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-20"
         >
-          <h2 className="text-display mb-4">Education</h2>
-          <p className="text-body-lg text-foreground-secondary max-w-xl mx-auto">
-            Academic foundation and continuous learning
-          </p>
+          <h2 className="text-display">Education</h2>
         </motion.div>
 
         {/* Education List */}

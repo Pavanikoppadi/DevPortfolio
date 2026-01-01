@@ -23,10 +23,7 @@ export const WorkflowSection = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-display text-foreground mb-4">My Development Workflow</h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          How I design, build, and deliver reliable digital products end to end.
-        </p>
+        <h2 className="text-display text-foreground">My Development Workflow</h2>
       </motion.div>
 
       {/* Clean Horizontal Timeline */}
