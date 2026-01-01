@@ -46,11 +46,11 @@ export const Header = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-semibold text-sm">
+              <span className="text-white font-semibold text-sm tracking-tight">
                 Pavani Koppadi
               </span>
-              <span className="text-gray-400 text-xs">AI Full Stack Developer</span>
-              <span className="text-green-400 text-[10px]">● Open to work</span>
+              <span className="text-gray-400 text-xs tracking-normal">AI Full Stack Developer</span>
+              <span className="text-green-400 text-[10px] tracking-normal">● Open to work</span>
             </div>
           </div>
 

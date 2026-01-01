@@ -195,6 +195,10 @@
     @apply w-full max-w-6xl mx-auto px-6 md:px-10 lg:px-12;
   }
 
+  .section-padding {
+    @apply py-16 md:py-24 px-6 md:px-10 lg:px-12;
+  }
+
   .section-full {
     @apply min-h-[80vh] flex flex-col items-center justify-center py-16 md:py-24;
   }
