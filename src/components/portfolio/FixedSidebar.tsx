@@ -42,6 +42,7 @@ export const FixedSidebar = () => {
               Pavani Koppadi
             </h1>
             <p className="text-sidebar-muted text-xs">AI Full Stack Developer</p>
+            <p className="text-green-400 text-[10px] mt-1">● Open to work</p>
           </div>
         </motion.div>
 
