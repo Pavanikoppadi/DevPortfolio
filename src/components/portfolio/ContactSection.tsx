@@ -44,7 +44,7 @@ export const ContactSection = () => {
                   delay: 0.2 + index * 0.1,
                   ease: [0.16, 1, 0.3, 1] 
                 }}
-                className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-background-secondary hover:bg-foreground/5 border border-border hover:border-foreground/20 transition-all duration-500"
+                className="group flex items-center gap-3 px-6 py-4 rounded-full bg-background-secondary hover:bg-foreground/5 border border-border hover:border-foreground/20 transition-all duration-500 hover:scale-[1.02]"
               >
                 <link.icon className="w-5 h-5 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
                 <span className="font-medium">{link.label}</span>
