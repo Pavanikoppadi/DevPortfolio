@@ -81,7 +81,7 @@ export const CreativeHeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-muted-foreground text-lg md:text-xl mb-2 font-light italic"
         >
-          Hi! I'm
+          Heyy, I'm
         </motion.p>
 
         <motion.h1
