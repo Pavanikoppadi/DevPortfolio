@@ -97,12 +97,11 @@ export const CreativeHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col items-center gap-2 mb-8"
+          className="inline-block mb-8"
         >
           <span className="bg-secondary border border-border text-foreground px-4 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-base">
             AI Full Stack Developer
           </span>
-          <span className="text-green-500 text-xs md:text-sm">● Open to work</span>
         </motion.div>
 
         <motion.p
