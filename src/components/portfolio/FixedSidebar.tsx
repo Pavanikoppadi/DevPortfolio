@@ -72,8 +72,6 @@ export const FixedSidebar = () => {
 
       {/* Bottom Section */}
       <div>
-        {/* Device Status Box */}
-        <DeviceStatusBox />
 
         {/* Hire Me Button */}
         <a
