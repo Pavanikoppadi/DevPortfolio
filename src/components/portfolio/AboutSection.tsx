@@ -17,8 +17,8 @@ export const AboutSection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-display">
-              Code with purpose.{" "}
-              <span className="text-foreground-secondary">Design with intent.</span>
+              Engineering with intent.{" "}
+              <span className="text-foreground-secondary">Build with purpose.</span>
             </h2>
           </motion.div>
 
