@@ -16,13 +16,10 @@ export const AboutSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-display mb-6">
+            <h2 className="text-display">
               Code with purpose.{" "}
               <span className="text-foreground-secondary">Design with intent.</span>
             </h2>
-            <p className="text-body-lg text-foreground-secondary">
-              I believe technology should elevate human capability, not complicate it.
-            </p>
           </motion.div>
 
           {/* Right Column - Narrative */}
