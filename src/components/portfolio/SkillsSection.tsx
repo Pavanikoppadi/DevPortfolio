@@ -34,10 +34,7 @@ export const SkillsSection = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-display text-foreground mb-3">Skills & Technologies</h2>
-        <p className="text-muted-foreground text-lg">
-          Technologies I work with
-        </p>
+        <h2 className="text-display text-foreground">Technologies I work with</h2>
       </motion.div>
 
       <motion.div
