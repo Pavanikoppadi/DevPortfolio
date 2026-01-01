@@ -36,9 +36,15 @@ export const Header = () => {
         }`}
       >
         <nav className="section-container flex items-center justify-between h-14 md:h-16">
-          <a href="#" className="text-foreground font-semibold text-lg tracking-tight">
-            Pavani Koppadi
-          </a>
+          <div className="flex flex-col">
+            <a href="#" className="text-foreground font-semibold text-base md:text-lg tracking-tight">
+              Pavani Koppadi
+            </a>
+            <div className="flex items-center gap-2 md:hidden">
+              <span className="text-muted-foreground text-[10px]">AI Full Stack Developer</span>
+              <span className="text-green-500 text-[10px]">● Open to work</span>
+            </div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
