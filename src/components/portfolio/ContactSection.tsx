@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Linkedin, Github, ArrowUpRight } from "lucide-react";
-
-const contactLinks = [
-  { icon: Mail, label: "Email", href: "mailto:hello@example.com", value: "hello@example.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/", value: "Connect" },
-  { icon: Github, label: "GitHub", href: "https://github.com/", value: "Follow" },
-];
+import { Mail } from "lucide-react";
 
 export const ContactSection = () => {
   const ref = useRef(null);
@@ -30,31 +24,20 @@ export const ContactSection = () => {
             Let's create something extraordinary.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            {contactLinks.map((link, index) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                target={link.label !== "Email" ? "_blank" : undefined}
-                rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 0.2 + index * 0.1,
-                  ease: [0.16, 1, 0.3, 1] 
-                }}
-                className="group flex items-center gap-3 px-6 py-4 rounded-full bg-background-secondary hover:bg-foreground/5 border border-border hover:border-foreground/20 transition-all duration-500 hover:scale-[1.02]"
-              >
-                <link.icon className="w-5 h-5 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
-                <span className="font-medium">{link.label}</span>
-                <ArrowUpRight 
-                  size={16} 
-                  className="text-foreground-secondary group-hover:text-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" 
-                />
-              </motion.a>
-            ))}
-          </div>
+          <motion.a
+            href="mailto:koppadipavani34@gmail.com"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ 
+              duration: 0.6, 
+              delay: 0.2,
+              ease: [0.16, 1, 0.3, 1] 
+            }}
+            className="inline-flex items-center gap-3 bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-[1.02]"
+          >
+            <Mail className="w-5 h-5" />
+            Get in Touch
+          </motion.a>
         </motion.div>
       </div>
     </section>
