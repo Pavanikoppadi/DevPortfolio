@@ -38,11 +38,11 @@ export const FixedSidebar = () => {
             />
           </div>
           <div>
-            <h1 className="text-sidebar-foreground font-semibold text-sm leading-tight">
+            <h1 className="text-sidebar-foreground font-semibold text-sm leading-tight tracking-tight">
               Pavani Koppadi
             </h1>
-            <p className="text-sidebar-muted text-xs">AI Full Stack Developer</p>
-            <p className="text-green-400 text-[10px] mt-1">● Open to work</p>
+            <p className="text-sidebar-muted text-xs tracking-normal">AI Full Stack Developer</p>
+            <p className="text-green-400 text-[10px] mt-1 tracking-normal">● Open to work</p>
           </div>
         </motion.div>
 

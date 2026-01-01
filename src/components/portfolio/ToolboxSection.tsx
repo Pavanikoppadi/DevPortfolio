@@ -38,7 +38,7 @@ export const ToolboxSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-display text-foreground">
             Toolbox
           </h2>
         </motion.div>

@@ -69,7 +69,7 @@ export const LearningSection = () => {
         >
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm font-medium text-foreground">
+            <p className="text-caption font-medium text-foreground">
               {totalContributions} learning activities in the last year
             </p>
           </div>
@@ -142,20 +142,20 @@ export const LearningSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border">
             <div className="text-center">
-              <p className="text-2xl font-bold text-foreground">365+</p>
-              <p className="text-sm text-muted-foreground">Days Active</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">365+</p>
+              <p className="text-caption text-muted-foreground">Days Active</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-foreground">50+</p>
-              <p className="text-sm text-muted-foreground">Courses Completed</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">50+</p>
+              <p className="text-caption text-muted-foreground">Courses Completed</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-foreground">100+</p>
-              <p className="text-sm text-muted-foreground">Projects Built</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">100+</p>
+              <p className="text-caption text-muted-foreground">Projects Built</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-foreground">20+</p>
-              <p className="text-sm text-muted-foreground">Technologies Learned</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">20+</p>
+              <p className="text-caption text-muted-foreground">Technologies Learned</p>
             </div>
           </div>
         </motion.div>
