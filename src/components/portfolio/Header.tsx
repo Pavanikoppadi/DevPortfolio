@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -29,20 +30,27 @@ export const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 md:hidden ${
           isScrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
-            : "bg-transparent"
+            ? "bg-black/95 backdrop-blur-xl"
+            : "bg-black"
         }`}
       >
-        <nav className="section-container flex items-center justify-between h-14 md:h-16">
-          <div className="flex flex-col">
-            <a href="#" className="text-foreground font-semibold text-base md:text-lg tracking-tight">
-              Pavani Koppadi
-            </a>
-            <div className="flex items-center gap-2 md:hidden">
-              <span className="text-muted-foreground text-[10px]">AI Full Stack Developer</span>
-              <span className="text-green-500 text-[10px]">● Open to work</span>
+        <nav className="px-4 flex items-center justify-between h-16">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+              <img 
+                src={profilePhoto} 
+                alt="Pavani Koppadi" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-white font-semibold text-sm">
+                Pavani Koppadi
+              </span>
+              <span className="text-gray-400 text-xs">AI Full Stack Developer</span>
+              <span className="text-green-400 text-[10px]">● Open to work</span>
             </div>
           </div>
 
@@ -61,11 +69,11 @@ export const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-foreground"
+              className="p-2 text-white"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
