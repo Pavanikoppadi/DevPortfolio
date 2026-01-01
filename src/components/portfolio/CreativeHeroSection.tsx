@@ -97,18 +97,19 @@ export const CreativeHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-block mb-8"
+          className="flex flex-col items-center gap-2 mb-8"
         >
-          <span className="bg-secondary border border-border text-foreground px-6 py-3 rounded-full text-sm md:text-base">
+          <span className="bg-secondary border border-border text-foreground px-4 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-base">
             AI Full Stack Developer
           </span>
+          <span className="text-green-500 text-xs md:text-sm">● Open to work</span>
         </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-10 leading-relaxed"
+          className="text-muted-foreground text-sm md:text-lg max-w-md mx-auto mb-8 md:mb-10 leading-relaxed"
         >
           AI-focused full stack developer building scalable, real-world web products.
         </motion.p>
@@ -117,22 +118,22 @@ export const CreativeHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex items-center justify-center gap-4"
+          className="flex items-center justify-center gap-3"
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center bg-foreground hover:bg-foreground/90 text-background px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base font-medium transition-all duration-300 hover:scale-[1.02]"
           >
             View Works
           </a>
           <a
             href="/pavanideveloperesume.pdf"
             download
-            className="inline-flex items-center gap-3 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-4 py-3 md:px-6 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 hover:scale-[1.02]"
           >
             Resume
-            <span className="flex items-center justify-center w-8 h-8 rounded-full border border-border">
-              <ArrowUpRight size={16} />
+            <span className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full border border-border">
+              <ArrowUpRight size={14} className="md:w-4 md:h-4" />
             </span>
           </a>
         </motion.div>
