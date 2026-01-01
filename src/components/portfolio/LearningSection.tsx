@@ -57,7 +57,7 @@ export const LearningSection = () => {
         >
           <h2 className="text-display mb-4">Learning & Understanding</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            AI can't replace deep understanding — that's why I stay consistent.
+            AI can't replace deep understanding.
           </p>
         </motion.div>
 
