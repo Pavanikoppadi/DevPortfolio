@@ -61,7 +61,7 @@ export const FixedSidebar = () => {
               >
                 <a
                   href={link.href}
-                  className="block px-3 py-2 text-sm text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent rounded-lg transition-all duration-200"
+                  className="block px-3 py-2 text-sm text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent rounded-full transition-all duration-200"
                 >
                   {link.label}
                 </a>

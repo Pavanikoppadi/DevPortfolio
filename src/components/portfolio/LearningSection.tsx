@@ -146,15 +146,15 @@ export const LearningSection = () => {
               <p className="text-caption text-muted-foreground">Days Active</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">50+</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">15+</p>
               <p className="text-caption text-muted-foreground">Courses Completed</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">100+</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">10+</p>
               <p className="text-caption text-muted-foreground">Projects Built</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">20+</p>
+              <p className="text-2xl font-semibold text-foreground tracking-tight">10+</p>
               <p className="text-caption text-muted-foreground">Technologies Learned</p>
             </div>
           </div>
