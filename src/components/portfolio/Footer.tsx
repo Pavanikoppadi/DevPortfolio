@@ -9,42 +9,11 @@ export const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-6"
+          className="text-center"
         >
-          <div className="text-center md:text-left">
-            <p className="text-caption text-foreground-secondary">
-              © {new Date().getFullYear()} Pavani Koppadi. All rights reserved.
-            </p>
-          </div>
-
-          <p className="text-caption text-foreground-tertiary italic">
-            "Engineering with intent. Building with purpose."
+          <p className="text-caption text-foreground-secondary">
+            © {new Date().getFullYear()} Pavani Koppadi. All rights reserved.
           </p>
-
-          <div className="flex items-center gap-6">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-caption text-foreground-secondary hover:text-foreground transition-colors duration-300"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/Pavanikoppadi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-caption text-foreground-secondary hover:text-foreground transition-colors duration-300"
-            >
-              GitHub
-            </a>
-            <a
-              href="pavanikoppadi.work@gmail.com"
-              className="text-caption text-foreground-secondary hover:text-foreground transition-colors duration-300"
-            >
-              Email
-            </a>
-          </div>
         </motion.div>
       </div>
     </footer>
