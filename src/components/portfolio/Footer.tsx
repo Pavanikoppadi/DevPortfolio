@@ -1,3 +1,10 @@
+/**
+ * Footer Component
+ * 
+ * Simple footer with copyright information.
+ * Minimal design with centered text.
+ */
+
 import { motion } from "framer-motion";
 
 export const Footer = () => {

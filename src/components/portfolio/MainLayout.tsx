@@ -1,3 +1,12 @@
+/**
+ * MainLayout Component
+ * 
+ * The main layout wrapper for the portfolio.
+ * Desktop: Fixed dark sidebar on left, scrollable white content area on right
+ * Mobile: Fixed dark header with hamburger menu, full-width content below
+ * Creates the distinctive Apple-style framed layout.
+ */
+
 import { ReactNode, useState, useEffect } from "react";
 import { FixedSidebar } from "./FixedSidebar";
 import { motion, AnimatePresence } from "framer-motion";

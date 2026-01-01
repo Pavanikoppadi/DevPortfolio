@@ -1,8 +1,16 @@
+/**
+ * FixedSidebar Component
+ * 
+ * A fixed dark sidebar displayed on the left side of the screen (desktop only).
+ * Contains profile information, navigation links, hire button, and social links.
+ * Follows Apple Design Guidelines with clean typography and minimal styling.
+ */
+
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
-import { DeviceStatusBox } from "./DeviceStatusBox";
 
+/** Navigation links for the sidebar menu */
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Work", href: "#projects" },
@@ -12,6 +20,7 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+/** Social media links with icons */
 const socialLinks = [
   { icon: Mail, href: "mailto:koppadipavani34@gmail.com", label: "Email" },
   { icon: Linkedin, href: "https://linkedin.com/in/", label: "LinkedIn" },
@@ -22,14 +31,16 @@ const socialLinks = [
 export const FixedSidebar = () => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-52 lg:w-56 bg-sidebar-dark flex flex-col justify-between py-8 px-5 z-50">
-      {/* Profile Section */}
+      {/* Top Section: Profile & Navigation */}
       <div>
+        {/* Profile Card */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="flex items-center gap-3 mb-10"
         >
+          {/* Profile Photo */}
           <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
             <img 
               src={profilePhoto} 
@@ -37,16 +48,22 @@ export const FixedSidebar = () => {
               className="w-full h-full object-cover"
             />
           </div>
+          
+          {/* Profile Info */}
           <div>
             <h1 className="text-sidebar-foreground font-semibold text-sm leading-tight tracking-tight">
               Pavani Koppadi
             </h1>
-            <p className="text-sidebar-muted text-xs tracking-normal">AI Full Stack Developer</p>
-            <p className="text-green-400 text-[10px] mt-1 tracking-normal">● Open to work</p>
+            <p className="text-sidebar-muted text-xs tracking-normal">
+              AI Full Stack Developer
+            </p>
+            <p className="text-green-400 text-[10px] mt-1 tracking-normal">
+              ● Open to work
+            </p>
           </div>
         </motion.div>
 
-        {/* Navigation */}
+        {/* Navigation Menu */}
         <nav className="mb-8">
           <ul className="space-y-1">
             {navLinks.map((link, index) => (
@@ -68,9 +85,8 @@ export const FixedSidebar = () => {
         </nav>
       </div>
 
-      {/* Bottom Section */}
+      {/* Bottom Section: CTA & Socials */}
       <div>
-
         {/* Hire Me Button */}
         <a
           href="mailto:koppadipavani34@gmail.com"
@@ -79,7 +95,7 @@ export const FixedSidebar = () => {
           Hire Me
         </a>
 
-        {/* Socials */}
+        {/* Social Links */}
         <div className="mb-6">
           <p className="text-sidebar-muted text-[10px] font-semibold tracking-widest uppercase mb-3">
             Socials
@@ -100,7 +116,7 @@ export const FixedSidebar = () => {
           </div>
         </div>
 
-        {/* Location tag */}
+        {/* Location Tag */}
         <p className="text-sidebar-muted text-xs">From Earth :)</p>
       </div>
     </aside>
