@@ -125,8 +125,8 @@ export const ProjectsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              {/* Project Info */}
-              <div className="space-y-3">
+              {/* Project Info - Left-aligned vertical stack */}
+              <div className="space-y-2">
                 
                 {/* Title */}
                 <h3 className="text-title text-foreground">
@@ -139,10 +139,10 @@ export const ProjectsSection = () => {
                 </p>
                 
                 {/* Bullet Points - What it does, tech, outcome */}
-                <ul className="space-y-1.5 text-caption text-foreground/80">
+                <ul className="space-y-1 text-caption text-foreground/80 pt-1">
                   {project.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-foreground-secondary mt-1">•</span>
+                      <span className="text-foreground-secondary mt-0.5">•</span>
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -153,7 +153,7 @@ export const ProjectsSection = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-foreground-secondary hover:text-foreground transition-colors text-caption font-medium group/link pt-2"
+                  className="inline-flex items-center gap-1.5 text-foreground hover:text-foreground/70 transition-colors text-caption font-medium group/link pt-3"
                 >
                   View Project
                   <ArrowUpRight

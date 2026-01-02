@@ -80,15 +80,15 @@ export default {
         sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', 'sans-serif'],
       },
       fontSize: {
-        // Apple HIG Typography Scale
-        'hero': ['clamp(3rem, 8vw, 4.5rem)', { lineHeight: '1.05', fontWeight: '600', letterSpacing: '-0.025em' }],
-        'display': ['clamp(2rem, 5vw, 3rem)', { lineHeight: '1.1', fontWeight: '600', letterSpacing: '-0.022em' }],
-        'title': ['clamp(1.5rem, 3vw, 2rem)', { lineHeight: '1.2', fontWeight: '600', letterSpacing: '-0.02em' }],
-        'subtitle': ['1.25rem', { lineHeight: '1.4', fontWeight: '500', letterSpacing: '-0.016em' }],
-        'body-lg': ['1.125rem', { lineHeight: '1.5', letterSpacing: '-0.022em' }],
-        'body': ['1.0625rem', { lineHeight: '1.47', letterSpacing: '-0.022em' }],
-        'caption': ['0.8125rem', { lineHeight: '1.38', letterSpacing: '-0.008em' }],
-        'micro': ['0.6875rem', { lineHeight: '1.27', letterSpacing: '0em' }],
+        // Apple-style Large Typography Scale
+        'hero': ['clamp(3.5rem, 10vw, 5.5rem)', { lineHeight: '1.05', fontWeight: '600', letterSpacing: '-0.025em' }],
+        'display': ['clamp(2.5rem, 6vw, 4rem)', { lineHeight: '1.08', fontWeight: '600', letterSpacing: '-0.022em' }],
+        'title': ['clamp(1.375rem, 3vw, 1.75rem)', { lineHeight: '1.2', fontWeight: '600', letterSpacing: '-0.02em' }],
+        'subtitle': ['1.3125rem', { lineHeight: '1.4', fontWeight: '500', letterSpacing: '-0.016em' }],
+        'body-lg': ['1.25rem', { lineHeight: '1.5', letterSpacing: '-0.022em' }],
+        'body': ['1.125rem', { lineHeight: '1.47', letterSpacing: '-0.022em' }],
+        'caption': ['0.9375rem', { lineHeight: '1.42', letterSpacing: '-0.016em' }],
+        'micro': ['0.8125rem', { lineHeight: '1.35', letterSpacing: '-0.008em' }],
       },
       spacing: {
         'section': '8rem',
