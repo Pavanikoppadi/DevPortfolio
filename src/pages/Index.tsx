@@ -78,6 +78,7 @@ import { ToolboxSection } from "@/components/portfolio/ToolboxSection";
 
 // Personal sections
 import { AchievementsSection } from "@/components/portfolio/AchievementsSection";
+import { TestimonialsSection } from "@/components/portfolio/TestimonialsSection";
 import { LearningSection } from "@/components/portfolio/LearningSection";
 import { InterestsSection } from "@/components/portfolio/InterestsSection";
 import { LifestyleSection } from "@/components/portfolio/LifestyleSection";
@@ -171,6 +172,9 @@ const Index = () => {
       
       {/* Achievements - Recognition */}
       <AchievementsSection />
+      
+      {/* Testimonials - What people say */}
+      <TestimonialsSection />
       
       {/* Interests - Beyond Code */}
       <InterestsSection />
