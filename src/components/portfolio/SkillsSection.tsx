@@ -39,6 +39,18 @@ const skillGroups = [
     ],
   },
   {
+    title: "AI Tools",
+    skills: [
+      { name: "ChatGPT", icon: "/src/assets/tools/chatgpt.png" },
+      { name: "Claude AI", icon: "/src/assets/tools/claude.png" },
+      { name: "GitHub Copilot", icon: "/src/assets/tools/copilot.png" },
+      { name: "Cursor", icon: "/src/assets/tools/cursor.png" },
+      { name: "Lovable", icon: "/src/assets/tools/lovable.png" },
+      { name: "Gemini", icon: "/src/assets/tools/gemini.png" },
+      { name: "Bolt", icon: "/src/assets/tools/bolt.png" },
+    ],
+  },
+  {
     title: "Tools & Workflow",
     skills: [
       { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
@@ -47,6 +59,7 @@ const skillGroups = [
       { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
       { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
       { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "Warp", icon: "/src/assets/tools/warp.png" },
     ],
   },
 ];
