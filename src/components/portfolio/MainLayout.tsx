@@ -239,7 +239,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           {/* This is where all page sections render                            */}
           {/* scrollbar-hide creates clean look without visible scrollbars      */}
           {/* ----------------------------------------------------------------- */}
-          <div className="h-[calc(100vh-24px)] md:h-[calc(100vh-32px)] lg:h-[calc(100vh-40px)] overflow-y-auto overflow-x-hidden scroll-smooth scrollbar-hide">
+          <div className="h-[calc(100vh-24px)] md:h-[calc(100vh-32px)] lg:h-[calc(100vh-40px)] overflow-y-auto overflow-x-hidden scrollbar-hide smooth-scroll">
             {children}
           </div>
         </div>
