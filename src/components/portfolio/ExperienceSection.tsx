@@ -81,7 +81,7 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-display">Experience</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">Experience</h2>
         </motion.div>
 
         {/* Experience List */}
@@ -96,16 +96,16 @@ export const ExperienceSection = () => {
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="py-5 sm:py-6 border-b border-border/60 last:border-b-0"
+              className="py-6 sm:py-8 border-b border-border/60 last:border-b-0"
             >
-              <div className="flex gap-3 sm:gap-4">
+              <div className="flex gap-4 sm:gap-5">
                 
                 {/* Company Logo */}
-                <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-sm">
                   <img 
                     src={exp.logo} 
                     alt={`${exp.company} logo`}
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
                   />
                 </div>
 
@@ -113,22 +113,22 @@ export const ExperienceSection = () => {
                 <div className="min-w-0 flex-1">
                   
                   {/* Role Title */}
-                  <h3 className="text-sm sm:text-body font-semibold text-foreground">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-foreground">
                     {exp.role}
                   </h3>
                   
                   {/* Metadata - Stack on mobile */}
-                  <p className="text-xs sm:text-caption text-foreground-secondary mt-0.5 leading-relaxed">
+                  <p className="text-sm sm:text-base text-foreground-secondary mt-1 leading-relaxed">
                     <span className="block sm:inline">{exp.company} • {exp.type}</span>
                     <span className="hidden sm:inline"> | </span>
                     <span className="block sm:inline">{exp.period} | {exp.location}</span>
                   </p>
                   
                   {/* Bullet Points - Action-oriented */}
-                  <ul className="mt-2.5 sm:mt-3 space-y-1 sm:space-y-1.5">
+                  <ul className="mt-3 sm:mt-4 space-y-1.5 sm:space-y-2">
                     {exp.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs sm:text-caption text-foreground/80">
-                        <span className="text-foreground-secondary mt-0.5 sm:mt-1">•</span>
+                      <li key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-foreground/80">
+                        <span className="text-foreground-secondary mt-1">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}

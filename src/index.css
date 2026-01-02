@@ -211,20 +211,20 @@
 
   /* Section Layouts - Mobile-first spacing */
   .section-container {
-    @apply w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12;
+    @apply w-full max-w-6xl mx-auto px-5 sm:px-6 md:px-10 lg:px-12;
   }
 
   .section-padding {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-10 lg:px-12;
+    @apply py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-10 lg:px-12;
   }
 
   .section-full {
-    @apply min-h-[70vh] md:min-h-[80vh] flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24;
+    @apply min-h-[80vh] md:min-h-[85vh] flex flex-col items-center justify-center py-16 sm:py-20 md:py-24 lg:py-28;
   }
 
   /* Mobile section spacing */
   .py-section {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+    @apply py-16 sm:py-20 md:py-24 lg:py-28;
   }
 
   /* Apple-style Cards */
