@@ -1,106 +1,252 @@
 /**
- * LifestyleSection Component
+ * =============================================================================
+ * LifestyleSection.tsx - Bento Grid Navigation Component
+ * =============================================================================
  * 
- * Displays lifestyle photos in a Bento-style grid layout.
- * Features varying sized images with hover zoom effects.
- * Uses placeholder images from Unsplash.
+ * PURPOSE:
+ * A visually striking bento-grid style section inspired by the reference design.
+ * Features colorful cards with icons and labels for quick navigation/preview.
+ * 
+ * DESIGN INSPIRATION:
+ * - Apple's bento grid layouts
+ * - Colorful, bold card design with rounded corners
+ * - Icon + label pattern for each card
+ * - Asymmetric grid layout for visual interest
+ * 
+ * LAYOUT:
+ * - Large hero card (2x2) on the left
+ * - Smaller cards stacked on the right
+ * - Responsive: stacks on mobile
+ * 
+ * ANIMATIONS:
+ * - Staggered fade-in on scroll
+ * - Hover lift and scale effects
+ * - Icon animations on hover
  */
+
+// =============================================================================
+// IMPORTS
+// =============================================================================
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { 
+  Briefcase, 
+  User, 
+  Send,
+  Sparkles 
+} from "lucide-react";
 
-/** Lifestyle images with sizes for the Bento grid */
-const lifestyleItems = [
+// =============================================================================
+// DATA CONFIGURATION
+// =============================================================================
+
+/**
+ * Bento grid items configuration
+ * Each item has: id, label, icon, color scheme, and grid span
+ */
+const bentoItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop",
-    alt: "Coding setup",
+    label: "Featured Work",
+    icon: Sparkles,
+    // Primary blue card - largest, spans 2 columns and 2 rows
+    bgColor: "bg-[hsl(240,80%,60%)]",
+    textColor: "text-white",
+    iconBg: "bg-white/20",
+    href: "#projects",
+    span: "col-span-2 row-span-2",
+    size: "large",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
-    alt: "Travel mountains",
+    label: "Work",
+    icon: Briefcase,
+    // White/light card
+    bgColor: "bg-white",
+    textColor: "text-foreground",
+    iconBg: "bg-foreground/10",
+    href: "#experience",
+    span: "col-span-1 row-span-1",
+    size: "small",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop",
-    alt: "Music",
+    label: "About Me",
+    icon: User,
+    // Dark card
+    bgColor: "bg-[hsl(0,0%,12%)]",
+    textColor: "text-white",
+    iconBg: "bg-white/10",
+    href: "#about",
+    span: "col-span-1 row-span-1",
+    size: "small",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop",
-    alt: "Reading books",
+    label: "Contact",
+    icon: Send,
+    // Accent yellow card - spans 2 columns
+    bgColor: "bg-[hsl(48,96%,76%)]",
+    textColor: "text-foreground",
+    iconBg: "bg-foreground/10",
+    href: "#contact",
+    span: "col-span-2 row-span-1",
+    size: "wide",
   },
 ];
 
+// =============================================================================
+// COMPONENT
+// =============================================================================
+
 export const LifestyleSection = () => {
+  // Ref for scroll detection
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  
+  // Track visibility for animations
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="section-padding pt-8" ref={ref}>
+    <section className="section-padding" ref={ref}>
       <div className="section-container">
-        {/* Bento Grid Layout */}
+        
+        {/* ================================================================== */}
+        {/* SECTION HEADER                                                     */}
+        {/* ================================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-4 md:grid-cols-6 gap-3 auto-rows-[80px] md:auto-rows-[100px]"
+          className="text-center mb-12"
         >
-          {/* Large Item - Spans 2 cols, 2 rows */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="col-span-2 row-span-2 rounded-2xl overflow-hidden bg-muted"
-          >
-            <img
-              src={lifestyleItems[0].image}
-              alt={lifestyleItems[0].alt}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
-
-          {/* Small Items */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="col-span-2 row-span-1 rounded-2xl overflow-hidden bg-muted"
-          >
-            <img
-              src={lifestyleItems[1].image}
-              alt={lifestyleItems[1].alt}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="col-span-2 row-span-2 rounded-2xl overflow-hidden bg-muted"
-          >
-            <img
-              src={lifestyleItems[2].image}
-              alt={lifestyleItems[2].alt}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="col-span-2 row-span-1 rounded-2xl overflow-hidden bg-muted"
-          >
-            <img
-              src={lifestyleItems[3].image}
-              alt={lifestyleItems[3].alt}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
+          <h2 className="text-display">Quick Links</h2>
         </motion.div>
+
+        {/* ================================================================== */}
+        {/* BENTO GRID LAYOUT                                                  */}
+        {/* 3 columns on desktop, 2 on mobile                                  */}
+        {/* Auto rows with fixed height for consistent sizing                  */}
+        {/* ================================================================== */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[140px] md:auto-rows-[160px] max-w-4xl mx-auto">
+          
+          {bentoItems.map((item, index) => (
+            <motion.a
+              key={item.id}
+              href={item.href}
+              // Staggered animation based on index
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ 
+                duration: 0.5, 
+                delay: 0.1 * index,
+                ease: [0.16, 1, 0.3, 1] 
+              }}
+              // Dynamic classes based on item configuration
+              className={`
+                ${item.span} 
+                ${item.bgColor} 
+                ${item.textColor}
+                relative overflow-hidden rounded-3xl p-6
+                flex flex-col justify-between
+                group cursor-pointer
+                hover-lift press-scale
+                transition-all duration-300
+              `}
+            >
+              
+              {/* --------------------------------------------------------------- */}
+              {/* DECORATIVE SHAPES (for large card only)                         */}
+              {/* Creates visual interest with floating geometric shapes          */}
+              {/* --------------------------------------------------------------- */}
+              {item.size === "large" && (
+                <>
+                  {/* Circle decoration */}
+                  <motion.div 
+                    className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-white/10"
+                    animate={{ 
+                      y: [0, -10, 0],
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                  />
+                  
+                  {/* Triangle decoration */}
+                  <motion.div 
+                    className="absolute bottom-1/4 right-1/4 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-white/10"
+                    animate={{ 
+                      rotate: [0, 10, 0],
+                      y: [0, -5, 0],
+                    }}
+                    transition={{ 
+                      duration: 5, 
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                  />
+                  
+                  {/* Large hero text */}
+                  <div className="relative z-10 flex-1 flex items-center">
+                    <h3 className="text-3xl md:text-4xl font-bold leading-tight">
+                      Explore My<br />Featured Work
+                    </h3>
+                  </div>
+                </>
+              )}
+              
+              {/* --------------------------------------------------------------- */}
+              {/* CARD CONTENT: Label and Icon                                    */}
+              {/* Positioned at bottom of card                                    */}
+              {/* --------------------------------------------------------------- */}
+              <div className={`
+                flex items-center justify-between 
+                ${item.size === "large" ? "relative z-10" : "mt-auto"}
+              `}>
+                
+                {/* Card label */}
+                <span className={`
+                  font-medium 
+                  ${item.size === "large" ? "text-lg" : "text-base"}
+                `}>
+                  {item.size !== "large" && item.label}
+                </span>
+                
+                {/* Icon container with hover animation */}
+                <motion.div 
+                  className={`
+                    ${item.iconBg} 
+                    p-2 rounded-full
+                    transition-transform duration-300
+                    group-hover:scale-110
+                  `}
+                  whileHover={{ rotate: 5 }}
+                >
+                  <item.icon className="w-5 h-5" />
+                </motion.div>
+              </div>
+              
+              {/* Label for large card at bottom left */}
+              {item.size === "large" && (
+                <div className="absolute bottom-6 left-6 flex items-center gap-2">
+                  <span className="text-sm font-medium opacity-80">
+                    See our services
+                  </span>
+                  <motion.span 
+                    animate={{ y: [0, 3, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    ↓
+                  </motion.span>
+                </div>
+              )}
+              
+            </motion.a>
+          ))}
+        </div>
       </div>
     </section>
   );
