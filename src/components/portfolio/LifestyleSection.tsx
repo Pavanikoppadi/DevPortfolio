@@ -70,7 +70,7 @@ export const LifestyleSection = () => {
       <div className="section-container">
         
         {/* Bento Grid - No title, just images */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[140px] md:auto-rows-[180px] max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-[100px] sm:auto-rows-[140px] md:auto-rows-[180px] max-w-4xl mx-auto">
           
           {lifestyleImages.map((item, index) => (
             <motion.div

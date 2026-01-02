@@ -61,13 +61,13 @@ export const AchievementsSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <h2 className="text-display">Recognition</h2>
         </motion.div>
 
         {/* Achievement Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {achievements.map((achievement, index) => (
             <motion.div
               key={achievement.title}
@@ -83,24 +83,24 @@ export const AchievementsSection = () => {
                 y: -6,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="p-8 rounded-2xl border border-border bg-background text-center group hover:border-foreground/20 hover:shadow-[0_15px_50px_-15px_hsl(var(--foreground)/0.12)] transition-all duration-500"
+              className="p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border bg-background text-center group hover:border-foreground/20 hover:shadow-[0_15px_50px_-15px_hsl(var(--foreground)/0.12)] transition-all duration-500"
             >
               
               {/* Icon Container with bounce animation */}
               <motion.div 
-                className="inline-flex p-4 rounded-2xl bg-background-secondary mb-4 group-hover:bg-foreground/5 transition-colors duration-500"
+                className="inline-flex p-2.5 sm:p-3 md:p-4 rounded-xl sm:rounded-2xl bg-background-secondary mb-3 sm:mb-4 group-hover:bg-foreground/5 transition-colors duration-500"
                 whileHover={{ 
                   scale: 1.1, 
                   rotate: 5,
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <achievement.icon className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
+                <achievement.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
               </motion.div>
               
               {/* Title with subtle animation */}
               <motion.h3 
-                className="font-semibold text-body mb-2"
+                className="font-semibold text-sm sm:text-body mb-1.5 sm:mb-2"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: index * 0.1 + 0.2 }}
@@ -109,7 +109,7 @@ export const AchievementsSection = () => {
               </motion.h3>
               
               {/* Description */}
-              <p className="text-caption text-foreground-secondary">
+              <p className="text-xs sm:text-caption text-foreground-secondary leading-relaxed">
                 {achievement.description}
               </p>
             </motion.div>

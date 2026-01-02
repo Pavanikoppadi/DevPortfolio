@@ -22,7 +22,7 @@ export const ContactSection = () => {
 
   return (
     <section id="contact" className="section-full" ref={ref}>
-      <div className="section-container text-center">
+      <div className="section-container text-center px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -30,12 +30,12 @@ export const ContactSection = () => {
           className="max-w-2xl mx-auto"
         >
           {/* Headline */}
-          <h2 className="text-display mb-6">
+          <h2 className="text-display mb-4 sm:mb-6">
             Let's Work Together
           </h2>
           
           {/* Invitation */}
-          <p className="text-body-lg text-foreground-secondary mb-10">
+          <p className="text-sm sm:text-body-lg text-foreground-secondary mb-8 sm:mb-10">
             Open to remote roles, freelance projects, and collaborations.
           </p>
 
@@ -49,10 +49,10 @@ export const ContactSection = () => {
               delay: 0.2,
               ease: [0.16, 1, 0.3, 1] 
             }}
-            className="inline-flex items-center gap-3 bg-foreground hover:bg-foreground/90 text-background px-8 py-3.5 rounded-full text-body font-medium transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-foreground hover:bg-foreground/90 text-background px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full text-xs sm:text-body font-medium transition-all duration-300 hover:scale-[1.02]"
           >
-            <Mail className="w-5 h-5" />
-            koppadipavani34@gmail.com
+            <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="truncate">koppadipavani34@gmail.com</span>
           </motion.a>
 
           {/* Social Links */}
@@ -64,24 +64,24 @@ export const ContactSection = () => {
               delay: 0.3,
               ease: [0.16, 1, 0.3, 1] 
             }}
-            className="flex items-center justify-center gap-4 mt-8"
+            className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8"
           >
             <a
               href="https://github.com/Pavanikoppadi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:bg-muted transition-colors text-caption font-medium text-foreground"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border hover:bg-muted transition-colors text-xs sm:text-caption font-medium text-foreground"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               GitHub
             </a>
             <a
               href="https://linkedin.com/in/pavanikoppadi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:bg-muted transition-colors text-caption font-medium text-foreground"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border hover:bg-muted transition-colors text-xs sm:text-caption font-medium text-foreground"
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               LinkedIn
             </a>
           </motion.div>
