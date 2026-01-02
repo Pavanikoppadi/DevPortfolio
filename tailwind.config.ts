@@ -68,6 +68,13 @@ export default {
           muted: "hsl(var(--sidebar-muted))",
         },
         "content-container": "hsl(var(--content-container))",
+        // Bento grid colors
+        bento: {
+          primary: "hsl(240 80% 60%)",
+          light: "hsl(0 0% 100%)",
+          dark: "hsl(0 0% 12%)",
+          accent: "hsl(48 96% 76%)",
+        },
       },
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'sans-serif'],
@@ -130,6 +137,28 @@ export default {
           "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "0.8" },
         },
+        // Apple-style micro animations
+        "bounce-subtle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-4px)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "breathe": {
+          "0%, 100%": { transform: "scale(1)", opacity: "0.8" },
+          "50%": { transform: "scale(1.05)", opacity: "1" },
+        },
+        "slide-in-bottom": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "icon-bounce": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "25%": { transform: "translateY(-2px) rotate(-5deg)" },
+          "75%": { transform: "translateY(-2px) rotate(5deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -141,6 +170,12 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
         "glow": "glow 4s ease-in-out infinite",
+        // Apple-style micro animations
+        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
+        "shimmer": "shimmer 2s linear infinite",
+        "breathe": "breathe 4s ease-in-out infinite",
+        "slide-in-bottom": "slide-in-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "icon-bounce": "icon-bounce 0.5s ease-in-out",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

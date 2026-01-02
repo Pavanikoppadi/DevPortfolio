@@ -295,4 +295,60 @@
     background: transparent;
     pointer-events: none;
   }
+
+  /* Apple-style Micro Interactions */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 10px 40px -10px hsl(var(--foreground) / 0.15);
+  }
+
+  .hover-glow {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--foreground) / 0.1);
+  }
+
+  .press-scale {
+    @apply transition-transform duration-150 ease-out active:scale-[0.98];
+  }
+
+  .magnetic-hover {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  /* Bento Card Colors */
+  .bento-primary {
+    background: hsl(240 80% 60%);
+  }
+
+  .bento-light {
+    background: hsl(0 0% 100%);
+  }
+
+  .bento-dark {
+    background: hsl(0 0% 12%);
+  }
+
+  .bento-accent {
+    background: hsl(48 96% 76%);
+  }
+
+  /* Smooth text reveal */
+  .text-reveal {
+    @apply opacity-0 translate-y-4;
+    animation: textReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes textReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
