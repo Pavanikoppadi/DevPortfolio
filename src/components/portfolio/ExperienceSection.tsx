@@ -71,7 +71,7 @@ export const ExperienceSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="experience" className="section-full" ref={ref}>
+    <section id="experience" className="py-20 sm:py-24 md:py-28 lg:py-32 flex items-center justify-center" ref={ref}>
       <div className="section-container">
         
         {/* Section Header */}
@@ -96,39 +96,39 @@ export const ExperienceSection = () => {
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="py-6 sm:py-8 border-b border-border/60 last:border-b-0"
+              className="py-7 sm:py-8 md:py-10 border-b border-border/60 last:border-b-0"
             >
-              <div className="flex gap-4 sm:gap-5">
+              <div className="flex gap-4 sm:gap-5 md:gap-6">
                 
                 {/* Company Logo */}
-                <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-sm">
                   <img 
                     src={exp.logo} 
                     alt={`${exp.company} logo`}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
+                    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
                   />
                 </div>
 
                 {/* Content */}
                 <div className="min-w-0 flex-1">
                   
-                  {/* Role Title */}
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-foreground">
+                  {/* Role Title - Larger and single line on desktop */}
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-semibold text-foreground whitespace-nowrap">
                     {exp.role}
                   </h3>
                   
-                  {/* Metadata - Stack on mobile */}
-                  <p className="text-sm sm:text-base text-foreground-secondary mt-1 leading-relaxed">
+                  {/* Metadata - Larger text */}
+                  <p className="text-base sm:text-lg text-foreground-secondary mt-1.5 leading-relaxed">
                     <span className="block sm:inline">{exp.company} • {exp.type}</span>
                     <span className="hidden sm:inline"> | </span>
                     <span className="block sm:inline">{exp.period} | {exp.location}</span>
                   </p>
                   
-                  {/* Bullet Points - Action-oriented */}
-                  <ul className="mt-3 sm:mt-4 space-y-1.5 sm:space-y-2">
+                  {/* Bullet Points - Larger text */}
+                  <ul className="mt-4 sm:mt-5 space-y-2 sm:space-y-2.5">
                     {exp.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-foreground/80">
-                        <span className="text-foreground-secondary mt-1">•</span>
+                      <li key={i} className="flex items-start gap-3 text-base sm:text-lg text-foreground/80">
+                        <span className="text-foreground-secondary mt-1.5">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
