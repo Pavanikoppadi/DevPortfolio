@@ -127,7 +127,7 @@ export const TestimonialsSection = () => {
                 onClick={() => setActiveIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === activeIndex 
-                    ? "bg-[hsl(240,80%,60%)] scale-110" 
+                    ? "bg-foreground scale-110" 
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 }`}
                 whileHover={{ scale: 1.2 }}
