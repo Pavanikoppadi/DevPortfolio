@@ -85,7 +85,7 @@ export const ProjectsSection = () => {
           
           <a
             href="#"
-            className="hidden md:inline-flex items-center gap-1 text-accent hover:text-accent/80 transition-colors text-body font-medium"
+            className="hidden md:inline-flex items-center gap-1 text-foreground-secondary hover:text-foreground transition-colors text-body font-medium"
           >
             View all projects
             <ChevronRight size={18} />
@@ -129,20 +129,20 @@ export const ProjectsSection = () => {
               <div className="space-y-3">
                 
                 {/* Title */}
-                <h3 className="text-lg md:text-xl font-semibold text-foreground">
+                <h3 className="text-title text-foreground">
                   {project.title}
                 </h3>
                 
                 {/* Subtitle - What it is */}
-                <p className="text-sm md:text-base text-muted-foreground">
+                <p className="text-body text-foreground-secondary">
                   {project.subtitle}
                 </p>
                 
                 {/* Bullet Points - What it does, tech, outcome */}
-                <ul className="space-y-1.5 text-sm text-foreground/80">
+                <ul className="space-y-1.5 text-caption text-foreground/80">
                   {project.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-muted-foreground mt-1.5">•</span>
+                      <span className="text-foreground-secondary mt-1">•</span>
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -153,7 +153,7 @@ export const ProjectsSection = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-accent hover:text-accent/80 transition-colors text-body-sm font-medium group/link pt-2"
+                  className="inline-flex items-center gap-1.5 text-foreground-secondary hover:text-foreground transition-colors text-caption font-medium group/link pt-2"
                 >
                   View Project
                   <ArrowUpRight

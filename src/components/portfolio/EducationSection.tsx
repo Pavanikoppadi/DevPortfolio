@@ -142,17 +142,17 @@ export const EducationSection = () => {
                 {/* Content */}
                 <div className="min-w-0 flex-1">
                   {/* Institution Name */}
-                  <h3 className="text-base md:text-lg font-semibold text-foreground">
+                  <h3 className="text-body font-semibold text-foreground">
                     {edu.institution}
                   </h3>
                   
                   {/* Degree */}
-                  <p className="text-sm md:text-base text-muted-foreground mt-0.5">
+                  <p className="text-caption text-foreground-secondary mt-0.5">
                     {edu.degree}
                   </p>
                   
                   {/* Details (CGPA, etc.) */}
-                  <p className="text-sm md:text-base text-foreground/70 mt-1">
+                  <p className="text-caption text-foreground/70 mt-1">
                     {edu.details}
                   </p>
                 </div>

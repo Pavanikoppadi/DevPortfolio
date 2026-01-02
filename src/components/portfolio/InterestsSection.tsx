@@ -50,7 +50,7 @@ export const InterestsSection = () => {
           className="text-center"
         >
           {/* Section Label */}
-          <p className="text-caption uppercase tracking-[0.2em] text-foreground-secondary mb-8">
+          <p className="text-micro uppercase tracking-[0.2em] text-foreground-secondary mb-8">
             Beyond Code
           </p>
           

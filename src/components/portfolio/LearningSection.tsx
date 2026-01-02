@@ -101,7 +101,7 @@ export const LearningSection = () => {
                 {months.map((month) => (
                   <span 
                     key={month} 
-                    className="text-xs text-muted-foreground"
+                    className="text-micro text-foreground-secondary"
                     style={{ width: `${100 / 12}%` }}
                   >
                     {month}
@@ -114,7 +114,7 @@ export const LearningSection = () => {
                 {/* Day Labels */}
                 <div className="flex flex-col justify-around mr-2 h-[88px]">
                   {days.map(day => (
-                    <span key={day} className="text-xs text-muted-foreground">
+                    <span key={day} className="text-micro text-foreground-secondary">
                       {day}
                     </span>
                   ))}
@@ -144,7 +144,7 @@ export const LearningSection = () => {
 
               {/* Legend */}
               <div className="flex items-center justify-end gap-2 mt-4">
-                <span className="text-xs text-muted-foreground">Less</span>
+                <span className="text-micro text-foreground-secondary">Less</span>
                 <div className="flex gap-[2px]">
                   {[0, 1, 2, 3, 4].map(level => (
                     <div
@@ -153,7 +153,7 @@ export const LearningSection = () => {
                     />
                   ))}
                 </div>
-                <span className="text-xs text-muted-foreground">More</span>
+                <span className="text-micro text-foreground-secondary">More</span>
               </div>
             </div>
           </div>
@@ -161,20 +161,20 @@ export const LearningSection = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border">
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">365+</p>
-              <p className="text-caption text-muted-foreground">Days Active</p>
+              <p className="text-title text-foreground">365+</p>
+              <p className="text-caption text-foreground-secondary">Days Active</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">15+</p>
-              <p className="text-caption text-muted-foreground">Courses Completed</p>
+              <p className="text-title text-foreground">15+</p>
+              <p className="text-caption text-foreground-secondary">Courses Completed</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">10+</p>
-              <p className="text-caption text-muted-foreground">Projects Built</p>
+              <p className="text-title text-foreground">10+</p>
+              <p className="text-caption text-foreground-secondary">Projects Built</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-semibold text-foreground tracking-tight">10+</p>
-              <p className="text-caption text-muted-foreground">Technologies Learned</p>
+              <p className="text-title text-foreground">10+</p>
+              <p className="text-caption text-foreground-secondary">Technologies Learned</p>
             </div>
           </div>
         </motion.div>

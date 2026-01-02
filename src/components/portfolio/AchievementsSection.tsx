@@ -100,7 +100,7 @@ export const AchievementsSection = () => {
               
               {/* Title with subtle animation */}
               <motion.h3 
-                className="font-semibold mb-2"
+                className="font-semibold text-body mb-2"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: index * 0.1 + 0.2 }}
