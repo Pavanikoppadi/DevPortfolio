@@ -11,6 +11,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+// Import local tool assets
+import chatgptLogo from "@/assets/tools/chatgpt.png";
+import claudeLogo from "@/assets/tools/claude.png";
+import copilotLogo from "@/assets/tools/copilot.png";
+import cursorLogo from "@/assets/tools/cursor.png";
+import lovableLogo from "@/assets/tools/lovable.png";
+import geminiLogo from "@/assets/tools/gemini.png";
+import boltLogo from "@/assets/tools/bolt.png";
+import warpLogo from "@/assets/tools/warp.png";
+import vscodeLogo from "@/assets/tools/vscode.png";
+
 // =============================================================================
 // DATA - Grouped by category
 // =============================================================================
@@ -32,22 +43,22 @@ const skillGroups = [
   {
     title: "AI & Automation",
     skills: [
-      { name: "OpenAI API", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openai/openai-original.svg" },
+      { name: "OpenAI API", icon: "https://cdn.simpleicons.org/openai/412991" },
       { name: "LangChain", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/langchain/langchain-original.svg" },
-      { name: "n8n", icon: "https://cdn.jsdelivr.net/gh/n8n-io/n8n/assets/n8n-logo.svg" },
+      { name: "n8n", icon: "https://cdn.simpleicons.org/n8n/EA4B71" },
       { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
     ],
   },
   {
     title: "AI Tools",
     skills: [
-      { name: "ChatGPT", icon: "/src/assets/tools/chatgpt.png" },
-      { name: "Claude AI", icon: "/src/assets/tools/claude.png" },
-      { name: "GitHub Copilot", icon: "/src/assets/tools/copilot.png" },
-      { name: "Cursor", icon: "/src/assets/tools/cursor.png" },
-      { name: "Lovable", icon: "/src/assets/tools/lovable.png" },
-      { name: "Gemini", icon: "/src/assets/tools/gemini.png" },
-      { name: "Bolt", icon: "/src/assets/tools/bolt.png" },
+      { name: "ChatGPT", icon: chatgptLogo },
+      { name: "Claude AI", icon: claudeLogo },
+      { name: "GitHub Copilot", icon: copilotLogo },
+      { name: "Cursor", icon: cursorLogo },
+      { name: "Lovable", icon: lovableLogo },
+      { name: "Gemini", icon: geminiLogo },
+      { name: "Bolt", icon: boltLogo },
     ],
   },
   {
@@ -55,11 +66,11 @@ const skillGroups = [
     skills: [
       { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-      { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "VS Code", icon: vscodeLogo },
       { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
       { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
       { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
-      { name: "Warp", icon: "/src/assets/tools/warp.png" },
+      { name: "Warp", icon: warpLogo },
     ],
   },
 ];
