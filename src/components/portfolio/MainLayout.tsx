@@ -155,21 +155,32 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-sidebar-dark px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between">
         
         {/* ------------------------------------------------------------------- */}
-        {/* LEFT: Profile Info                                                  */}
+        {/* LEFT: Profile Info with Role                                        */}
         {/* ------------------------------------------------------------------- */}
-        <div className="flex items-center gap-2">
-          {/* Profile Photo - Smaller on mobile */}
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden flex-shrink-0">
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Profile Photo */}
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden flex-shrink-0">
             <img 
               src={profilePhoto} 
               alt="Pavani Koppadi" 
               className="w-full h-full object-cover"
             />
           </div>
-          {/* Name text */}
-          <span className="text-sidebar-foreground font-semibold text-xs sm:text-sm">
-            Pavani Koppadi
-          </span>
+          {/* Name and Role */}
+          <div className="flex flex-col">
+            <span className="text-sidebar-foreground font-semibold text-sm sm:text-base leading-tight">
+              Pavani Koppadi
+            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-sidebar-muted text-xs sm:text-sm leading-tight">
+                AI Full-Stack Developer
+              </span>
+              <span className="flex items-center gap-1 text-emerald-400 text-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Open to work
+              </span>
+            </div>
+          </div>
         </div>
         
         {/* ------------------------------------------------------------------- */}
@@ -181,7 +192,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           aria-label="Toggle menu"
         >
           {/* Show X when open, hamburger Menu icon when closed */}
-          {isMobileMenuOpen ? <X size={22} className="sm:w-6 sm:h-6" /> : <Menu size={22} className="sm:w-6 sm:h-6" />}
+          {isMobileMenuOpen ? <X size={24} className="sm:w-7 sm:h-7" /> : <Menu size={24} className="sm:w-7 sm:h-7" />}
         </button>
       </div>
 
@@ -226,7 +237,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       {/* MAIN CONTENT CONTAINER                                                */}
       {/* The white rounded area where page content lives                       */}
       {/* ===================================================================== */}
-      <main className="md:ml-52 lg:ml-56 min-h-screen p-2 sm:p-3 md:p-4 lg:p-5 pt-14 sm:pt-16 md:pt-4 lg:pt-5">
+      <main className="md:ml-52 lg:ml-56 min-h-screen p-2 sm:p-3 md:p-4 lg:p-5 pt-16 sm:pt-[72px] md:pt-4 lg:pt-5">
         {/* ------------------------------------------------------------------- */}
         {/* CONTENT CARD                                                        */}
         {/* White rounded container that creates the "framed" effect            */}
