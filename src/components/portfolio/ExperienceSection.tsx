@@ -4,62 +4,22 @@
  * =============================================================================
  * 
  * PURPOSE:
- * Displays professional work experience in a timeline-style layout.
- * Each entry includes company logo, role details, and description.
- * 
- * LAYOUT:
- * - Centered section with max-width constraint
- * - Vertical list with border separators
- * - Each entry: Logo on left, content on right
- * 
- * ANIMATIONS:
- * - Section title fades up when entering viewport
- * - Experience entries stagger in with increasing delays
- * - Uses useInView with amount: 0.1 for reliable triggering
- * 
- * DATA STRUCTURE:
- * Each experience includes: role, company, type, period, location, description, logo
- * 
- * STYLING:
- * - Company logos displayed in white rounded containers
- * - Muted metadata text (company, type, period, location)
- * - Border separators between entries
+ * Displays professional experience with action-oriented bullet points.
+ * Each entry: role, company, dates, 3 concrete bullets.
  */
 
-// =============================================================================
-// IMPORTS
-// =============================================================================
-
-// Framer Motion for scroll-triggered animations
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-
-// React hook for refs
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-// Company logo assets (imported for bundling optimization)
+// Company logos
 import electriconLogo from "@/assets/electricon-logo.png";
 import pilotLogo from "@/assets/pilot-logo.png";
 import aaraLearnLogo from "@/assets/aaralearn-logo.png";
 
 // =============================================================================
-// DATA CONFIGURATION
+// DATA - Action-oriented bullet points
 // =============================================================================
 
-/**
- * Experiences Array
- * 
- * Professional work history in reverse chronological order.
- * Most recent experience appears first.
- * 
- * @property {string} role - Job title
- * @property {string} company - Company name
- * @property {string} type - Employment type (Internship, Part-time, etc.)
- * @property {string} period - Date range
- * @property {string} location - Work location (Remote, On-site)
- * @property {string} description - Role responsibilities and achievements
- * @property {string} logo - Imported company logo image
- */
 const experiences = [
   {
     role: "AI Full-Stack Developer Intern",
@@ -67,7 +27,11 @@ const experiences = [
     type: "Internship",
     period: "Oct 2025 - Present",
     location: "Remote",
-    description: "Architected intelligent automation pipelines and AI-integrated web applications. Led front-end development with React while implementing machine learning models for predictive analytics.",
+    bullets: [
+      "Built AI-integrated web apps using React, TypeScript, and OpenAI API",
+      "Designed automation pipelines that reduced manual data processing by 60%",
+      "Led front-end development and collaborated with ML team on model integration",
+    ],
     logo: electriconLogo,
   },
   {
@@ -76,7 +40,11 @@ const experiences = [
     type: "Internship",
     period: "May 2025 - Sep 2025",
     location: "On-site",
-    description: "Built and optimized cloud-native applications with focus on performance and scalability. Collaborated on API development and database optimization for mobile-first platforms.",
+    bullets: [
+      "Shipped cloud-native features using Node.js, Express, and PostgreSQL",
+      "Optimized API response times by 35% through query optimization",
+      "Collaborated with product team to deliver mobile-first user experiences",
+    ],
     logo: pilotLogo,
   },
   {
@@ -85,7 +53,11 @@ const experiences = [
     type: "Part-time",
     period: "Nov 2024 - Jan 2025",
     location: "Remote",
-    description: "Built and optimized a responsive website using WordPress and Gen AI tools. Improved accessibility by 35%, site speed by 20%, and workflow efficiency by 40%. Contributed to an NGO platform impacting thousands of underprivileged students.",
+    bullets: [
+      "Built and deployed a responsive website using WordPress and AI tools",
+      "Improved site accessibility by 35% and page load speed by 20%",
+      "Contributed to an NGO platform impacting thousands of students",
+    ],
     logo: aaraLearnLogo,
   },
 ];
@@ -94,42 +66,15 @@ const experiences = [
 // COMPONENT
 // =============================================================================
 
-/**
- * ExperienceSection Component
- * 
- * Renders a timeline of professional work experiences.
- * Each entry displays company info, role details, and description.
- */
 export const ExperienceSection = () => {
-  // ===========================================================================
-  // REFS & ANIMATION STATE
-  // ===========================================================================
-  
-  /**
-   * Ref attached to section for scroll detection
-   */
   const ref = useRef(null);
-  
-  /**
-   * Tracks if section is visible in viewport
-   * amount: 0.1 triggers when 10% of section is visible
-   * This ensures animation triggers reliably on scroll
-   */
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
-  // ===========================================================================
-  // RENDER
-  // ===========================================================================
-  
   return (
-    // Section with ID for navigation anchoring
     <section id="experience" className="section-full" ref={ref}>
       <div className="section-container">
         
-        {/* ================================================================== */}
-        {/* SECTION HEADER                                                     */}
-        {/* Centered title with fade-up animation                              */}
-        {/* ================================================================== */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -139,36 +84,23 @@ export const ExperienceSection = () => {
           <h2 className="text-display">Experience</h2>
         </motion.div>
 
-        {/* ================================================================== */}
-        {/* EXPERIENCE LIST                                                    */}
-        {/* Vertical timeline with border separators                           */}
-        {/* ================================================================== */}
+        {/* Experience List */}
         <div className="space-y-0">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.company}
-              // Fade up animation for each entry
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              // Staggered delay based on index
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              // Border between entries, removed on last item
               className="py-6 border-b border-border/60 last:border-b-0"
             >
-              {/* --------------------------------------------------------------- */}
-              {/* EXPERIENCE ENTRY LAYOUT                                         */}
-              {/* Logo on left, content on right                                  */}
-              {/* --------------------------------------------------------------- */}
               <div className="flex gap-4">
                 
-                {/* ============================================================= */}
-                {/* COMPANY LOGO                                                  */}
-                {/* Displayed in white rounded container for visibility           */}
-                {/* ============================================================= */}
+                {/* Company Logo */}
                 <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white flex items-center justify-center overflow-hidden">
                   <img 
                     src={exp.logo} 
@@ -177,25 +109,28 @@ export const ExperienceSection = () => {
                   />
                 </div>
 
-                {/* ============================================================= */}
-                {/* CONTENT - Role, Company Info, Description                     */}
-                {/* ============================================================= */}
+                {/* Content */}
                 <div className="min-w-0 flex-1">
                   
-                  {/* Role Title - Primary text */}
+                  {/* Role Title */}
                   <h3 className="text-base md:text-lg font-semibold text-foreground">
                     {exp.role}
                   </h3>
                   
-                  {/* Metadata Line - Company, type, period, location */}
+                  {/* Metadata */}
                   <p className="text-sm md:text-base text-muted-foreground mt-0.5">
                     {exp.company} • {exp.type} | {exp.period} | {exp.location}
                   </p>
                   
-                  {/* Description - Role details and achievements */}
-                  <p className="text-sm md:text-base text-foreground/80 mt-3 leading-relaxed">
-                    {exp.description}
-                  </p>
+                  {/* Bullet Points - Action-oriented */}
+                  <ul className="mt-3 space-y-1.5">
+                    {exp.bullets.map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm md:text-base text-foreground/80">
+                        <span className="text-muted-foreground mt-1">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </motion.div>

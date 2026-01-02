@@ -1,41 +1,41 @@
 /**
  * =============================================================================
- * TestimonialsSection.tsx - Client/Colleague Testimonials
+ * TestimonialsSection.tsx - Social Proof
  * =============================================================================
  * 
  * PURPOSE:
- * Displays testimonials from people the portfolio owner has worked with.
- * Features a centered layout with avatar, quote, name, and role.
- * 
- * DESIGN:
- * - Clean, minimal centered layout
- * - Circular avatar image
- * - Large quote text
- * - Dot navigation for multiple testimonials
- * - Apple-style animations
+ * Displays testimonials focused on reliability, problem-solving, and shipping.
+ * Short, specific quotes from colleagues and collaborators.
  */
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 
 // =============================================================================
-// DATA CONFIGURATION
+// DATA - Focused on reliability and shipping
 // =============================================================================
 
 const testimonials = [
   {
     id: 1,
-    quote: "Pavani was a real pleasure to work with and we look forward to working with her again. She's definitely the kind of developer you can trust with a project from start to finish.",
+    quote: "Pavani consistently delivered ahead of schedule with clean, production-ready code. She's the kind of developer you can trust to own a project from start to finish.",
     name: "Ravi Kumar",
     role: "Technical Lead, Electricon Wiz",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
   },
   {
     id: 2,
-    quote: "Her attention to detail and ability to translate complex requirements into elegant solutions is remarkable. Pavani consistently delivered high-quality work ahead of schedule.",
+    quote: "Her ability to translate complex requirements into working solutions is impressive. She communicates clearly and ships reliably—exactly what you want in a developer.",
     name: "Priya Sharma",
     role: "Project Manager, Pilot Mobility",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+  },
+  {
+    id: 3,
+    quote: "Pavani took ownership of our web platform and improved both performance and accessibility. She's proactive, reliable, and easy to work with.",
+    name: "Ananya Reddy",
+    role: "Founder, AaraLearn",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
   },
 ];
 
@@ -47,7 +47,6 @@ export const TestimonialsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  // Track active testimonial for carousel
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTestimonial = testimonials[activeIndex];
 
@@ -62,10 +61,7 @@ export const TestimonialsSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-8"
         >
-          <h2 className="text-display mb-4">Testimonials</h2>
-          <p className="text-body-lg text-muted-foreground">
-            People I've worked with have said some nice things...
-          </p>
+          <h2 className="text-display mb-4">What People Say</h2>
         </motion.div>
 
         {/* Testimonial Card */}
@@ -91,7 +87,7 @@ export const TestimonialsSection = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden ring-4 ring-[hsl(200,70%,80%)] ring-offset-4 ring-offset-background">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden ring-4 ring-border ring-offset-4 ring-offset-background">
                   <img
                     src={activeTestimonial.avatar}
                     alt={activeTestimonial.name}
