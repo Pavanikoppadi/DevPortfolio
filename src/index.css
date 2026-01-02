@@ -154,7 +154,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.47059;
     font-weight: 400;
     letter-spacing: -0.022em;
@@ -165,27 +165,27 @@
 
   /* Apple Human Interface Guidelines Typography */
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl font-semibold leading-none;
-    letter-spacing: -0.025em;
+    @apply text-6xl md:text-7xl lg:text-8xl font-semibold leading-none;
+    letter-spacing: -0.03em;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight;
-    letter-spacing: -0.022em;
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight;
+    letter-spacing: -0.025em;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold leading-snug;
+    @apply text-2xl md:text-3xl font-semibold leading-snug;
     letter-spacing: -0.02em;
   }
 
   h4 {
-    @apply text-lg md:text-xl font-medium leading-snug;
+    @apply text-xl md:text-2xl font-medium leading-snug;
     letter-spacing: -0.016em;
   }
 
   p {
-    @apply text-base leading-relaxed;
+    @apply text-lg leading-relaxed;
     letter-spacing: -0.022em;
   }
 }
