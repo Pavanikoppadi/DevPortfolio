@@ -95,7 +95,7 @@ export const SkillsSection = () => {
             transition={{ duration: 0.6, delay: 0.1 + groupIndex * 0.1 }}
           >
             {/* Group Title */}
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4 text-center">
+            <h3 className="text-micro font-medium text-foreground-secondary uppercase tracking-widest mb-4 text-center">
               {group.title}
             </h3>
             

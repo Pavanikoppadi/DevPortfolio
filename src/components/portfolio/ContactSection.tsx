@@ -49,7 +49,7 @@ export const ContactSection = () => {
               delay: 0.2,
               ease: [0.16, 1, 0.3, 1] 
             }}
-            className="inline-flex items-center gap-3 bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center gap-3 bg-foreground hover:bg-foreground/90 text-background px-8 py-3.5 rounded-full text-body font-medium transition-all duration-300 hover:scale-[1.02]"
           >
             <Mail className="w-5 h-5" />
             koppadipavani34@gmail.com
@@ -70,7 +70,7 @@ export const ContactSection = () => {
               href="https://github.com/Pavanikoppadi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:bg-muted transition-colors text-sm font-medium text-foreground"
+              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:bg-muted transition-colors text-caption font-medium text-foreground"
             >
               <Github className="w-4 h-4" />
               GitHub
@@ -79,7 +79,7 @@ export const ContactSection = () => {
               href="https://linkedin.com/in/pavanikoppadi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:bg-muted transition-colors text-sm font-medium text-foreground"
+              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:bg-muted transition-colors text-caption font-medium text-foreground"
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn

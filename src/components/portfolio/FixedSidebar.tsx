@@ -129,17 +129,17 @@ export const FixedSidebar = () => {
           {/* Profile Text Info */}
           <div>
             {/* Name - Primary sidebar text color */}
-            <h1 className="text-sidebar-foreground font-semibold text-sm leading-tight tracking-tight">
+            <h1 className="text-sidebar-foreground font-semibold text-caption leading-tight">
               Pavani Koppadi
             </h1>
             
             {/* Role - Muted sidebar text color */}
-            <p className="text-sidebar-muted text-xs tracking-normal">
+            <p className="text-sidebar-muted text-micro">
               AI Full Stack Developer
             </p>
             
             {/* Availability Status - Green dot indicator */}
-            <p className="text-green-400 text-[10px] mt-1 tracking-normal">
+            <p className="text-green-400 text-micro mt-1">
               ● Open to work
             </p>
           </div>
@@ -163,7 +163,7 @@ export const FixedSidebar = () => {
                 {/* Navigation Link with rounded hover state */}
                 <a
                   href={link.href}
-                  className="block px-3 py-2 text-sm text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent rounded-full transition-all duration-200"
+                  className="block px-3 py-2 text-caption text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent rounded-full transition-all duration-200"
                 >
                   {link.label}
                 </a>
@@ -186,7 +186,7 @@ export const FixedSidebar = () => {
         <a
           href="mailto:koppadipavani34@gmail.com"
           // Full-width button with inverted colors (light on dark)
-          className="block w-full mb-6 px-4 py-2.5 bg-sidebar-foreground text-sidebar-dark text-sm font-medium text-center rounded-full hover:bg-sidebar-foreground/90 hover:scale-[1.02] transition-all duration-300"
+          className="block w-full mb-6 px-4 py-2.5 bg-sidebar-foreground text-sidebar-dark text-caption font-medium text-center rounded-full hover:bg-sidebar-foreground/90 hover:scale-[1.02] transition-all duration-300"
         >
           Hire Me
         </a>
@@ -197,7 +197,7 @@ export const FixedSidebar = () => {
         {/* ------------------------------------------------------------------- */}
         <div className="mb-6">
           {/* Section Label */}
-          <p className="text-sidebar-muted text-[10px] font-semibold tracking-widest uppercase mb-3">
+          <p className="text-sidebar-muted text-micro font-semibold tracking-widest uppercase mb-3">
             Socials
           </p>
           
@@ -226,7 +226,7 @@ export const FixedSidebar = () => {
         {/* LOCATION TAG                                                        */}
         {/* Playful location text at very bottom                                */}
         {/* ------------------------------------------------------------------- */}
-        <p className="text-sidebar-muted text-xs">From Earth :)</p>
+        <p className="text-sidebar-muted text-micro">From Earth :)</p>
       </div>
     </aside>
   );

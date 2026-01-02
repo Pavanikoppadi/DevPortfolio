@@ -57,11 +57,11 @@ export const WorkflowSection = () => {
               <div className="flex flex-col items-center text-center">
                 {/* Number Circle */}
                 <div className="w-12 h-12 rounded-full border-2 border-foreground/80 flex items-center justify-center mb-4 group-hover:bg-foreground group-hover:text-background transition-all duration-300">
-                  <span className="text-sm font-semibold">{step.number}</span>
+                  <span className="text-caption font-semibold">{step.number}</span>
                 </div>
                 
                 {/* Step Label */}
-                <p className="text-foreground font-medium text-sm leading-relaxed max-w-[160px]">
+                <p className="text-foreground font-medium text-caption max-w-[160px]">
                   {step.label}
                 </p>
               </div>
@@ -81,11 +81,11 @@ export const WorkflowSection = () => {
             >
               {/* Number Circle */}
               <div className="w-10 h-10 rounded-full border-2 border-foreground/80 flex items-center justify-center flex-shrink-0">
-                <span className="text-xs font-semibold">{step.number}</span>
+                <span className="text-micro font-semibold">{step.number}</span>
               </div>
               
               {/* Step Label */}
-              <p className="text-foreground font-medium text-sm">
+              <p className="text-foreground font-medium text-caption">
                 {step.label}
               </p>
             </motion.div>

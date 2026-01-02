@@ -77,17 +77,18 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'sans-serif'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', 'sans-serif'],
       },
       fontSize: {
-        'hero': ['clamp(3rem, 8vw, 5rem)', { lineHeight: '1', fontWeight: '600', letterSpacing: '-0.025em' }],
-        'display': ['clamp(2.5rem, 6vw, 4rem)', { lineHeight: '1.1', fontWeight: '600', letterSpacing: '-0.02em' }],
-        'title': ['clamp(1.75rem, 4vw, 2.5rem)', { lineHeight: '1.2', fontWeight: '600', letterSpacing: '-0.015em' }],
-        'subtitle': ['clamp(1.125rem, 2vw, 1.5rem)', { lineHeight: '1.4', fontWeight: '500' }],
-        'body-lg': ['1.125rem', { lineHeight: '1.7' }],
-        'body': ['1rem', { lineHeight: '1.7' }],
-        'caption': ['0.875rem', { lineHeight: '1.5' }],
-        'micro': ['0.75rem', { lineHeight: '1.4' }],
+        // Apple HIG Typography Scale
+        'hero': ['clamp(3rem, 8vw, 4.5rem)', { lineHeight: '1.05', fontWeight: '600', letterSpacing: '-0.025em' }],
+        'display': ['clamp(2rem, 5vw, 3rem)', { lineHeight: '1.1', fontWeight: '600', letterSpacing: '-0.022em' }],
+        'title': ['clamp(1.5rem, 3vw, 2rem)', { lineHeight: '1.2', fontWeight: '600', letterSpacing: '-0.02em' }],
+        'subtitle': ['1.25rem', { lineHeight: '1.4', fontWeight: '500', letterSpacing: '-0.016em' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.5', letterSpacing: '-0.022em' }],
+        'body': ['1.0625rem', { lineHeight: '1.47', letterSpacing: '-0.022em' }],
+        'caption': ['0.8125rem', { lineHeight: '1.38', letterSpacing: '-0.008em' }],
+        'micro': ['0.6875rem', { lineHeight: '1.27', letterSpacing: '0em' }],
       },
       spacing: {
         'section': '8rem',

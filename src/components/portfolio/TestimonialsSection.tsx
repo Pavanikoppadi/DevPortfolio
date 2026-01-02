@@ -98,17 +98,17 @@ export const TestimonialsSection = () => {
 
               {/* Quote */}
               <blockquote className="mb-8">
-                <p className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
+                <p className="text-subtitle md:text-title text-foreground">
                   "{activeTestimonial.quote}"
                 </p>
               </blockquote>
 
               {/* Attribution */}
               <div>
-                <p className="font-semibold text-lg text-foreground">
+                <p className="font-semibold text-body text-foreground">
                   {activeTestimonial.name}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-caption text-foreground-secondary">
                   {activeTestimonial.role}
                 </p>
               </div>

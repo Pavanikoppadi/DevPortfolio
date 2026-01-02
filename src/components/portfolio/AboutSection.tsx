@@ -43,27 +43,27 @@ export const AboutSection = () => {
             className="space-y-6"
           >
             {/* Opening Statement */}
-            <p className="text-body text-foreground leading-relaxed">
+            <p className="text-body text-foreground">
               I'm a developer who enjoys turning ideas into working web apps and AI-powered tools. Currently pursuing B.Tech in IT with a 8.45 CGPA.
             </p>
             
             {/* Bullet Points - Concrete and scannable */}
             <ul className="space-y-4 text-body text-foreground/80">
               <li className="flex items-start gap-3">
-                <span className="text-muted-foreground mt-1">•</span>
-                <span><strong className="text-foreground">What I build:</strong> Full-stack web apps, AI-powered tools, and automation workflows that solve real problems.</span>
+                <span className="text-foreground-secondary mt-1">•</span>
+                <span><strong className="text-foreground font-medium">What I build:</strong> Full-stack web apps, AI-powered tools, and automation workflows that solve real problems.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-muted-foreground mt-1">•</span>
-                <span><strong className="text-foreground">How I work:</strong> End-to-end ownership—from problem discovery to deployment. I ship clean, maintainable code.</span>
+                <span className="text-foreground-secondary mt-1">•</span>
+                <span><strong className="text-foreground font-medium">How I work:</strong> End-to-end ownership—from problem discovery to deployment. I ship clean, maintainable code.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-muted-foreground mt-1">•</span>
-                <span><strong className="text-foreground">How I improve:</strong> Side projects, experiments, and staying current with AI/automation trends.</span>
+                <span className="text-foreground-secondary mt-1">•</span>
+                <span><strong className="text-foreground font-medium">How I improve:</strong> Side projects, experiments, and staying current with AI/automation trends.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-muted-foreground mt-1">•</span>
-                <span><strong className="text-foreground">What I'm open to:</strong> Remote roles, freelance projects, and collaborations in AI/full-stack development.</span>
+                <span className="text-foreground-secondary mt-1">•</span>
+                <span><strong className="text-foreground font-medium">What I'm open to:</strong> Remote roles, freelance projects, and collaborations in AI/full-stack development.</span>
               </li>
             </ul>
             
@@ -71,15 +71,15 @@ export const AboutSection = () => {
             <div className="pt-4">
               <div className="flex flex-wrap gap-4">
                 <div className="card-glass py-4 px-6">
-                  <div className="text-2xl font-semibold text-foreground">8.45</div>
+                  <div className="text-title text-foreground">8.45</div>
                   <div className="text-caption text-foreground-secondary">CGPA</div>
                 </div>
                 <div className="card-glass py-4 px-6">
-                  <div className="text-2xl font-semibold text-foreground">2027</div>
+                  <div className="text-title text-foreground">2027</div>
                   <div className="text-caption text-foreground-secondary">Expected Grad</div>
                 </div>
                 <div className="card-glass py-4 px-6">
-                  <div className="text-2xl font-semibold text-foreground">3+</div>
+                  <div className="text-title text-foreground">3+</div>
                   <div className="text-caption text-foreground-secondary">Internships</div>
                 </div>
               </div>

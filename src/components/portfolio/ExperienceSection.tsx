@@ -113,20 +113,20 @@ export const ExperienceSection = () => {
                 <div className="min-w-0 flex-1">
                   
                   {/* Role Title */}
-                  <h3 className="text-base md:text-lg font-semibold text-foreground">
+                  <h3 className="text-body font-semibold text-foreground">
                     {exp.role}
                   </h3>
                   
                   {/* Metadata */}
-                  <p className="text-sm md:text-base text-muted-foreground mt-0.5">
+                  <p className="text-caption text-foreground-secondary mt-0.5">
                     {exp.company} • {exp.type} | {exp.period} | {exp.location}
                   </p>
                   
                   {/* Bullet Points - Action-oriented */}
                   <ul className="mt-3 space-y-1.5">
                     {exp.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm md:text-base text-foreground/80">
-                        <span className="text-muted-foreground mt-1">•</span>
+                      <li key={i} className="flex items-start gap-2 text-caption text-foreground/80">
+                        <span className="text-foreground-secondary mt-1">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
