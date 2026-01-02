@@ -43,9 +43,9 @@ const skillGroups = [
   {
     title: "AI & Automation",
     skills: [
-      { name: "OpenAI API", icon: "https://cdn.simpleicons.org/openai/412991" },
-      { name: "LangChain", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/langchain/langchain-original.svg" },
-      { name: "n8n", icon: "https://cdn.simpleicons.org/n8n/EA4B71" },
+      { name: "OpenAI API", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/512px-OpenAI_Logo.svg.png" },
+      { name: "LangChain", icon: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4" },
+      { name: "n8n", icon: "https://avatars.githubusercontent.com/u/45487711?s=200&v=4" },
       { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
     ],
   },
@@ -84,20 +84,20 @@ export const SkillsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12" ref={ref}>
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-12" ref={ref}>
       
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-8 sm:mb-10 md:mb-12"
+        className="text-center mb-10 sm:mb-12 md:mb-16"
       >
-        <h2 className="text-display text-foreground">Tech Stack</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground">Tech Stack</h2>
       </motion.div>
 
       {/* Skill Groups */}
-      <div className="max-w-4xl mx-auto space-y-8 sm:space-y-10">
+      <div className="max-w-5xl mx-auto space-y-10 sm:space-y-12">
         {skillGroups.map((group, groupIndex) => (
           <motion.div
             key={group.title}
@@ -106,30 +106,30 @@ export const SkillsSection = () => {
             transition={{ duration: 0.6, delay: 0.1 + groupIndex * 0.1 }}
           >
             {/* Group Title */}
-            <h3 className="text-xs sm:text-micro font-medium text-foreground-secondary uppercase tracking-widest mb-3 sm:mb-4 text-center">
+            <h3 className="text-sm sm:text-base font-medium text-foreground-secondary uppercase tracking-widest mb-4 sm:mb-5 text-center">
               {group.title}
             </h3>
             
             {/* Skills Grid */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
+            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 md:gap-4">
               {group.skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: 0.2 + groupIndex * 0.1 + index * 0.03 }}
-                  className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-secondary/50 border border-border hover:bg-secondary transition-colors duration-200"
+                  className="flex items-center gap-2 sm:gap-2.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-secondary/50 border border-border hover:bg-secondary transition-colors duration-200"
                 >
                   <img 
                     src={skill.icon} 
                     alt={skill.name} 
-                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                     onError={(e) => {
                       // Hide broken images
                       e.currentTarget.style.display = 'none';
                     }}
                   />
-                  <span className="text-foreground text-xs sm:text-caption font-medium">
+                  <span className="text-foreground text-sm sm:text-base font-medium">
                     {skill.name}
                   </span>
                 </motion.div>
