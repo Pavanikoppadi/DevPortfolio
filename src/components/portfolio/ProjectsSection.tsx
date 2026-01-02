@@ -77,7 +77,7 @@ export const ProjectsSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-end justify-between mb-12"
+          className="flex items-end justify-between mb-8 sm:mb-10 md:mb-12"
         >
           <div>
             <h2 className="text-display">Featured Work.</h2>
@@ -100,7 +100,7 @@ export const ProjectsSection = () => {
         transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 md:px-16 lg:px-24 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6 md:px-12 lg:px-24 pb-6 sm:pb-8">
           
           {projects.map((project, index) => (
             <motion.div
@@ -116,7 +116,7 @@ export const ProjectsSection = () => {
             >
               
               {/* Project Image */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-surface">
+              <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 bg-surface">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -126,20 +126,20 @@ export const ProjectsSection = () => {
               </div>
 
               {/* Project Info - Left-aligned vertical stack */}
-              <div className="space-y-2">
+              <div className="space-y-1.5 sm:space-y-2">
                 
                 {/* Title */}
-                <h3 className="text-title text-foreground">
+                <h3 className="text-lg sm:text-title text-foreground">
                   {project.title}
                 </h3>
                 
                 {/* Subtitle - What it is */}
-                <p className="text-body text-foreground-secondary">
+                <p className="text-sm sm:text-body text-foreground-secondary">
                   {project.subtitle}
                 </p>
                 
                 {/* Bullet Points - What it does, tech, outcome */}
-                <ul className="space-y-1 text-caption text-foreground/80 pt-1">
+                <ul className="space-y-1 text-xs sm:text-caption text-foreground/80 pt-1">
                   {project.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-foreground-secondary mt-0.5">•</span>
@@ -153,12 +153,12 @@ export const ProjectsSection = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-foreground hover:text-foreground/70 transition-colors text-caption font-medium group/link pt-3"
+                  className="inline-flex items-center gap-1.5 text-foreground hover:text-foreground/70 transition-colors text-xs sm:text-caption font-medium group/link pt-2 sm:pt-3"
                 >
                   View Project
                   <ArrowUpRight
-                    size={14}
-                    className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                    size={12}
+                    className="sm:w-3.5 sm:h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
                   />
                 </a>
               </div>

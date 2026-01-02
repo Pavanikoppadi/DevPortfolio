@@ -152,14 +152,14 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       {/* Fixed at top on mobile only (hidden on desktop)                       */}
       {/* Contains profile info and hamburger menu toggle                       */}
       {/* ===================================================================== */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-sidebar-dark px-4 py-3 flex items-center justify-between">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-sidebar-dark px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between">
         
         {/* ------------------------------------------------------------------- */}
         {/* LEFT: Profile Info                                                  */}
         {/* ------------------------------------------------------------------- */}
         <div className="flex items-center gap-2">
           {/* Profile Photo - Smaller on mobile */}
-          <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden flex-shrink-0">
             <img 
               src={profilePhoto} 
               alt="Pavani Koppadi" 
@@ -167,7 +167,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             />
           </div>
           {/* Name text */}
-          <span className="text-sidebar-foreground font-semibold text-sm">
+          <span className="text-sidebar-foreground font-semibold text-xs sm:text-sm">
             Pavani Koppadi
           </span>
         </div>
@@ -177,11 +177,11 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         {/* ------------------------------------------------------------------- */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 text-sidebar-foreground"
+          className="p-1.5 sm:p-2 text-sidebar-foreground"
           aria-label="Toggle menu"
         >
           {/* Show X when open, hamburger Menu icon when closed */}
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={22} className="sm:w-6 sm:h-6" /> : <Menu size={22} className="sm:w-6 sm:h-6" />}
         </button>
       </div>
 
@@ -226,20 +226,20 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       {/* MAIN CONTENT CONTAINER                                                */}
       {/* The white rounded area where page content lives                       */}
       {/* ===================================================================== */}
-      <main className="md:ml-52 lg:ml-56 min-h-screen p-3 md:p-4 lg:p-5 pt-16 md:pt-4 lg:pt-5">
+      <main className="md:ml-52 lg:ml-56 min-h-screen p-2 sm:p-3 md:p-4 lg:p-5 pt-14 sm:pt-16 md:pt-4 lg:pt-5">
         {/* ------------------------------------------------------------------- */}
         {/* CONTENT CARD                                                        */}
         {/* White rounded container that creates the "framed" effect            */}
         {/* Height calculations account for padding on each breakpoint          */}
         {/* ------------------------------------------------------------------- */}
-        <div className="bg-content-container rounded-3xl min-h-[calc(100vh-24px)] md:min-h-[calc(100vh-32px)] lg:min-h-[calc(100vh-40px)] overflow-hidden">
+        <div className="bg-content-container rounded-2xl sm:rounded-3xl min-h-[calc(100vh-16px)] sm:min-h-[calc(100vh-24px)] md:min-h-[calc(100vh-32px)] lg:min-h-[calc(100vh-40px)] overflow-hidden">
           
           {/* ----------------------------------------------------------------- */}
           {/* SCROLLABLE CONTENT AREA                                           */}
           {/* This is where all page sections render                            */}
           {/* scrollbar-hide creates clean look without visible scrollbars      */}
           {/* ----------------------------------------------------------------- */}
-          <div className="h-[calc(100vh-24px)] md:h-[calc(100vh-32px)] lg:h-[calc(100vh-40px)] overflow-y-auto overflow-x-hidden scrollbar-hide smooth-scroll">
+          <div className="h-[calc(100vh-16px)] sm:h-[calc(100vh-24px)] md:h-[calc(100vh-32px)] lg:h-[calc(100vh-40px)] overflow-y-auto overflow-x-hidden scrollbar-hide smooth-scroll">
             {children}
           </div>
         </div>
