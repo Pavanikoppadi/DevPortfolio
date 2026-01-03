@@ -130,12 +130,17 @@ export const Header = () => {
           {/* -------------------------------------------------------------- */}
           <div className="flex items-center gap-3">
             
-            {/* Profile Photo - Circular avatar */}
+            {/* Profile Photo - Circular avatar with optimized loading */}
             <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
               <img 
                 src={profilePhoto} 
                 alt="Pavani Koppadi" 
                 className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                width={40}
+                height={40}
               />
             </div>
             

@@ -10,6 +10,7 @@
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // =============================================================================
 // DATA - Focused on reliability and shipping
@@ -50,6 +51,15 @@ export const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTestimonial = testimonials[activeIndex];
   
+  // Navigation handlers
+  const goToPrevious = () => {
+    setActiveIndex((prev) => (prev > 0 ? prev - 1 : testimonials.length - 1));
+  };
+  
+  const goToNext = () => {
+    setActiveIndex((prev) => (prev < testimonials.length - 1 ? prev + 1 : 0));
+  };
+  
   // Touch/swipe handling
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -72,11 +82,11 @@ export const TestimonialsSection = () => {
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
     
-    if (isLeftSwipe && activeIndex < testimonials.length - 1) {
-      setActiveIndex(activeIndex + 1);
+    if (isLeftSwipe) {
+      goToNext();
     }
-    if (isRightSwipe && activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
+    if (isRightSwipe) {
+      goToPrevious();
     }
   };
 
@@ -94,64 +104,94 @@ export const TestimonialsSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">What People Say</h2>
         </motion.div>
 
-        {/* Testimonial Card - Swipeable */}
+        {/* Testimonial Card with Navigation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mx-auto text-center"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
+          className="max-w-4xl mx-auto"
         >
-          
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTestimonial.id}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          {/* Navigation Container */}
+          <div className="relative flex items-center gap-4 md:gap-8">
+            
+            {/* Previous Button - Desktop */}
+            <motion.button
+              onClick={goToPrevious}
+              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-all duration-300 flex-shrink-0"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Previous testimonial"
             >
-              
-              {/* Avatar */}
-              <motion.div 
-                className="mb-8 sm:mb-10"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 mx-auto rounded-full overflow-hidden ring-4 ring-border ring-offset-4 ring-offset-background">
-                  <img
-                    src={activeTestimonial.avatar}
-                    alt={activeTestimonial.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
+              <ChevronLeft size={24} />
+            </motion.button>
+            
+            {/* Testimonial Content */}
+            <div 
+              className="flex-1 text-center"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTestimonial.id}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  
+                  {/* Avatar */}
+                  <motion.div 
+                    className="mb-8 sm:mb-10"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 mx-auto rounded-full overflow-hidden ring-4 ring-border ring-offset-4 ring-offset-background">
+                      <img
+                        src={activeTestimonial.avatar}
+                        alt={activeTestimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </motion.div>
 
-              {/* Quote */}
-              <blockquote className="mb-6 sm:mb-8">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground leading-relaxed">
-                  "{activeTestimonial.quote}"
-                </p>
-              </blockquote>
+                  {/* Quote */}
+                  <blockquote className="mb-6 sm:mb-8">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground leading-relaxed">
+                      "{activeTestimonial.quote}"
+                    </p>
+                  </blockquote>
 
-              {/* Attribution */}
-              <div>
-                <p className="font-semibold text-base sm:text-lg md:text-xl text-foreground">
-                  {activeTestimonial.name}
-                </p>
-                <p className="text-sm sm:text-base text-foreground-secondary">
-                  {activeTestimonial.role}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                  {/* Attribution */}
+                  <div>
+                    <p className="font-semibold text-base sm:text-lg md:text-xl text-foreground">
+                      {activeTestimonial.name}
+                    </p>
+                    <p className="text-sm sm:text-base text-foreground-secondary">
+                      {activeTestimonial.role}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
-          {/* Swipe hint on mobile */}
-          <p className="text-xs text-foreground-secondary/60 mt-6 sm:hidden">
-            Swipe to see more
-          </p>
+              {/* Swipe hint on mobile */}
+              <p className="text-xs text-foreground-secondary/60 mt-6 sm:hidden">
+                Swipe to see more
+              </p>
+            </div>
+            
+            {/* Next Button - Desktop */}
+            <motion.button
+              onClick={goToNext}
+              className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-muted hover:bg-muted/80 text-foreground transition-all duration-300 flex-shrink-0"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={24} />
+            </motion.button>
+          </div>
 
           {/* Dot Navigation */}
           <div className="flex justify-center gap-3 mt-8 sm:mt-10">
