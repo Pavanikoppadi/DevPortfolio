@@ -10,6 +10,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Trophy, Award, GraduationCap, Users } from "lucide-react";
 
 // =============================================================================
 // COMPONENT
@@ -81,6 +82,29 @@ export const AboutSection = () => {
                 <div className="card-glass py-4 sm:py-5 px-6 sm:px-8">
                   <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">3+</div>
                   <div className="text-sm sm:text-base text-foreground-secondary">Internships</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Recognition Icons */}
+            <div className="pt-6 sm:pt-8">
+              <p className="text-micro uppercase tracking-[0.2em] text-foreground-secondary mb-4">Recognition</p>
+              <div className="flex flex-wrap gap-4 sm:gap-6">
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <Trophy className="w-5 h-5 text-foreground-secondary" />
+                  <span className="text-sm">Pragati Cohort 4</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <Award className="w-5 h-5 text-foreground-secondary" />
+                  <span className="text-sm">Coding Winner</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <GraduationCap className="w-5 h-5 text-foreground-secondary" />
+                  <span className="text-sm">Certified Dev</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <Users className="w-5 h-5 text-foreground-secondary" />
+                  <span className="text-sm">Campus Lead</span>
                 </div>
               </div>
             </div>

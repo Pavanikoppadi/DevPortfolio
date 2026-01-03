@@ -85,7 +85,16 @@ const Index = () => {
       <HeroSection />
       
       {/* =================================================================== */}
-      {/* SECTION 2: PROJECTS (MOST IMPORTANT)                                */}
+      {/* SECTION 2: VIDEO                                                    */}
+      {/* Visual introduction - below "building web apps and AI tools"        */}
+      {/* =================================================================== */}
+      
+      <Suspense fallback={<SectionLoader />}>
+        <VideoSection />
+      </Suspense>
+      
+      {/* =================================================================== */}
+      {/* SECTION 3: PROJECTS                                                 */}
       {/* Proof of capability - what you've built                             */}
       {/* =================================================================== */}
       
@@ -94,7 +103,7 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 3: TECH STACK                                               */}
+      {/* SECTION 4: TECH STACK                                               */}
       {/* Production-ready tools                                              */}
       {/* =================================================================== */}
       
@@ -105,7 +114,7 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 4: EXPERIENCE                                               */}
+      {/* SECTION 5: EXPERIENCE                                               */}
       {/* Credibility - where you've worked                                   */}
       {/* =================================================================== */}
       
@@ -114,21 +123,12 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 5: TESTIMONIALS                                             */}
+      {/* SECTION 6: TESTIMONIALS                                             */}
       {/* Social proof - what others say                                      */}
       {/* =================================================================== */}
       
       <Suspense fallback={<SectionLoader />}>
         <TestimonialsSection />
-      </Suspense>
-      
-      {/* =================================================================== */}
-      {/* SECTION 6: VIDEO                                                    */}
-      {/* Visual introduction                                                 */}
-      {/* =================================================================== */}
-      
-      <Suspense fallback={<SectionLoader />}>
-        <VideoSection />
       </Suspense>
       
       {/* =================================================================== */}
@@ -141,8 +141,26 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 8: ABOUT                                                    */}
-      {/* Personal story - who you are beyond work                            */}
+      {/* SECTION 8: WORKFLOW                                                 */}
+      {/* Development process - below education                               */}
+      {/* =================================================================== */}
+      
+      <Suspense fallback={<SectionLoader />}>
+        <WorkflowSection />
+      </Suspense>
+      
+      {/* =================================================================== */}
+      {/* SECTION 9: LEARNING                                                 */}
+      {/* Learning & understanding graph                                      */}
+      {/* =================================================================== */}
+      
+      <Suspense fallback={<SectionLoader />}>
+        <LearningSection />
+      </Suspense>
+      
+      {/* =================================================================== */}
+      {/* SECTION 10: ABOUT                                                   */}
+      {/* Personal story with recognition icons                               */}
       {/* =================================================================== */}
       
       <Suspense fallback={<SectionLoader />}>
@@ -150,7 +168,16 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 9: CONTACT & FOOTER                                         */}
+      {/* SECTION 11: BEYOND CODE (Interests)                                 */}
+      {/* Interests section above contact                                     */}
+      {/* =================================================================== */}
+      
+      <Suspense fallback={<SectionLoader />}>
+        <InterestsSection />
+      </Suspense>
+      
+      {/* =================================================================== */}
+      {/* SECTION 12: CONTACT & FOOTER                                        */}
       {/* Call-to-action and copyright                                        */}
       {/* =================================================================== */}
       
