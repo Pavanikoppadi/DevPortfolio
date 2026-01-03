@@ -37,7 +37,7 @@
 import { motion } from "framer-motion";
 
 // Lucide icons for social links
-import { Mail, Linkedin, Github, Instagram } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 // Profile photo asset (imported as ES6 module for bundling)
 import profilePhoto from "@/assets/profile-photo.png";
@@ -75,9 +75,8 @@ const navLinks = [
  */
 const socialLinks = [
   { icon: Mail, href: "mailto:koppadipavani34@gmail.com", label: "Email" },
-  { icon: Linkedin, href: "https://linkedin.com/in/", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
-  { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com/in/pavanikoppadi", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/Pavanikoppadi", label: "GitHub" },
 ];
 
 // =============================================================================
@@ -182,16 +181,6 @@ export const FixedSidebar = () => {
       {/* Pushed to bottom via flex justify-between on parent                  */}
       {/* ===================================================================== */}
       <div>
-        
-        {/* Resume Download Button */}
-        <a
-          href="/pavanideveloperesume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full mb-3 px-4 py-2.5 bg-sidebar-foreground text-sidebar-dark text-caption font-medium text-center rounded-full hover:bg-sidebar-foreground/90 hover:scale-[1.02] transition-all duration-300"
-        >
-          Resume (PDF)
-        </a>
         
         {/* Hire Me Button */}
         <a

@@ -10,7 +10,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, forwardRef, useState } from "react";
-import { Mail, Github, Linkedin, Copy, Check, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin, Check } from "lucide-react";
 
 // =============================================================================
 // COMPONENT
@@ -45,29 +45,23 @@ export const ContactSection = forwardRef<HTMLElement>((_, forwardedRef) => {
           
           {/* Availability Note */}
           <p className="text-sm sm:text-body-lg text-foreground-secondary mb-8 sm:mb-10">
-            Open to Remote AI Engineering roles • IST timezone
+            Open to remote roles, freelance projects, and collaborations • IST timezone
           </p>
 
-          {/* Email with Copy Button */}
+          {/* Email Button - Click to Copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8"
+            className="flex items-center justify-center mb-8"
           >
-            <a
-              href={`mailto:${email}`}
+            <button
+              onClick={copyEmail}
               className="inline-flex items-center gap-2 sm:gap-3 bg-foreground hover:bg-foreground/90 text-background px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full text-xs sm:text-body font-medium transition-all duration-300 hover:scale-[1.02]"
             >
               <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="truncate">{email}</span>
-            </a>
-            <button
-              onClick={copyEmail}
-              className="inline-flex items-center gap-2 px-4 py-2.5 sm:py-3.5 rounded-full border border-border hover:bg-muted transition-colors text-sm font-medium text-foreground"
-            >
-              {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-              {copied ? "Copied!" : "Copy Email"}
+              <span className="truncate">{copied ? "Copied!" : email}</span>
+              {copied && <Check className="w-4 h-4 text-green-500" />}
             </button>
           </motion.div>
 
@@ -97,13 +91,15 @@ export const ContactSection = forwardRef<HTMLElement>((_, forwardedRef) => {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com/"
+              href="https://medium.com/@koppadipavani34"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border hover:bg-muted transition-colors text-xs sm:text-caption font-medium text-foreground"
             >
-              <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              Twitter/X
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+              </svg>
+              Medium
             </a>
           </motion.div>
         </motion.div>

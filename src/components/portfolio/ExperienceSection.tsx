@@ -24,7 +24,7 @@ const experiences = [
   {
     year: "2025",
     role: "AI Engineer",
-    company: "Independent / Startup",
+    company: "Electricon Wiz",
     bullets: [
       "Shipped AI interview platform handling 10K+ inferences/day",
       "Reduced LLM costs by 40% using caching + prompt optimization",
