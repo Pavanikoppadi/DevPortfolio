@@ -47,11 +47,12 @@ import profilePhoto from "@/assets/profile-photo.png";
  * Each link has a label (display text) and href (anchor target)
  */
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Capabilities", href: "#capabilities" },
+  { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
+  { label: "Stack", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
+  { label: "Resume", href: "/pavanideveloperesume.pdf", external: true },
 ];
 
 // =============================================================================
@@ -200,11 +201,11 @@ export const Header = () => {
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  // Staggered fade-up for each link
+                  target={(link as any).external ? "_blank" : undefined}
+                  rel={(link as any).external ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  // Close menu when link is clicked
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-2xl font-medium text-foreground hover:text-foreground-secondary transition-colors"
                 >

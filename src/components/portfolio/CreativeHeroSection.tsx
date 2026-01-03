@@ -21,63 +21,56 @@ export const CreativeHeroSection = () => {
       
       <div className="relative z-20 text-center px-5 sm:px-6 max-w-3xl mx-auto">
         
-        {/* Greeting */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-foreground-secondary text-base sm:text-lg md:text-xl mb-3 sm:mb-4 font-normal"
-        >
-          Heyy, I'm
-        </motion.p>
-
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-foreground text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold mb-5 sm:mb-6 md:mb-8 tracking-tight"
+          transition={{ duration: 0.6 }}
+          className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 sm:mb-5 md:mb-6 tracking-tight"
         >
-          Pavani Koppadi
+          AI Full-Stack Engineer
         </motion.h1>
 
-        {/* Role Badge - Clear role + niche */}
+        {/* Role Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="inline-block mb-5 sm:mb-6 md:mb-8"
         >
           <span className="bg-secondary border border-border text-foreground px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base md:text-lg font-medium">
-            AI Automation & Full-Stack Engineer
+            Production AI Agents & SaaS
           </span>
         </motion.div>
 
-        {/* Value Proposition - What I do and why it matters */}
+        {/* Metrics Line */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-foreground-secondary text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10 px-2 leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-foreground-secondary text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto mb-4 sm:mb-5 md:mb-6 px-2 leading-relaxed"
         >
-          I design and build web apps and AI-powered tools that automate real workflows and ship to production quickly.
+          Shipped 5+ production AI tools • 1K+ users
         </motion.p>
 
-        {/* Skill Highlight Tags */}
+        {/* Tech Stack Tags */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
           className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 sm:mb-12 md:mb-14 px-2"
         >
           <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
-            TypeScript, React/Next.js
+            Next.js
           </span>
           <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
-            AI agents & workflows
+            LangChain
           </span>
           <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
-            End-to-end ownership
+            Supabase
+          </span>
+          <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
+            OpenAI
           </span>
         </motion.div>
 
@@ -85,8 +78,8 @@ export const CreativeHeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           
           {/* Primary - View My Work */}
@@ -97,15 +90,23 @@ export const CreativeHeroSection = () => {
             View My Work
           </a>
           
-          {/* Secondary - Contact Me */}
+          {/* Secondary - Download Resume */}
+          <a
+            href="/pavanideveloperesume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
+          >
+            Download Resume
+          </a>
+          
+          {/* Tertiary - Book Call */}
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
           >
-            Contact Me
-            <span className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-border">
-              <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
-            </span>
+            Book 15-Min Call
+            <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
           </a>
         </motion.div>
       </div>

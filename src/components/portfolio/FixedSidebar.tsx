@@ -57,10 +57,9 @@ import profilePhoto from "@/assets/profile-photo.png";
  */
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Work", href: "#projects" },
+  { label: "Projects", href: "#projects" },
+  { label: "Stack", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -184,14 +183,20 @@ export const FixedSidebar = () => {
       {/* ===================================================================== */}
       <div>
         
-        {/* ------------------------------------------------------------------- */}
-        {/* HIRE ME BUTTON                                                      */}
-        {/* Primary CTA linking to email                                        */}
-        {/* ------------------------------------------------------------------- */}
+        {/* Resume Download Button */}
+        <a
+          href="/pavanideveloperesume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full mb-3 px-4 py-2.5 bg-sidebar-foreground text-sidebar-dark text-caption font-medium text-center rounded-full hover:bg-sidebar-foreground/90 hover:scale-[1.02] transition-all duration-300"
+        >
+          Resume (PDF)
+        </a>
+        
+        {/* Hire Me Button */}
         <a
           href="mailto:koppadipavani34@gmail.com"
-          // Full-width button with inverted colors (light on dark)
-          className="block w-full mb-6 px-4 py-2.5 bg-sidebar-foreground text-sidebar-dark text-caption font-medium text-center rounded-full hover:bg-sidebar-foreground/90 hover:scale-[1.02] transition-all duration-300"
+          className="block w-full mb-6 px-4 py-2.5 border border-sidebar-foreground/30 text-sidebar-foreground text-caption font-medium text-center rounded-full hover:bg-sidebar-accent hover:scale-[1.02] transition-all duration-300"
         >
           Hire Me
         </a>

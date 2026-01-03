@@ -24,39 +24,39 @@ import sparkPreview from "@/assets/projects/spark-launchpad-preview.jpg";
 const projects = [
   {
     id: 1,
-    title: "Resumind.ai",
-    subtitle: "AI-powered resume optimization platform",
-    bullets: [
-      "Analyzes resumes against job descriptions using OpenAI API",
-      "Built with Next.js, TypeScript, Supabase, and Tailwind",
-      "Improved ATS match rates by 40% for test users",
-    ],
+    title: "AI Interview Agent",
+    subtitle: "60% faster screening • 500+ interviews processed",
+    problem: "Manual interview screening took 30+ minutes per candidate.",
+    solution: "Built AI agent that conducts initial screenings via voice/chat, scores responses, and generates structured reports.",
+    techStack: "Next.js | Node.js | Supabase | LangChain | OpenAI | Pinecone",
     image: resumindPreview,
-    link: "https://github.com/Pavanikoppadi/ai-resumebulider-demo",
+    liveDemo: "#",
+    github: "https://github.com/Pavanikoppadi/ai-resumebulider-demo",
+    video: "#",
   },
   {
     id: 2,
-    title: "Secure Voting System",
-    subtitle: "Campus-wide online voting platform",
-    bullets: [
-      "End-to-end encrypted voting with real-time result dashboards",
-      "Built with MERN stack (MongoDB, Express, React, Node.js)",
-      "Handled 2,000+ votes with zero downtime during elections",
-    ],
+    title: "RAG Knowledge Base Platform",
+    subtitle: "80% faster internal search queries",
+    problem: "Teams wasted hours searching scattered documentation.",
+    solution: "Created vector-powered knowledge base with semantic search and contextual answers from company docs.",
+    techStack: "Next.js | FastAPI | PostgreSQL | LangChain | Pinecone | OpenAI",
     image: votingPreview,
-    link: "https://github.com/Pavanikoppadi/CollegeOnlineVoting",
+    liveDemo: "#",
+    github: "https://github.com/Pavanikoppadi/CollegeOnlineVoting",
+    video: "#",
   },
   {
     id: 3,
-    title: "Corgnetrix Spark Launchpad",
-    subtitle: "Enterprise-ready React SPA for client",
-    bullets: [
-      "Modular component library with TypeScript and Tailwind",
-      "Built with React, Vite, and cloud-native architecture",
-      "Delivered production-ready MVP in 4 weeks",
-    ],
+    title: "AI Content Engine",
+    subtitle: "10× content velocity for growth teams",
+    problem: "Marketing teams bottlenecked on content creation.",
+    solution: "Built automated pipeline that generates, edits, and schedules SEO-optimized content at scale.",
+    techStack: "React | Node.js | Supabase | OpenAI | Redis | Vercel",
     image: sparkPreview,
-    link: "https://github.com/Pavanikoppadi/corgnetrix-spark-launchpad",
+    liveDemo: "#",
+    github: "https://github.com/Pavanikoppadi/corgnetrix-spark-launchpad",
+    video: "#",
   },
 ];
 
@@ -135,34 +135,50 @@ export const ProjectsSection = () => {
                   {project.title}
                 </h3>
                 
-                {/* Subtitle - What it is */}
-                <p className="text-base sm:text-lg text-foreground-secondary">
+                {/* Outcome Headline */}
+                <p className="text-base sm:text-lg text-foreground-secondary font-medium">
                   {project.subtitle}
                 </p>
                 
-                {/* Bullet Points - What it does, tech, outcome */}
-                <ul className="space-y-1.5 text-sm sm:text-base text-foreground/80 pt-1">
-                  {project.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-foreground-secondary mt-0.5">•</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Problem → Solution */}
+                <div className="space-y-1.5 text-sm sm:text-base text-foreground/80 pt-1">
+                  <p><span className="font-medium text-foreground">Problem:</span> {project.problem}</p>
+                  <p><span className="font-medium text-foreground">Solution:</span> {project.solution}</p>
+                </div>
                 
-                {/* View Project Link */}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-foreground hover:text-foreground/70 transition-colors text-sm sm:text-base font-medium group/link pt-3 sm:pt-4"
-                >
-                  View Project
-                  <ArrowUpRight
-                    size={14}
-                    className="sm:w-4 sm:h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                  />
-                </a>
+                {/* Tech Stack */}
+                <p className="text-xs sm:text-sm text-foreground-secondary pt-2">
+                  {project.techStack}
+                </p>
+                
+                {/* Action Buttons */}
+                <div className="flex flex-wrap items-center gap-3 pt-3 sm:pt-4">
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-foreground hover:text-foreground/70 transition-colors text-sm sm:text-base font-medium group/link"
+                  >
+                    Live Demo
+                    <ArrowUpRight size={14} className="sm:w-4 sm:h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-foreground-secondary hover:text-foreground transition-colors text-sm sm:text-base font-medium"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href={project.video}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-foreground-secondary hover:text-foreground transition-colors text-sm sm:text-base font-medium"
+                  >
+                    Watch Demo
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
