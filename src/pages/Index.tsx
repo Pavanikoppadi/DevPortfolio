@@ -28,31 +28,36 @@
 // IMPORTS
 // =============================================================================
 
-// Layout wrapper component
+import { lazy, Suspense } from "react";
+
+// Layout wrapper component (critical - load immediately)
 import { MainLayout } from "@/components/portfolio/MainLayout";
 
-// Hero sections
+// Hero sections (critical - load immediately for first paint)
 import { CreativeHeroSection } from "@/components/portfolio/CreativeHeroSection";
 import { HeroSection } from "@/components/portfolio/HeroSection";
 
-// Video section
-import { VideoSection } from "@/components/portfolio/VideoSection";
+// Lazy load below-the-fold sections for faster initial load
+const VideoSection = lazy(() => import("@/components/portfolio/VideoSection").then(m => ({ default: m.VideoSection })));
+const ProjectsSection = lazy(() => import("@/components/portfolio/ProjectsSection").then(m => ({ default: m.ProjectsSection })));
+const ExperienceSection = lazy(() => import("@/components/portfolio/ExperienceSection").then(m => ({ default: m.ExperienceSection })));
+const EducationSection = lazy(() => import("@/components/portfolio/EducationSection").then(m => ({ default: m.EducationSection })));
+const WorkflowSection = lazy(() => import("@/components/portfolio/WorkflowSection").then(m => ({ default: m.WorkflowSection })));
+const SkillsSection = lazy(() => import("@/components/portfolio/SkillsSection").then(m => ({ default: m.SkillsSection })));
+const TestimonialsSection = lazy(() => import("@/components/portfolio/TestimonialsSection").then(m => ({ default: m.TestimonialsSection })));
+const LearningSection = lazy(() => import("@/components/portfolio/LearningSection").then(m => ({ default: m.LearningSection })));
+const AchievementsSection = lazy(() => import("@/components/portfolio/AchievementsSection").then(m => ({ default: m.AchievementsSection })));
+const AboutSection = lazy(() => import("@/components/portfolio/AboutSection").then(m => ({ default: m.AboutSection })));
+const InterestsSection = lazy(() => import("@/components/portfolio/InterestsSection").then(m => ({ default: m.InterestsSection })));
+const ContactSection = lazy(() => import("@/components/portfolio/ContactSection").then(m => ({ default: m.ContactSection })));
+const Footer = lazy(() => import("@/components/portfolio/Footer").then(m => ({ default: m.Footer })));
 
-// Core sections (priority order for recruiters)
-import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
-import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
-import { EducationSection } from "@/components/portfolio/EducationSection";
-import { WorkflowSection } from "@/components/portfolio/WorkflowSection";
-import { SkillsSection } from "@/components/portfolio/SkillsSection";
-import { TestimonialsSection } from "@/components/portfolio/TestimonialsSection";
-import { LearningSection } from "@/components/portfolio/LearningSection";
-import { AchievementsSection } from "@/components/portfolio/AchievementsSection";
-import { AboutSection } from "@/components/portfolio/AboutSection";
-import { InterestsSection } from "@/components/portfolio/InterestsSection";
-
-// Contact & footer
-import { ContactSection } from "@/components/portfolio/ContactSection";
-import { Footer } from "@/components/portfolio/Footer";
+// Loading fallback component
+const SectionLoader = () => (
+  <div className="py-16 flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
+  </div>
+);
 
 // =============================================================================
 // PAGE COMPONENT
@@ -84,86 +89,112 @@ const Index = () => {
       {/* Visual introduction                                                 */}
       {/* =================================================================== */}
       
-      <VideoSection />
+      <Suspense fallback={<SectionLoader />}>
+        <VideoSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 3: PROJECTS (MOST IMPORTANT)                                */}
       {/* Proof of capability - what you've built                             */}
       {/* =================================================================== */}
       
-      <ProjectsSection />
+      <Suspense fallback={<SectionLoader />}>
+        <ProjectsSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 4: EXPERIENCE                                               */}
       {/* Credibility - where you've worked                                   */}
       {/* =================================================================== */}
       
-      <ExperienceSection />
+      <Suspense fallback={<SectionLoader />}>
+        <ExperienceSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 5: EDUCATION                                                */}
       {/* Academic background                                                 */}
       {/* =================================================================== */}
       
-      <EducationSection />
+      <Suspense fallback={<SectionLoader />}>
+        <EducationSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 6: WORKFLOW                                                 */}
       {/* Development process                                                 */}
       {/* =================================================================== */}
       
-      <WorkflowSection />
+      <Suspense fallback={<SectionLoader />}>
+        <WorkflowSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 7: SKILLS                                                   */}
       {/* Technical capabilities - grouped by category                        */}
       {/* =================================================================== */}
       
-      <SkillsSection />
+      <Suspense fallback={<SectionLoader />}>
+        <SkillsSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 8: TESTIMONIALS                                             */}
       {/* Social proof - what others say                                      */}
       {/* =================================================================== */}
       
-      <TestimonialsSection />
+      <Suspense fallback={<SectionLoader />}>
+        <TestimonialsSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 9: LEARNING                                                 */}
       {/* Continuous improvement                                              */}
       {/* =================================================================== */}
       
-      <LearningSection />
+      <Suspense fallback={<SectionLoader />}>
+        <LearningSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 10: ACHIEVEMENTS                                            */}
       {/* Recognition and accomplishments                                     */}
       {/* =================================================================== */}
       
-      <AchievementsSection />
+      <Suspense fallback={<SectionLoader />}>
+        <AchievementsSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 11: ABOUT                                                   */}
       {/* Personal story - who you are beyond work                            */}
       {/* =================================================================== */}
       
-      <AboutSection />
+      <Suspense fallback={<SectionLoader />}>
+        <AboutSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 12: INTERESTS                                               */}
       {/* Beyond code - hobbies and interests                                 */}
       {/* =================================================================== */}
       
-      <InterestsSection />
+      <Suspense fallback={<SectionLoader />}>
+        <InterestsSection />
+      </Suspense>
       
       {/* =================================================================== */}
       {/* SECTION 13: CONTACT & FOOTER                                        */}
       {/* Call-to-action and copyright                                        */}
       {/* =================================================================== */}
       
-      <ContactSection />
+      <Suspense fallback={<SectionLoader />}>
+        <ContactSection />
+      </Suspense>
       
-      <Footer />
+      <Suspense fallback={<SectionLoader />}>
+        <Footer />
+      </Suspense>
       
     </MainLayout>
   );

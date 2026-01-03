@@ -9,20 +9,20 @@
  */
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, forwardRef } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 
 // =============================================================================
 // COMPONENT
 // =============================================================================
 
-export const ContactSection = () => {
+export const ContactSection = forwardRef<HTMLElement>((_, forwardedRef) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="section-full" ref={ref}>
-      <div className="section-container text-center px-4 sm:px-6">
+    <section id="contact" className="section-full" ref={forwardedRef || ref}>
+      <div className="section-container text-center px-4 sm:px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -89,4 +89,6 @@ export const ContactSection = () => {
       </div>
     </section>
   );
-};
+});
+
+ContactSection.displayName = 'ContactSection';

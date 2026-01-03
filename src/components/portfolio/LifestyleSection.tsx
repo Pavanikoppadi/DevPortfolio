@@ -96,6 +96,8 @@ export const LifestyleSection = () => {
               <motion.img
                 src={item.image}
                 alt={item.alt}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 whileHover={{ scale: 1.05 }}
               />

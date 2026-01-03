@@ -100,6 +100,8 @@ export const ToolboxSection = () => {
                 <img 
                   src={tool.image} 
                   alt={tool.name} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
               </motion.div>
