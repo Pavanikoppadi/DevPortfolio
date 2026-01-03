@@ -22,41 +22,35 @@ import aaraLearnLogo from "@/assets/aaralearn-logo.png";
 
 const experiences = [
   {
-    role: "AI Full-Stack Developer Intern",
-    company: "Electricon Wiz",
-    type: "Internship",
-    period: "Oct 2025 - Present",
-    location: "Remote",
+    year: "2025",
+    role: "AI Engineer",
+    company: "Independent / Startup",
     bullets: [
-      "Built AI-integrated web apps using React, TypeScript, and OpenAI API",
-      "Designed automation pipelines that reduced manual data processing by 60%",
-      "Led front-end development and collaborated with ML team on model integration",
+      "Shipped AI interview platform handling 10K+ inferences/day",
+      "Reduced LLM costs by 40% using caching + prompt optimization",
+      "Built RAG pipeline processing 50K+ documents with 95% accuracy",
     ],
     logo: electriconLogo,
   },
   {
-    role: "Software Developer Intern",
+    year: "2024",
+    role: "Full-Stack Developer",
     company: "Pilot Mobility",
-    type: "Internship",
-    period: "May 2025 - Sep 2025",
-    location: "On-site",
     bullets: [
-      "Shipped cloud-native features using Node.js, Express, and PostgreSQL",
+      "Built analytics dashboard used by 500+ active users",
+      "Maintained 99.9% uptime real-time chat system",
       "Optimized API response times by 35% through query optimization",
-      "Collaborated with product team to deliver mobile-first user experiences",
     ],
     logo: pilotLogo,
   },
   {
+    year: "2024",
     role: "Technical Intern",
     company: "AaraLearn",
-    type: "Part-time",
-    period: "Nov 2024 - Jan 2025",
-    location: "Remote",
     bullets: [
-      "Built and deployed a responsive website using WordPress and AI tools",
-      "Improved site accessibility by 35% and page load speed by 20%",
-      "Contributed to an NGO platform impacting thousands of students",
+      "Built responsive platform impacting 1000+ students",
+      "Improved site accessibility by 35% and load speed by 20%",
+      "Integrated AI tools for automated content generation",
     ],
     logo: aaraLearnLogo,
   },
@@ -114,19 +108,22 @@ export const ExperienceSection = () => {
                 {/* Content */}
                 <div className="min-w-0 flex-1">
                   
-                  {/* Role Title - Larger and single line on desktop */}
-                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-semibold text-foreground whitespace-nowrap">
+                  {/* Year Badge */}
+                  <span className="inline-block text-sm font-medium text-foreground-secondary bg-muted px-3 py-1 rounded-full mb-2">
+                    {exp.year}
+                  </span>
+                  
+                  {/* Role Title */}
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-semibold text-foreground">
                     {exp.role}
                   </h3>
                   
-                  {/* Metadata - Larger text */}
-                  <p className="text-base sm:text-lg text-foreground-secondary mt-1.5 leading-relaxed">
-                    <span className="block sm:inline">{exp.company} • {exp.type}</span>
-                    <span className="hidden sm:inline"> | </span>
-                    <span className="block sm:inline">{exp.period} | {exp.location}</span>
+                  {/* Company */}
+                  <p className="text-base sm:text-lg text-foreground-secondary mt-1">
+                    {exp.company}
                   </p>
                   
-                  {/* Bullet Points - Larger text */}
+                  {/* Bullet Points with metrics */}
                   <ul className="mt-4 sm:mt-5 space-y-2 sm:space-y-2.5">
                     {exp.bullets.map((bullet, i) => (
                       <li key={i} className="flex items-start gap-3 text-base sm:text-lg text-foreground/80">

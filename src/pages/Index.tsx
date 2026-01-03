@@ -85,21 +85,23 @@ const Index = () => {
       <HeroSection />
       
       {/* =================================================================== */}
-      {/* SECTION 2: VIDEO                                                    */}
-      {/* Visual introduction                                                 */}
-      {/* =================================================================== */}
-      
-      <Suspense fallback={<SectionLoader />}>
-        <VideoSection />
-      </Suspense>
-      
-      {/* =================================================================== */}
-      {/* SECTION 3: PROJECTS (MOST IMPORTANT)                                */}
+      {/* SECTION 2: PROJECTS (MOST IMPORTANT)                                */}
       {/* Proof of capability - what you've built                             */}
       {/* =================================================================== */}
       
       <Suspense fallback={<SectionLoader />}>
         <ProjectsSection />
+      </Suspense>
+      
+      {/* =================================================================== */}
+      {/* SECTION 3: TECH STACK                                               */}
+      {/* Production-ready tools                                              */}
+      {/* =================================================================== */}
+      
+      <Suspense fallback={<SectionLoader />}>
+        <div id="skills">
+          <SkillsSection />
+        </div>
       </Suspense>
       
       {/* =================================================================== */}
@@ -112,34 +114,7 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 5: EDUCATION                                                */}
-      {/* Academic background                                                 */}
-      {/* =================================================================== */}
-      
-      <Suspense fallback={<SectionLoader />}>
-        <EducationSection />
-      </Suspense>
-      
-      {/* =================================================================== */}
-      {/* SECTION 6: WORKFLOW                                                 */}
-      {/* Development process                                                 */}
-      {/* =================================================================== */}
-      
-      <Suspense fallback={<SectionLoader />}>
-        <WorkflowSection />
-      </Suspense>
-      
-      {/* =================================================================== */}
-      {/* SECTION 7: SKILLS                                                   */}
-      {/* Technical capabilities - grouped by category                        */}
-      {/* =================================================================== */}
-      
-      <Suspense fallback={<SectionLoader />}>
-        <SkillsSection />
-      </Suspense>
-      
-      {/* =================================================================== */}
-      {/* SECTION 8: TESTIMONIALS                                             */}
+      {/* SECTION 5: TESTIMONIALS                                             */}
       {/* Social proof - what others say                                      */}
       {/* =================================================================== */}
       
@@ -148,25 +123,25 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 9: LEARNING                                                 */}
-      {/* Continuous improvement                                              */}
+      {/* SECTION 6: VIDEO                                                    */}
+      {/* Visual introduction                                                 */}
       {/* =================================================================== */}
       
       <Suspense fallback={<SectionLoader />}>
-        <LearningSection />
+        <VideoSection />
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 10: ACHIEVEMENTS                                            */}
-      {/* Recognition and accomplishments                                     */}
+      {/* SECTION 7: EDUCATION                                                */}
+      {/* Academic background                                                 */}
       {/* =================================================================== */}
       
       <Suspense fallback={<SectionLoader />}>
-        <AchievementsSection />
+        <EducationSection />
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 11: ABOUT                                                   */}
+      {/* SECTION 8: ABOUT                                                    */}
       {/* Personal story - who you are beyond work                            */}
       {/* =================================================================== */}
       
@@ -175,16 +150,7 @@ const Index = () => {
       </Suspense>
       
       {/* =================================================================== */}
-      {/* SECTION 12: INTERESTS                                               */}
-      {/* Beyond code - hobbies and interests                                 */}
-      {/* =================================================================== */}
-      
-      <Suspense fallback={<SectionLoader />}>
-        <InterestsSection />
-      </Suspense>
-      
-      {/* =================================================================== */}
-      {/* SECTION 13: CONTACT & FOOTER                                        */}
+      {/* SECTION 9: CONTACT & FOOTER                                         */}
       {/* Call-to-action and copyright                                        */}
       {/* =================================================================== */}
       
