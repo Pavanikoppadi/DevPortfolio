@@ -105,6 +105,8 @@ export const ExperienceSection = () => {
                   <img 
                     src={exp.logo} 
                     alt={`${exp.company} logo`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
                   />
                 </div>

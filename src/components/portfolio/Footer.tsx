@@ -6,10 +6,11 @@
  */
 
 import { motion } from "framer-motion";
+import { forwardRef } from "react";
 
-export const Footer = () => {
+export const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer className="py-12 border-t border-border/50">
+    <footer ref={ref} className="py-12 border-t border-border/50">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -25,4 +26,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';

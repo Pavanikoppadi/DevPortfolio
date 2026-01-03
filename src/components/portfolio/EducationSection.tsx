@@ -135,6 +135,8 @@ export const EducationSection = () => {
                   <img 
                     src={edu.logo} 
                     alt={edu.institution} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-10 h-10 md:w-12 md:h-12 object-contain"
                   />
                 </div>

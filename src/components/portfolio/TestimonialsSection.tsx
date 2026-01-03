@@ -151,6 +151,8 @@ export const TestimonialsSection = () => {
                       <img
                         src={activeTestimonial.avatar}
                         alt={activeTestimonial.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>
