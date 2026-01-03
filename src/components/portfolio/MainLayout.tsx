@@ -158,12 +158,17 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         {/* LEFT: Profile Info with Role                                        */}
         {/* ------------------------------------------------------------------- */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Profile Photo */}
+          {/* Profile Photo - Optimized with loading eager and smaller decode */}
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden flex-shrink-0">
             <img 
               src={profilePhoto} 
               alt="Pavani Koppadi" 
               className="w-full h-full object-cover"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              width={36}
+              height={36}
             />
           </div>
           {/* Name and Role */}
