@@ -48,6 +48,11 @@ export const AboutSection = () => {
               I'm a developer who enjoys turning ideas into working web apps and AI-powered tools. Currently pursuing B.Tech in IT with a 8.45 CGPA.
             </p>
             
+            {/* Name */}
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground">
+              — Pavani Koppadi
+            </p>
+            
             {/* Bullet Points - Concrete and scannable */}
             <ul className="space-y-4 sm:space-y-5 text-base sm:text-lg text-foreground/80">
               <li className="flex items-start gap-3">
