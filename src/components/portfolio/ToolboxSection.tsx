@@ -99,7 +99,7 @@ export const ToolboxSection = () => {
               >
                 <img 
                   src={tool.image} 
-                  alt={tool.name} 
+                  alt={`${tool.name} - AI development tool used by Pavani Koppadi for full-stack development and automation`}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-contain"

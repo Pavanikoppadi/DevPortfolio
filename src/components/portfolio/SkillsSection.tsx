@@ -123,7 +123,7 @@ export const SkillsSection = () => {
                 >
                   <img 
                     src={skill.icon} 
-                    alt={skill.name}
+                    alt={`${skill.name} - Technology skill used by AI Full-Stack Engineer Pavani Koppadi`}
                     loading="lazy"
                     decoding="async"
                     className="w-5 h-5 sm:w-6 sm:h-6 object-contain"

@@ -120,7 +120,7 @@ export const FixedSidebar = () => {
           <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
             <img 
               src={profilePhoto} 
-              alt="Pavani Koppadi" 
+              alt="Pavani Koppadi - AI Full-Stack Engineer and Automation Specialist" 
               className="w-full h-full object-cover"
               loading="eager"
               decoding="async"
