@@ -25,7 +25,7 @@ const experiences = [
     period: "Oct 2025 - Present",
     type: "Internship",
     location: "Remote",
-    role: "AI Engineer",
+    role: "Full Stack AI Engineer",
     company: "Electricon Wiz",
     bullets: [
       "Shipped AI interview platform handling 10K+ inferences/day",
