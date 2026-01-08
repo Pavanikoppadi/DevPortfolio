@@ -51,8 +51,8 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Stack", href: "#skills" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
-  { label: "Resume", href: "/pavanideveloperesume.pdf", external: true },
 ];
 
 // =============================================================================
