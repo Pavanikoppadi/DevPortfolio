@@ -1,3 +1,6 @@
+# Pavani Koppadi Portfolio - AI Full-Stack Engineer
+# https://pavanikoppadi.com
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +13,14 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://pavanikoppadi.com/sitemap.xml
