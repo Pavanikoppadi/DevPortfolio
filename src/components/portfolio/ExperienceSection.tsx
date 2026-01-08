@@ -22,7 +22,9 @@ import aaraLearnLogo from "@/assets/aaralearn-logo.png";
 
 const experiences = [
   {
-    year: "2025",
+    period: "Oct 2025 - Present",
+    type: "Internship",
+    location: "Remote",
     role: "AI Engineer",
     company: "Electricon Wiz",
     bullets: [
@@ -33,7 +35,9 @@ const experiences = [
     logo: electriconLogo,
   },
   {
-    year: "2024",
+    period: "May 2025 - Sep 2025",
+    type: "Internship",
+    location: "On-site",
     role: "Full-Stack Developer",
     company: "Pilot Mobility",
     bullets: [
@@ -44,7 +48,9 @@ const experiences = [
     logo: pilotLogo,
   },
   {
-    year: "2024",
+    period: "Nov 2024 - Jan 2025",
+    type: "Part-time",
+    location: "Remote",
     role: "Technical Intern",
     company: "AaraLearn",
     bullets: [
@@ -108,10 +114,18 @@ export const ExperienceSection = () => {
                 {/* Content */}
                 <div className="min-w-0 flex-1">
                   
-                  {/* Year Badge */}
-                  <span className="inline-block text-sm font-medium text-foreground-secondary bg-muted px-3 py-1 rounded-full mb-2">
-                    {exp.year}
-                  </span>
+                  {/* Period, Type & Location Badge */}
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="inline-block text-sm font-medium text-foreground-secondary bg-muted px-3 py-1 rounded-full">
+                      {exp.period}
+                    </span>
+                    <span className="inline-block text-sm font-medium text-foreground-secondary bg-muted px-3 py-1 rounded-full">
+                      {exp.type}
+                    </span>
+                    <span className="inline-block text-sm font-medium text-foreground-secondary bg-muted px-3 py-1 rounded-full">
+                      {exp.location}
+                    </span>
+                  </div>
                   
                   {/* Role Title */}
                   <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-semibold text-foreground">
