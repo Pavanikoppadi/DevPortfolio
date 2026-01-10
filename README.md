@@ -1,13 +1,13 @@
 
-**Pavani Koppadi’s Developer Portfolio**  
+# Pavani Koppadi’s Developer Portfolio  
 
-🌐 *Live Website:* https://pavani-devportfolio.vercel.app/
+🌐 **Live Website:** https://pavani-devportfolio.vercel.app/
 
 A modern, responsive personal portfolio website showcasing my skills, projects, and experience as an **AI-focused Full-Stack Engineer & Automation Specialist**.
 
 ---
 
-About Me  
+##About Me  
 
 Hi! I’m **Pavani Koppadi**, an AI Full-Stack Engineer and Automation Specialist passionate about building intelligent, scalable, and real-world software solutions. I enjoy working with modern web technologies, Generative AI, and automation to solve complex problems efficiently.
 
@@ -15,7 +15,7 @@ This portfolio serves as a central place to explore my work, technical skills, a
 
 ---
 
-Features  
+##Features  
 
 - 📱 **Fully Responsive Design** — Optimized for mobile, tablet, and desktop  
 - ⚡ **Fast & Modern UI** — Clean, minimal, and performance-focused  
@@ -25,7 +25,7 @@ Features
 
 ---
 
-Tech Stack  
+##Tech Stack  
 
 > *(Update this list if needed based on your implementation)*
 
@@ -36,7 +36,7 @@ Tech Stack
 
 ---
 
-Portfolio Sections  
+## Portfolio Sections  
 
 - **About Me** — Brief professional summary  
 - **Skills** — Technologies, frameworks, and tools  
@@ -45,7 +45,7 @@ Portfolio Sections
 
 ---
 
-Getting Started (Local Setup)  
+## Getting Started (Local Setup)  
 
 To run this portfolio locally:
 
@@ -70,9 +70,9 @@ yarn dev
 Open your browser at:
 `http://localhost:3000`
 
+---
 
-
-Customization
+## Customization
 
 You can easily personalize this portfolio by updating:
 
@@ -84,7 +84,9 @@ You can easily personalize this portfolio by updating:
 
 Most content can be modified directly from the main components or configuration/data files.
 
-Deployment
+---
+
+## Deployment
 
 This portfolio is deployed using **Vercel**.
 
@@ -95,10 +97,14 @@ To deploy your own version:
 3. Let Vercel auto-detect and deploy
 4. (Optional) Add a custom domain
 
-Contact
+---
 
-* LinkedIn: [https://www.linkedin.com/in/pavanikoppadi/](https://www.linkedin.com/in/pavanikoppadi/)
-* Email: [your.email@example.com](mailto:your.email@example.com)
+## Contact
+
+* **LinkedIn:** [https://www.linkedin.com/in/pavanikoppadi/](https://www.linkedin.com/in/pavanikoppadi/)
+* **Email:** [your.email@example.com](mailto:your.email@example.com)
+
+---
 
 If you like this portfolio or find it useful, feel free to star the repository and share your feedback.
 Thanks for visiting!
