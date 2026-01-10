@@ -1,5 +1,5 @@
 
-Pavani Koppadi’s Developer Portfolio  
+**Pavani Koppadi’s Developer Portfolio**  
 
 🌐 *Live Website:* https://pavani-devportfolio.vercel.app/
 
