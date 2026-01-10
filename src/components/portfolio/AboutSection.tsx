@@ -11,6 +11,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Trophy, Award, GraduationCap, Users } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // =============================================================================
 // COMPONENT
@@ -73,20 +74,53 @@ export const AboutSection = () => {
               </li>
             </ul>
             
-            {/* Stats */}
+            {/* Stats with Glow */}
             <div className="pt-4 sm:pt-6">
               <div className="flex flex-wrap gap-4 sm:gap-5">
-                <div className="card-glass py-4 sm:py-5 px-6 sm:px-8">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">8.45</div>
-                  <div className="text-sm sm:text-base text-foreground-secondary">CGPA</div>
+                <div className="relative rounded-2xl">
+                  <GlowingEffect
+                    blur={0}
+                    borderWidth={1}
+                    spread={15}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                  />
+                  <div className="relative z-10 card-glass py-4 sm:py-5 px-6 sm:px-8">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">8.45</div>
+                    <div className="text-sm sm:text-base text-foreground-secondary">CGPA</div>
+                  </div>
                 </div>
-                <div className="card-glass py-4 sm:py-5 px-6 sm:px-8">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">2027</div>
-                  <div className="text-sm sm:text-base text-foreground-secondary">Expected Grad</div>
+                <div className="relative rounded-2xl">
+                  <GlowingEffect
+                    blur={0}
+                    borderWidth={1}
+                    spread={15}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                  />
+                  <div className="relative z-10 card-glass py-4 sm:py-5 px-6 sm:px-8">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">2027</div>
+                    <div className="text-sm sm:text-base text-foreground-secondary">Expected Grad</div>
+                  </div>
                 </div>
-                <div className="card-glass py-4 sm:py-5 px-6 sm:px-8">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">3+</div>
-                  <div className="text-sm sm:text-base text-foreground-secondary">Internships</div>
+                <div className="relative rounded-2xl">
+                  <GlowingEffect
+                    blur={0}
+                    borderWidth={1}
+                    spread={15}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                  />
+                  <div className="relative z-10 card-glass py-4 sm:py-5 px-6 sm:px-8">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">3+</div>
+                    <div className="text-sm sm:text-base text-foreground-secondary">Internships</div>
+                  </div>
                 </div>
               </div>
             </div>

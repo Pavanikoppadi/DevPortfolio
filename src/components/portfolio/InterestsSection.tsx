@@ -5,17 +5,13 @@
  * 
  * PURPOSE:
  * Displays personal interests/hobbies in a horizontal layout.
- * Features icons with labels and Apple-style hover animations.
- * 
- * ANIMATIONS:
- * - Staggered fade in from bottom
- * - Icon container scales and lifts on hover
- * - Color transition on hover
+ * Features icons with labels and Apple-style hover animations with glowing effect.
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Cpu, Camera, PenTool, Video } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // =============================================================================
 // DATA CONFIGURATION
@@ -69,19 +65,30 @@ export const InterestsSection = () => {
                 className="flex flex-col items-center gap-3 group cursor-default"
               >
                 
-                {/* Icon Container with Apple-style hover */}
-                <motion.div 
-                  className="p-4 rounded-2xl bg-background-secondary group-hover:bg-foreground/5 transition-colors duration-500"
-                  whileHover={{ 
-                    scale: 1.1, 
-                    y: -4,
-                    rotate: 3,
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <interest.icon className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
-                </motion.div>
+                {/* Icon Container with Apple-style hover and glow */}
+                <div className="relative rounded-2xl">
+                  <GlowingEffect
+                    blur={0}
+                    borderWidth={1}
+                    spread={15}
+                    glow={true}
+                    disabled={false}
+                    proximity={48}
+                    inactiveZone={0.01}
+                  />
+                  <motion.div 
+                    className="relative z-10 p-4 rounded-2xl bg-background-secondary group-hover:bg-foreground/5 transition-colors duration-500"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      y: -4,
+                      rotate: 3,
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <interest.icon className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
+                  </motion.div>
+                </div>
                 
                 {/* Interest Label */}
                 <motion.span 

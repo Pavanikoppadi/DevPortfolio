@@ -5,11 +5,12 @@
  * 
  * PURPOSE:
  * Displays professional experience with action-oriented bullet points.
- * Each entry: role, company, dates, 3 concrete bullets.
+ * Each entry: role, company, dates, 3 concrete bullets with glowing effect.
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // Company logos
 import electriconLogo from "@/assets/electricon-logo.png";
@@ -96,19 +97,30 @@ export const ExperienceSection = () => {
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="py-7 sm:py-8 md:py-10 border-b border-border/60 last:border-b-0"
+              className="relative py-7 sm:py-8 md:py-10 border-b border-border/60 last:border-b-0"
             >
               <div className="flex gap-4 sm:gap-5 md:gap-6">
                 
-                {/* Company Logo */}
-                <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-sm">
-                  <img 
-                    src={exp.logo} 
-                    alt={`${exp.company} logo`}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+                {/* Company Logo with Glow */}
+                <div className="relative shrink-0 rounded-xl sm:rounded-2xl">
+                  <GlowingEffect
+                    blur={0}
+                    borderWidth={1}
+                    spread={15}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
                   />
+                  <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                    <img 
+                      src={exp.logo} 
+                      alt={`${exp.company} logo`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+                    />
+                  </div>
                 </div>
 
                 {/* Content */}

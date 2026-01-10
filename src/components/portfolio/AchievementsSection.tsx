@@ -5,17 +5,13 @@
  * 
  * PURPOSE:
  * Displays achievements and recognition in a responsive grid.
- * Features Apple-style hover animations and icon effects.
- * 
- * ANIMATIONS:
- * - Cards stagger in on scroll
- * - Hover: lift, border glow, icon scale
- * - Icon has subtle bounce on card hover
+ * Features Apple-style hover animations and icon effects with glowing borders.
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Trophy, GraduationCap, Users } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // =============================================================================
 // DATA CONFIGURATION
@@ -78,17 +74,26 @@ export const AchievementsSection = () => {
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1] 
               }}
-              // Apple-style hover: lift and subtle glow
               whileHover={{ 
                 y: -6,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
-              className="p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border bg-background text-center group hover:border-foreground/20 hover:shadow-[0_15px_50px_-15px_hsl(var(--foreground)/0.12)] transition-all duration-500"
+              className="relative p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border bg-background text-center group hover:border-foreground/20 hover:shadow-[0_15px_50px_-15px_hsl(var(--foreground)/0.12)] transition-all duration-500"
             >
+              {/* Glowing Effect */}
+              <GlowingEffect
+                blur={0}
+                borderWidth={1}
+                spread={20}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+              />
               
               {/* Icon Container with bounce animation */}
               <motion.div 
-                className="inline-flex p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-background-secondary mb-4 group-hover:bg-foreground/5 transition-colors duration-500"
+                className="relative z-10 inline-flex p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-background-secondary mb-4 group-hover:bg-foreground/5 transition-colors duration-500"
                 whileHover={{ 
                   scale: 1.1, 
                   rotate: 5,
@@ -100,7 +105,7 @@ export const AchievementsSection = () => {
               
               {/* Title */}
               <motion.h3 
-                className="font-semibold text-base sm:text-lg md:text-xl"
+                className="relative z-10 font-semibold text-base sm:text-lg md:text-xl"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: index * 0.1 + 0.2 }}
