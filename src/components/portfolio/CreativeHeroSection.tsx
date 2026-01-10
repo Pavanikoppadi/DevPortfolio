@@ -10,6 +10,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // =============================================================================
 // COMPONENT
@@ -41,16 +42,27 @@ export const CreativeHeroSection = () => {
           Pavani Koppadi
         </motion.h1>
 
-        {/* Role Badge */}
+        {/* Role Badge with Glow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="inline-block mb-6 sm:mb-8"
         >
-          <span className="bg-secondary border border-border text-foreground px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base md:text-lg font-medium">
-            AI Automation & Full-Stack Engineer
-          </span>
+          <div className="relative rounded-full">
+            <GlowingEffect
+              blur={0}
+              borderWidth={1}
+              spread={20}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+            />
+            <span className="relative z-10 block bg-secondary border border-border text-foreground px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base md:text-lg font-medium">
+              AI Automation & Full-Stack Engineer
+            </span>
+          </div>
         </motion.div>
 
         {/* Tagline */}
@@ -81,7 +93,7 @@ export const CreativeHeroSection = () => {
           </span>
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons with Glow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -90,31 +102,64 @@ export const CreativeHeroSection = () => {
         >
           
           {/* Primary - View My Work */}
-          <a
-            href="#projects"
-            className="inline-flex items-center justify-center bg-foreground hover:bg-foreground/90 text-background px-7 py-3 sm:px-8 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
-          >
-            View My Work
-          </a>
+          <div className="relative rounded-full w-full sm:w-auto">
+            <GlowingEffect
+              blur={0}
+              borderWidth={2}
+              spread={25}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+            />
+            <a
+              href="#projects"
+              className="relative z-10 inline-flex items-center justify-center bg-foreground hover:bg-foreground/90 text-background px-7 py-3 sm:px-8 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
+            >
+              View My Work
+            </a>
+          </div>
           
           {/* Secondary - Download Resume */}
-          <a
-            href="/pavanideveloperesume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
-          >
-            Download Resume
-          </a>
+          <div className="relative rounded-full w-full sm:w-auto">
+            <GlowingEffect
+              blur={0}
+              borderWidth={1}
+              spread={20}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+            />
+            <a
+              href="/pavanideveloperesume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
+            >
+              Download Resume
+            </a>
+          </div>
           
           {/* Tertiary - Book Call */}
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
-          >
-            Book 15-Min Call
-            <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
-          </a>
+          <div className="relative rounded-full w-full sm:w-auto">
+            <GlowingEffect
+              blur={0}
+              borderWidth={1}
+              spread={20}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+            />
+            <a
+              href="#contact"
+              className="relative z-10 inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
+            >
+              Book 15-Min Call
+              <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

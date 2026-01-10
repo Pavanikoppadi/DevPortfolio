@@ -10,6 +10,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // Import local tool assets
 import chatgptLogo from "@/assets/tools/chatgpt.png";
@@ -119,22 +120,33 @@ export const SkillsSection = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: 0.2 + groupIndex * 0.1 + index * 0.03 }}
-                  className="flex items-center gap-2 sm:gap-2.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-secondary/50 border border-border hover:bg-secondary transition-colors duration-200"
+                  className="relative rounded-full"
                 >
-                  <img 
-                    src={skill.icon} 
-                    alt={`${skill.name} - Technology skill used by AI Full-Stack Engineer Pavani Koppadi`}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
-                    onError={(e) => {
-                      // Hide broken images
-                      e.currentTarget.style.display = 'none';
-                    }}
+                  <GlowingEffect
+                    blur={0}
+                    borderWidth={1}
+                    spread={15}
+                    glow={true}
+                    disabled={false}
+                    proximity={48}
+                    inactiveZone={0.01}
                   />
-                  <span className="text-foreground text-sm sm:text-base font-medium">
-                    {skill.name}
-                  </span>
+                  <div className="relative z-10 flex items-center gap-2 sm:gap-2.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-secondary/50 border border-border hover:bg-secondary transition-colors duration-200">
+                    <img 
+                      src={skill.icon} 
+                      alt={`${skill.name} - Technology skill used by AI Full-Stack Engineer Pavani Koppadi`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                      onError={(e) => {
+                        // Hide broken images
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <span className="text-foreground text-sm sm:text-base font-medium">
+                      {skill.name}
+                    </span>
+                  </div>
                 </motion.div>
               ))}
             </div>
