@@ -7,7 +7,7 @@ A modern, responsive personal portfolio website showcasing my skills, projects, 
 
 ---
 
-##About Me  
+## About Me  
 
 Hi! I’m **Pavani Koppadi**, an AI Full-Stack Engineer and Automation Specialist passionate about building intelligent, scalable, and real-world software solutions. I enjoy working with modern web technologies, Generative AI, and automation to solve complex problems efficiently.
 
@@ -15,7 +15,7 @@ This portfolio serves as a central place to explore my work, technical skills, a
 
 ---
 
-##Features  
+## Features  
 
 - 📱 **Fully Responsive Design** — Optimized for mobile, tablet, and desktop  
 - ⚡ **Fast & Modern UI** — Clean, minimal, and performance-focused  
@@ -25,7 +25,7 @@ This portfolio serves as a central place to explore my work, technical skills, a
 
 ---
 
-##Tech Stack  
+## Tech Stack  
 
 > *(Update this list if needed based on your implementation)*
 
