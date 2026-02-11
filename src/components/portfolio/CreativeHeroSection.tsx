@@ -1,7 +1,5 @@
 /**
- * =============================================================================
- * CreativeHeroSection.tsx - Primary Hero Section
- * =============================================================================
+ * CreativeHeroSection - Enhanced with polished micro-animations
  */
 
 import { motion } from "framer-motion";
@@ -17,9 +15,9 @@ export const CreativeHeroSection = () => {
         
         {/* Greeting */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.7 }}
           className="text-foreground-secondary text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4"
         >
           Heyy, I'm
@@ -27,9 +25,9 @@ export const CreativeHeroSection = () => {
 
         {/* Name */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.7, delay: 0.05 }}
           className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-5 sm:mb-6 md:mb-8 tracking-tight"
         >
           Pavani Koppadi
@@ -37,32 +35,28 @@ export const CreativeHeroSection = () => {
 
         {/* Role Badge with Glow */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9, filter: "blur(8px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="inline-block mb-6 sm:mb-8"
         >
-          <div className="relative rounded-full">
-            <GlowingEffect
-              blur={0}
-              borderWidth={1}
-              spread={20}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-            />
+          <motion.div
+            className="relative rounded-full"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <GlowingEffect blur={0} borderWidth={1} spread={20} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
             <span className="relative z-10 block bg-secondary border border-border text-foreground px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base md:text-lg font-medium">
               AI Automation & Full-Stack Engineer
             </span>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.7, delay: 0.15 }}
           className="text-foreground-secondary text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto mb-6 sm:mb-8 px-2 leading-relaxed"
         >
           I design and build web apps and AI-powered tools that automate real workflows and ship to production quickly.
@@ -75,15 +69,19 @@ export const CreativeHeroSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 sm:mb-12 md:mb-14 px-2"
         >
-          <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
-            TypeScript, React/Next.js
-          </span>
-          <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
-            AI agents & workflows
-          </span>
-          <span className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border">
-            End-to-end ownership
-          </span>
+          {["TypeScript, React/Next.js", "AI agents & workflows", "End-to-end ownership"].map((tag, i) => (
+            <motion.span
+              key={tag}
+              className="text-sm sm:text-base px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted text-foreground-secondary border border-border cursor-default"
+              whileHover={{ scale: 1.06, y: -2, backgroundColor: "hsl(var(--foreground) / 0.06)" }}
+              whileTap={{ scale: 0.97 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.25 + i * 0.08, type: "spring", stiffness: 400, damping: 17 }}
+            >
+              {tag}
+            </motion.span>
+          ))}
         </motion.div>
 
         {/* CTA Buttons */}
@@ -93,42 +91,33 @@ export const CreativeHeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
+          {/* View My Work */}
+          <motion.a href="#projects" className="w-full sm:w-auto" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+            <RainbowButton className="text-base sm:text-lg w-full sm:w-auto">View My Work</RainbowButton>
+          </motion.a>
           
-          {/* Primary - View My Work (Rainbow) */}
-          <a href="#projects" className="w-full sm:w-auto">
-            <RainbowButton className="text-base sm:text-lg w-full sm:w-auto">
-              View My Work
-            </RainbowButton>
-          </a>
-          
-          {/* Secondary - Download Resume */}
+          {/* Download Resume */}
           <div className="relative rounded-full w-full sm:w-auto">
-            <GlowingEffect
-              blur={0}
-              borderWidth={1}
-              spread={20}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-            />
-            <a
+            <GlowingEffect blur={0} borderWidth={1} spread={20} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+            <motion.a
               href="/pavanideveloperesume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-10 inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
+              className="relative z-10 inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 w-full sm:w-auto"
+              whileHover={{ scale: 1.03, y: -1 }}
+              whileTap={{ scale: 0.97 }}
             >
               Download Resume
-            </a>
+            </motion.a>
           </div>
           
-          {/* Tertiary - Book Call (Rainbow) */}
-          <a href="#contact" className="w-full sm:w-auto">
+          {/* Book Call */}
+          <motion.a href="#contact" className="w-full sm:w-auto" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
             <RainbowButton className="text-base sm:text-lg w-full sm:w-auto gap-2">
               Book 15-Min Call
               <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
             </RainbowButton>
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>
