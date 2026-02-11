@@ -1,5 +1,11 @@
 /**
- * ProjectsSection - Enhanced with card hover animations
+ * =============================================================================
+ * ProjectsSection.tsx - Featured Projects (Mini Case Studies)
+ * =============================================================================
+ * 
+ * PURPOSE:
+ * Displays featured projects as mini case studies for recruiters.
+ * Each card: title, one-line description, tech stack, key outcome.
  */
 
 import { motion, useInView } from "framer-motion";
@@ -7,9 +13,14 @@ import { useRef } from "react";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
+// Project images
 import resumindPreview from "@/assets/projects/resumind-preview.jpg";
 import votingPreview from "@/assets/projects/voting-system-preview.jpg";
 import sparkPreview from "@/assets/projects/spark-launchpad-preview.jpg";
+
+// =============================================================================
+// DATA - Structured as mini case studies
+// =============================================================================
 
 const projects = [
   {
@@ -50,12 +61,18 @@ const projects = [
   },
 ];
 
+// =============================================================================
+// COMPONENT
+// =============================================================================
+
 export const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="projects" className="py-16 sm:py-20 md:py-24 lg:py-28" ref={ref}>
+      
+      {/* Section Header */}
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -66,18 +83,18 @@ export const ProjectsSection = () => {
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">Featured Work.</h2>
           </div>
-          <motion.a
+          
+          <a
             href="#"
             className="hidden md:inline-flex items-center gap-1 text-foreground-secondary hover:text-foreground transition-colors text-lg font-medium"
-            whileHover={{ x: 4 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             View all projects
             <ChevronRight size={20} />
-          </motion.a>
+          </a>
         </motion.div>
       </div>
 
+      {/* Projects Grid */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -85,22 +102,37 @@ export const ProjectsSection = () => {
         className="relative"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 px-5 sm:px-6 md:px-12 lg:px-24 pb-6 sm:pb-8">
+          
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.3 + index * 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="group relative"
             >
+              
+              {/* Glowing Effect for the entire card */}
               <div className="relative rounded-xl sm:rounded-2xl">
-                <GlowingEffect blur={0} borderWidth={1} spread={25} glow={true} disabled={false} proximity={100} inactiveZone={0.01} />
+                <GlowingEffect
+                  blur={0}
+                  borderWidth={1}
+                  spread={25}
+                  glow={true}
+                  disabled={false}
+                  proximity={100}
+                  inactiveZone={0.01}
+                />
                 
+                {/* Project Image */}
                 <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden mb-5 sm:mb-6 bg-surface">
                   <img
                     src={project.image}
-                    alt={`${project.title} - AI Full-Stack Project`}
+                    alt={`${project.title} - AI Full-Stack Project by Pavani Koppadi showcasing ${project.techStack.split(' | ').slice(0, 3).join(', ')}`}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -109,50 +141,68 @@ export const ProjectsSection = () => {
                 </div>
               </div>
 
+              {/* Project Info - Left-aligned vertical stack */}
               <div className="space-y-2 sm:space-y-3">
-                <h3 className="text-xl sm:text-2xl md:text-2xl font-semibold text-foreground">{project.title}</h3>
-                <p className="text-base sm:text-lg text-foreground-secondary font-medium">{project.subtitle}</p>
                 
+                {/* Title */}
+                <h3 className="text-xl sm:text-2xl md:text-2xl font-semibold text-foreground">
+                  {project.title}
+                </h3>
+                
+                {/* Outcome Headline */}
+                <p className="text-base sm:text-lg text-foreground-secondary font-medium">
+                  {project.subtitle}
+                </p>
+                
+                {/* Problem → Solution */}
                 <div className="space-y-1.5 text-sm sm:text-base text-foreground/80 pt-1">
                   <p><span className="font-medium text-foreground">Problem:</span> {project.problem}</p>
                   <p><span className="font-medium text-foreground">Solution:</span> {project.solution}</p>
                 </div>
                 
-                <p className="text-xs sm:text-sm text-foreground-secondary pt-2">{project.techStack}</p>
+                {/* Tech Stack */}
+                <p className="text-xs sm:text-sm text-foreground-secondary pt-2">
+                  {project.techStack}
+                </p>
                 
+                {/* Action Buttons with Glow */}
                 <div className="flex flex-wrap items-center gap-3 pt-3 sm:pt-4">
                   <div className="relative rounded-full">
-                    <GlowingEffect blur={0} borderWidth={1} spread={15} glow={true} disabled={false} proximity={48} inactiveZone={0.01} />
-                    <motion.a
+                    <GlowingEffect
+                      blur={0}
+                      borderWidth={1}
+                      spread={15}
+                      glow={true}
+                      disabled={false}
+                      proximity={48}
+                      inactiveZone={0.01}
+                    />
+                    <a
                       href={project.liveDemo}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative z-10 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-colors text-sm sm:text-base font-medium group/link"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
                     >
                       Live Demo
                       <ArrowUpRight size={14} className="sm:w-4 sm:h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                    </motion.a>
+                    </a>
                   </div>
-                  <motion.a
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-foreground-secondary hover:text-foreground transition-colors text-sm sm:text-base font-medium"
-                    whileHover={{ x: 2 }}
                   >
                     GitHub
-                  </motion.a>
-                  <motion.a
+                  </a>
+                  <a
                     href={project.video}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-foreground-secondary hover:text-foreground transition-colors text-sm sm:text-base font-medium"
-                    whileHover={{ x: 2 }}
                   >
                     Watch Demo
-                  </motion.a>
+                  </a>
                 </div>
               </div>
             </motion.div>

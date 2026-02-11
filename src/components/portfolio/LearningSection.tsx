@@ -1,13 +1,23 @@
 /**
- * LearningSection - Optimized: memoized data, enhanced stat animations
+ * LearningSection Component
+ * 
+ * Displays a GitHub-style contribution graph representing learning activity.
+ * Includes stats for days active, courses, projects, and technologies.
+ * Uses monochrome color palette for the contribution squares.
  */
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 
+/**
+ * Generates random contribution data for the graph.
+ * Creates a 52-week grid with varying activity levels (0-4).
+ */
 const generateContributionData = () => {
   const data: number[][] = [];
-  for (let week = 0; week < 52; week++) {
+  const weeks = 52;
+  
+  for (let week = 0; week < weeks; week++) {
     const weekData: number[] = [];
     for (let day = 0; day < 7; day++) {
       const random = Math.random();
@@ -23,12 +33,18 @@ const generateContributionData = () => {
   return data;
 };
 
-// Generate once at module level
 const contributionData = generateContributionData();
 
+/** Month labels for the graph */
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** Day labels for the graph */
 const days = ['Mon', 'Wed', 'Fri'];
 
+/**
+ * Returns the appropriate CSS class for contribution level.
+ * Uses monochrome palette from muted to foreground.
+ */
 const getContributionColor = (level: number) => {
   switch (level) {
     case 0: return 'bg-muted';
@@ -40,25 +56,17 @@ const getContributionColor = (level: number) => {
   }
 };
 
-const stats = [
-  { value: "365+", label: "Days Active" },
-  { value: "15+", label: "Courses Completed" },
-  { value: "10+", label: "Projects Built" },
-  { value: "10+", label: "Technologies Learned" },
-];
-
 export const LearningSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
-  const totalContributions = useMemo(
-    () => contributionData.flat().filter(v => v > 0).length,
-    []
-  );
+  // Calculate total contributions for display
+  const totalContributions = contributionData.flat().filter(v => v > 0).length;
 
   return (
     <section id="learning" className="section-padding" ref={ref}>
       <div className="section-container">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -66,49 +74,66 @@ export const LearningSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-display mb-4">Learning & Understanding</h2>
-          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">AI can't replace deep understanding.</p>
+          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+            AI can't replace deep understanding.
+          </p>
         </motion.div>
 
+        {/* Contribution Graph Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-card rounded-2xl p-6 md:p-8 border border-border"
         >
+          {/* Graph Header */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-caption font-medium text-foreground">{totalContributions} learning activities in the last year</p>
+            <p className="text-caption font-medium text-foreground">
+              {totalContributions} learning activities in the last year
+            </p>
           </div>
 
+          {/* Contribution Graph */}
           <div className="overflow-x-auto">
             <div className="min-w-[800px]">
+              {/* Month Labels */}
               <div className="flex mb-2 ml-10">
                 {months.map((month) => (
-                  <span key={month} className="text-micro text-foreground-secondary" style={{ width: `${100 / 12}%` }}>{month}</span>
+                  <span 
+                    key={month} 
+                    className="text-micro text-foreground-secondary"
+                    style={{ width: `${100 / 12}%` }}
+                  >
+                    {month}
+                  </span>
                 ))}
               </div>
 
+              {/* Graph Grid */}
               <div className="flex">
+                {/* Day Labels */}
                 <div className="flex flex-col justify-around mr-2 h-[88px]">
                   {days.map(day => (
-                    <span key={day} className="text-micro text-foreground-secondary">{day}</span>
+                    <span key={day} className="text-micro text-foreground-secondary">
+                      {day}
+                    </span>
                   ))}
                 </div>
 
+                {/* Contribution Squares */}
                 <div className="flex gap-[3px]">
                   {contributionData.map((week, weekIndex) => (
                     <motion.div
                       key={weekIndex}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.3, delay: 0.3 + weekIndex * 0.008 }}
+                      transition={{ duration: 0.3, delay: 0.3 + weekIndex * 0.01 }}
                       className="flex flex-col gap-[3px]"
                     >
                       {week.map((level, dayIndex) => (
-                        <motion.div
+                        <div
                           key={dayIndex}
-                          className={`w-[11px] h-[11px] rounded-[2px] ${getContributionColor(level)} transition-colors cursor-default`}
-                          whileHover={{ scale: 1.8, zIndex: 10 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                          className={`w-[11px] h-[11px] rounded-[2px] ${getContributionColor(level)} transition-colors`}
                           title={`Contribution level: ${level}`}
                         />
                       ))}
@@ -117,11 +142,15 @@ export const LearningSection = () => {
                 </div>
               </div>
 
+              {/* Legend */}
               <div className="flex items-center justify-end gap-2 mt-4">
                 <span className="text-micro text-foreground-secondary">Less</span>
                 <div className="flex gap-[2px]">
                   {[0, 1, 2, 3, 4].map(level => (
-                    <div key={level} className={`w-[11px] h-[11px] rounded-[2px] ${getContributionColor(level)}`} />
+                    <div
+                      key={level}
+                      className={`w-[11px] h-[11px] rounded-[2px] ${getContributionColor(level)}`}
+                    />
                   ))}
                 </div>
                 <span className="text-micro text-foreground-secondary">More</span>
@@ -129,21 +158,24 @@ export const LearningSection = () => {
             </div>
           </div>
 
-          {/* Stats with count-up feel */}
+          {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className="text-center cursor-default"
-                initial={{ opacity: 0, y: 10 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
-                whileHover={{ scale: 1.08 }}
-              >
-                <p className="text-title text-foreground">{stat.value}</p>
-                <p className="text-caption text-foreground-secondary">{stat.label}</p>
-              </motion.div>
-            ))}
+            <div className="text-center">
+              <p className="text-title text-foreground">365+</p>
+              <p className="text-caption text-foreground-secondary">Days Active</p>
+            </div>
+            <div className="text-center">
+              <p className="text-title text-foreground">15+</p>
+              <p className="text-caption text-foreground-secondary">Courses Completed</p>
+            </div>
+            <div className="text-center">
+              <p className="text-title text-foreground">10+</p>
+              <p className="text-caption text-foreground-secondary">Projects Built</p>
+            </div>
+            <div className="text-center">
+              <p className="text-title text-foreground">10+</p>
+              <p className="text-caption text-foreground-secondary">Technologies Learned</p>
+            </div>
           </div>
         </motion.div>
       </div>
