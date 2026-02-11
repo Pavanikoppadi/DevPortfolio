@@ -2,19 +2,12 @@
  * =============================================================================
  * CreativeHeroSection.tsx - Primary Hero Section
  * =============================================================================
- * 
- * PURPOSE:
- * Main hero section with clear value proposition for recruiters.
- * Role + niche in one line, brief tagline, skill highlights, and CTAs.
  */
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-
-// =============================================================================
-// COMPONENT
-// =============================================================================
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export const CreativeHeroSection = () => {
   return (
@@ -93,7 +86,7 @@ export const CreativeHeroSection = () => {
           </span>
         </motion.div>
 
-        {/* CTA Buttons with Glow */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,24 +94,12 @@ export const CreativeHeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           
-          {/* Primary - View My Work */}
-          <div className="relative rounded-full w-full sm:w-auto">
-            <GlowingEffect
-              blur={0}
-              borderWidth={2}
-              spread={25}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-            />
-            <a
-              href="#projects"
-              className="relative z-10 inline-flex items-center justify-center bg-foreground hover:bg-foreground/90 text-background px-7 py-3 sm:px-8 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
-            >
+          {/* Primary - View My Work (Rainbow) */}
+          <a href="#projects" className="w-full sm:w-auto">
+            <RainbowButton className="text-base sm:text-lg w-full sm:w-auto">
               View My Work
-            </a>
-          </div>
+            </RainbowButton>
+          </a>
           
           {/* Secondary - Download Resume */}
           <div className="relative rounded-full w-full sm:w-auto">
@@ -141,25 +122,13 @@ export const CreativeHeroSection = () => {
             </a>
           </div>
           
-          {/* Tertiary - Book Call */}
-          <div className="relative rounded-full w-full sm:w-auto">
-            <GlowingEffect
-              blur={0}
-              borderWidth={1}
-              spread={20}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-            />
-            <a
-              href="#contact"
-              className="relative z-10 inline-flex items-center justify-center gap-2 bg-background hover:bg-muted border border-border text-foreground px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02] w-full sm:w-auto"
-            >
+          {/* Tertiary - Book Call (Rainbow) */}
+          <a href="#contact" className="w-full sm:w-auto">
+            <RainbowButton className="text-base sm:text-lg w-full sm:w-auto gap-2">
               Book 15-Min Call
               <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
-            </a>
-          </div>
+            </RainbowButton>
+          </a>
         </motion.div>
       </div>
     </section>

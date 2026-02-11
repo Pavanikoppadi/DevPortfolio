@@ -15,6 +15,13 @@
 
 @layer base {
   :root {
+    /* Rainbow button colors */
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+
     /* Core Colors - Light theme for content container */
     --background: 0 0% 100%;
     --background-elevated: 0 0% 100%;

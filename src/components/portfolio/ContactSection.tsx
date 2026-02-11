@@ -11,6 +11,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, forwardRef, useState } from "react";
 import { Mail, Github, Linkedin, Check } from "lucide-react";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 // =============================================================================
 // COMPONENT
@@ -55,14 +56,14 @@ export const ContactSection = forwardRef<HTMLElement>((_, forwardedRef) => {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center justify-center mb-8"
           >
-            <button
+            <RainbowButton
               onClick={copyEmail}
-              className="inline-flex items-center gap-2 sm:gap-3 bg-foreground hover:bg-foreground/90 text-background px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full text-xs sm:text-body font-medium transition-all duration-300 hover:scale-[1.02]"
+              className="gap-2 sm:gap-3 text-xs sm:text-body"
             >
               <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="truncate">{copied ? "Copied!" : email}</span>
               {copied && <Check className="w-4 h-4 text-green-500" />}
-            </button>
+            </RainbowButton>
           </motion.div>
 
           {/* Social Links */}
