@@ -1,18 +1,11 @@
 /**
- * =============================================================================
- * SkillsSection.tsx - Grouped Technology Skills
- * =============================================================================
- * 
- * PURPOSE:
- * Displays skills in 3 clear categories for easy scanning.
- * Core Technologies, AI & Automation, Tools & Workflow.
+ * SkillsSection - Enhanced with hover micro-animations on skill pills
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
-// Import local tool assets
 import chatgptLogo from "@/assets/tools/chatgpt.png";
 import claudeLogo from "@/assets/tools/claude.png";
 import copilotLogo from "@/assets/tools/copilot.png";
@@ -22,10 +15,6 @@ import geminiLogo from "@/assets/tools/gemini.png";
 import boltLogo from "@/assets/tools/bolt.png";
 import warpLogo from "@/assets/tools/warp.png";
 import vscodeLogo from "@/assets/tools/vscode.png";
-
-// =============================================================================
-// DATA - Grouped by category
-// =============================================================================
 
 const skillGroups = [
   {
@@ -76,18 +65,12 @@ const skillGroups = [
   },
 ];
 
-// =============================================================================
-// COMPONENT
-// =============================================================================
-
 export const SkillsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-5 sm:px-6 md:px-12" ref={ref}>
-      
-      {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -98,7 +81,6 @@ export const SkillsSection = () => {
         <p className="text-foreground-secondary text-base sm:text-lg mt-3">Production-ready tools I use end-to-end</p>
       </motion.div>
 
-      {/* Skill Groups */}
       <div className="max-w-5xl mx-auto space-y-10 sm:space-y-12">
         {skillGroups.map((group, groupIndex) => (
           <motion.div
@@ -107,12 +89,10 @@ export const SkillsSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 + groupIndex * 0.1 }}
           >
-            {/* Group Title */}
             <h3 className="text-sm sm:text-base font-medium text-foreground-secondary uppercase tracking-widest mb-4 sm:mb-5 text-center">
               {group.title}
             </h3>
             
-            {/* Skills Grid */}
             <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 md:gap-4">
               {group.skills.map((skill, index) => (
                 <motion.div
@@ -120,32 +100,21 @@ export const SkillsSection = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: 0.2 + groupIndex * 0.1 + index * 0.03 }}
-                  className="relative rounded-full"
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative rounded-full cursor-default"
                 >
-                  <GlowingEffect
-                    blur={0}
-                    borderWidth={1}
-                    spread={15}
-                    glow={true}
-                    disabled={false}
-                    proximity={48}
-                    inactiveZone={0.01}
-                  />
+                  <GlowingEffect blur={0} borderWidth={1} spread={15} glow={true} disabled={false} proximity={48} inactiveZone={0.01} />
                   <div className="relative z-10 flex items-center gap-2 sm:gap-2.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-secondary/50 border border-border hover:bg-secondary transition-colors duration-200">
-                    <img 
-                      src={skill.icon} 
-                      alt={`${skill.name} - Technology skill used by AI Full-Stack Engineer Pavani Koppadi`}
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
                       loading="lazy"
                       decoding="async"
                       className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
-                      onError={(e) => {
-                        // Hide broken images
-                        e.currentTarget.style.display = 'none';
-                      }}
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     />
-                    <span className="text-foreground text-sm sm:text-base font-medium">
-                      {skill.name}
-                    </span>
+                    <span className="text-foreground text-sm sm:text-base font-medium">{skill.name}</span>
                   </div>
                 </motion.div>
               ))}
