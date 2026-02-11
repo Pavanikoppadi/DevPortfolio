@@ -186,7 +186,7 @@ export const FixedSidebar = () => {
         
         {/* Hire Me Button - Rainbow */}
         <a href="mailto:koppadipavani34@gmail.com" className="block w-full mb-6">
-          <RainbowButton className="w-full text-caption py-2.5">
+          <RainbowButton className="w-full text-caption py-2.5 text-white [text-shadow:0_0_8px_rgba(255,255,255,0.3)]">
             Hire Me
           </RainbowButton>
         </a>
