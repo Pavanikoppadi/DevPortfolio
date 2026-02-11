@@ -38,6 +38,7 @@ import { motion } from "framer-motion";
 
 // Lucide icons for social links
 import { Mail, Linkedin, Github } from "lucide-react";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 // Profile photo asset (imported as ES6 module for bundling)
 import profilePhoto from "@/assets/profile-photo.png";
@@ -183,12 +184,11 @@ export const FixedSidebar = () => {
       {/* ===================================================================== */}
       <div>
         
-        {/* Hire Me Button */}
-        <a
-          href="mailto:koppadipavani34@gmail.com"
-          className="block w-full mb-6 px-4 py-2.5 border border-sidebar-foreground/30 text-sidebar-foreground text-caption font-medium text-center rounded-full hover:bg-sidebar-accent hover:scale-[1.02] transition-all duration-300"
-        >
-          Hire Me
+        {/* Hire Me Button - Rainbow */}
+        <a href="mailto:koppadipavani34@gmail.com" className="block w-full mb-6">
+          <RainbowButton className="w-full text-caption py-2.5">
+            Hire Me
+          </RainbowButton>
         </a>
 
         {/* ------------------------------------------------------------------- */}

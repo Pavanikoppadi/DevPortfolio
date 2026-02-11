@@ -68,6 +68,11 @@ export default {
           muted: "hsl(var(--sidebar-muted))",
         },
         "content-container": "hsl(var(--content-container))",
+        "color-1": "hsl(var(--color-1))",
+        "color-2": "hsl(var(--color-2))",
+        "color-3": "hsl(var(--color-3))",
+        "color-4": "hsl(var(--color-4))",
+        "color-5": "hsl(var(--color-5))",
         // Bento grid colors
         bento: {
           primary: "hsl(240 80% 60%)",
@@ -160,6 +165,10 @@ export default {
           "25%": { transform: "translateY(-2px) rotate(-5deg)" },
           "75%": { transform: "translateY(-2px) rotate(5deg)" },
         },
+        rainbow: {
+          "0%": { "background-position": "0%" },
+          "100%": { "background-position": "200%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -177,6 +186,7 @@ export default {
         "breathe": "breathe 4s ease-in-out infinite",
         "slide-in-bottom": "slide-in-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "icon-bounce": "icon-bounce 0.5s ease-in-out",
+        rainbow: "rainbow var(--speed, 2s) infinite linear",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
