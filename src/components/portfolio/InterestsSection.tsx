@@ -1,21 +1,11 @@
 /**
- * =============================================================================
- * InterestsSection.tsx - Personal Interests Beyond Code
- * =============================================================================
- * 
- * PURPOSE:
- * Displays personal interests/hobbies in a horizontal layout.
- * Features icons with labels and Apple-style hover animations with glowing effect.
+ * InterestsSection - Beyond code with enhanced hover animations
  */
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Cpu, Camera, PenTool, Video } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-
-// =============================================================================
-// DATA CONFIGURATION
-// =============================================================================
 
 const interests = [
   { icon: Cpu, label: "AI Productivity" },
@@ -24,10 +14,6 @@ const interests = [
   { icon: Video, label: "Content Creation" },
 ];
 
-// =============================================================================
-// COMPONENT
-// =============================================================================
-
 export const InterestsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -35,8 +21,6 @@ export const InterestsSection = () => {
   return (
     <section className="py-section-sm" ref={ref}>
       <div className="section-container">
-        
-        {/* Gradient divider */}
         <div className="divider-gradient mb-16" />
         
         <motion.div
@@ -45,58 +29,32 @@ export const InterestsSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          {/* Section Label */}
-          <p className="text-micro uppercase tracking-[0.2em] text-foreground-secondary mb-8">
-            Beyond Code
-          </p>
+          <p className="text-micro uppercase tracking-[0.2em] text-foreground-secondary mb-8">Beyond Code</p>
           
-          {/* Interests Row */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {interests.map((interest, index) => (
               <motion.div
                 key={interest.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.1,
-                  ease: [0.16, 1, 0.3, 1] 
-                }}
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-center gap-3 group cursor-default"
               >
-                
-                {/* Icon Container with Apple-style hover and glow */}
                 <div className="relative rounded-2xl">
-                  <GlowingEffect
-                    blur={0}
-                    borderWidth={1}
-                    spread={15}
-                    glow={true}
-                    disabled={false}
-                    proximity={48}
-                    inactiveZone={0.01}
-                  />
+                  <GlowingEffect blur={0} borderWidth={1} spread={15} glow={true} disabled={false} proximity={48} inactiveZone={0.01} />
                   <motion.div 
                     className="relative z-10 p-4 rounded-2xl bg-background-secondary group-hover:bg-foreground/5 transition-colors duration-500"
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -4,
-                      rotate: 3,
-                    }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.15, y: -4, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
                     <interest.icon className="w-6 h-6 text-foreground-secondary group-hover:text-foreground transition-colors duration-500" />
                   </motion.div>
                 </div>
                 
-                {/* Interest Label */}
-                <motion.span 
-                  className="text-caption text-foreground-secondary group-hover:text-foreground transition-colors duration-500"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <span className="text-caption text-foreground-secondary group-hover:text-foreground transition-colors duration-300">
                   {interest.label}
-                </motion.span>
+                </span>
               </motion.div>
             ))}
           </div>
